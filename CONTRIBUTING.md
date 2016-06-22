@@ -27,7 +27,7 @@ Also please make sure all tests pass before creating a pull request
 # Important Guidelines to follow when reviewing peoples pull requests
 The following a list of guidelines to follow when reviewing someone's code, listed in order of priority from top to bottom. 
 
-When the code does not meet the requirements of any items below labeled with a (1) or (2) the Pull request should be updated before it is approved
+When the code does not meet the requirements of any items below labelled with a (1) or (2) the Pull request should be updated before it is approved
 
 ## Does the code build (1)
 If the project doesn't build, obviously something is wrong. You can't proceed with testing / reviewing until the project builds.
@@ -45,7 +45,7 @@ This is harder to spot as to identify these you really need to spend time readin
 
 * Is the request restricted to authenticated users (people who are logged in).
 * Is the request restricted to authorised users (people who have the correct permissions to be performing this action).
-* Does the code protect against the OWASP top ten list of vunerabilities as defined by [https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2013_Project](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2013_Project)
+* Does the code protect against the OWASP top ten list of vulnerabilities as defined by [https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2013_Project](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2013_Project)
 
 ### Bugs
 
