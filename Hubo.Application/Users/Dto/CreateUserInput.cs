@@ -3,6 +3,7 @@ using Abp.Application.Services.Dto;
 using Abp.Auditing;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
+using Abp.Zero;
 
 namespace Hubo.Users.Dto
 {

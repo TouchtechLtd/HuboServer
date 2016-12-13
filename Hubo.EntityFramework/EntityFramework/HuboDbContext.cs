@@ -3,12 +3,20 @@ using Abp.Zero.EntityFramework;
 using Hubo.Authorization.Roles;
 using Hubo.MultiTenancy;
 using Hubo.Users;
+using System.Data.Entity;
+using System;
 
 namespace Hubo.EntityFramework
 {
-    public class HuboDbContext : AbpZeroDbContext<Tenant, Role, User>
+    public class HuboDbContext : AbpZeroDbContext<Tenant, Role, User>, IDisposable 
     {
         //TODO: Define an IDbSet for your Entities...
+        //public virtual DbSet<Shift> Shifts { get; set; }
+        //public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<Vehicle> VehiclesSet { get; set; }
+        public virtual DbSet<Driver> DriversSet { get; set; }
+        //public virtual DbSet<User> UserSet { get; set; }
+
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.

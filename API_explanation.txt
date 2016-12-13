@@ -1,0 +1,23 @@
+
+
+Example API Call for registering Vehicle
+
+- Call http://localhost:6634/api/Vehicles/registerVehicleAsync
+		with a POST body of JSON data:
+			{
+				"RegistrationNo": "abc1234",
+				"Make": "Toyota",
+				"Model": "Giga",
+				"StartingOdometer": 123000,
+				"CurrentOdometer":123500,
+				"CompanyId": 1
+			}
+			
+-  This accesses the registerVehicleAsync method in the VehicleController.cs class in WebAPI
+-  After converting the incoming request into a Vehicle object the registerVehicle method of the same class is called.
+   A VehicleAppService object is created (Hubo.Application.Vehicles.DriverAppService) and it's RegisterVehicle method called
+   
+- The VehicleAppService passes the data off to the VehicleRepository object
+
+- VehicleRepository does the magic, creating a HuboContext object with a matching VehicleSet object (holding the Vehicle object)
+  adn the context then saves the data to the db by calling SaveChanges.
