@@ -1,6 +1,7 @@
 ﻿using Hubo.EntityFramework.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,8 @@ namespace Hubo.EntityFramework
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
-                ctx.VehiclesSet.Add(vehicle);
-
+                 
+                //ctx.VehiclesSet.Add(testVehicle);
 
                 try
                 {
@@ -29,6 +30,7 @@ namespace Hubo.EntityFramework
                     }
                     else
                     {
+                        ctx.Entry(vehicle).State = System.Data.Entity.EntityState.Added;
                         result = ctx.SaveChanges();
                     }
 

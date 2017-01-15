@@ -32,7 +32,13 @@ namespace Hubo.Api.Controllers
             return await Task<AjaxResponse>.Run(() => registerVehicle(vehicle));
         }
 
-        
+        //[HttpPost]
+        //public async Task<AjaxResponse> getVehiclesFromCompanyAsync()
+        //{
+
+        //}
+
+
         // accept incoming JSON string, converted to Vehicle object, and saved
         private AjaxResponse registerVehicle(Vehicle vehicle)
         {

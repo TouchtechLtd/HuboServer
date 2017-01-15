@@ -55,6 +55,12 @@ namespace Hubo.EntityFramework
                 {
                     // createUser();
                 }
+
+                else
+                {
+                    //Matching User was found, thus email is in use, thus invalid
+                    return -1;
+                }
                 
                 try
                 {
@@ -78,6 +84,11 @@ namespace Hubo.EntityFramework
                 }
                 
             }
+        }
+
+        public bool CreateUser()
+        {
+            return false;
         }
     }
 }

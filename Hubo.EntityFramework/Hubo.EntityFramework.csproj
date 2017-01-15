@@ -173,21 +173,21 @@
     <Compile Include="Migrations\201605041151380_UserAccount_And_Notification_Changes.Designer.cs">
       <DependentUpon>201605041151380_UserAccount_And_Notification_Changes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612060426435_Drivers.cs" />
-    <Compile Include="Migrations\201612060426435_Drivers.Designer.cs">
-      <DependentUpon>201612060426435_Drivers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612060451093_Drivers1.cs" />
-    <Compile Include="Migrations\201612060451093_Drivers1.Designer.cs">
-      <DependentUpon>201612060451093_Drivers1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201612060452066_Vehicles.cs" />
     <Compile Include="Migrations\201612060452066_Vehicles.Designer.cs">
       <DependentUpon>201612060452066_Vehicles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612130337415_Driver.cs" />
-    <Compile Include="Migrations\201612130337415_Driver.Designer.cs">
-      <DependentUpon>201612130337415_Driver.cs</DependentUpon>
+    <Compile Include="Migrations\201701122317317_Vehicles1.cs" />
+    <Compile Include="Migrations\201701122317317_Vehicles1.Designer.cs">
+      <DependentUpon>201701122317317_Vehicles1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701152036108_Vehicle.cs" />
+    <Compile Include="Migrations\201701152036108_Vehicle.Designer.cs">
+      <DependentUpon>201701152036108_Vehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701152037559_Vehicles2.cs" />
+    <Compile Include="Migrations\201701152037559_Vehicles2.Designer.cs">
+      <DependentUpon>201701152037559_Vehicles2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -257,17 +257,17 @@
     <EmbeddedResource Include="Migrations\201605041151380_UserAccount_And_Notification_Changes.resx">
       <DependentUpon>201605041151380_UserAccount_And_Notification_Changes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612060426435_Drivers.resx">
-      <DependentUpon>201612060426435_Drivers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612060451093_Drivers1.resx">
-      <DependentUpon>201612060451093_Drivers1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612060452066_Vehicles.resx">
       <DependentUpon>201612060452066_Vehicles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612130337415_Driver.resx">
-      <DependentUpon>201612130337415_Driver.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701122317317_Vehicles1.resx">
+      <DependentUpon>201701122317317_Vehicles1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701152036108_Vehicle.resx">
+      <DependentUpon>201701152036108_Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701152037559_Vehicles2.resx">
+      <DependentUpon>201701152037559_Vehicles2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
