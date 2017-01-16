@@ -7,13 +7,13 @@ namespace Hubo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Driver : IMigrationMetadata
+    public sealed partial class Vehicles : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Driver));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Vehicles));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612130337415_Driver"; }
+            get { return "201701152335338_Vehicles"; }
         }
         
         string IMigrationMetadata.Source

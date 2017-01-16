@@ -7,13 +7,13 @@ namespace Hubo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Created_Table_AbpUserAccounts : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Created_Table_AbpUserAccounts));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605021116147_Created_Table_AbpUserAccounts"; }
+            get { return "201701160016566_initial"; }
         }
         
         string IMigrationMetadata.Source
