@@ -537,18 +537,7 @@ namespace Hubo.Migrations
                         StartingOdometer = c.Int(nullable: false),
                         CurrentOdometer = c.Int(nullable: false),
                         CompanyId = c.Int(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        DeleterUserId = c.Long(),
-                        DeletionTime = c.DateTime(),
-                        LastModificationTime = c.DateTime(),
-                        LastModifierUserId = c.Long(),
-                        CreationTime = c.DateTime(nullable: false),
-                        CreatorUserId = c.Long(),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_Vehicle_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
+                    })
                 .PrimaryKey(t => t.Id);
             
         }
@@ -596,11 +585,7 @@ namespace Hubo.Migrations
             DropIndex("dbo.AbpUsers", new[] { "DeleterUserId" });
             DropIndex("dbo.Drivers", new[] { "UserId" });
             DropIndex("dbo.AbpBackgroundJobs", new[] { "IsAbandoned", "NextTryTime" });
-            DropTable("dbo.Vehicles",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_Vehicle_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
+            DropTable("dbo.Vehicles");
             DropTable("dbo.AbpUserOrganizationUnits",
                 removedAnnotations: new Dictionary<string, object>
                 {
