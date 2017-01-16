@@ -4,6 +4,7 @@ using Abp.Web.Models;
 using Abp.WebApi.Controllers;
 using System;
 using System.Linq;
+using Hubo.Companies;
 
 namespace Hubo.Api.Controllers
 {

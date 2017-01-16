@@ -103,6 +103,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Companies\CompanyAppService.cs" />
+    <Compile Include="Companies\ICompanyAppService.cs" />
     <Compile Include="Drivers\DriverAppService.cs" />
     <Compile Include="Drivers\DTo\CreateDriverInput.cs" />
     <Compile Include="Drivers\IDriverAppService.cs" />
@@ -143,6 +145,9 @@
       <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
       <Name>Hubo.EntityFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Companies\DTo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hubo.EntityFramework.Repositories
 {
-    class ICompanyRepository : IRepository
+    public class ICompanyRepository : IRepository
     {
     }
 }

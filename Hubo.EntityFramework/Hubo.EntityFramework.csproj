@@ -107,15 +107,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\CompanyRepository.cs" />
     <Compile Include="EntityFramework\DriverRepository.cs" />
     <Compile Include="EntityFramework\HuboDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\HuboRepositoryBase.cs" />
+    <Compile Include="EntityFramework\Repositories\ICompanyRepository.cs" />
     <Compile Include="EntityFramework\Repositories\IDriverRepository.cs" />
     <Compile Include="EntityFramework\Repositories\IVehicleRepository.cs" />
     <Compile Include="EntityFramework\VehicleRepository.cs" />
     <Compile Include="Migrations\201701160118050_initial.cs" />
     <Compile Include="Migrations\201701160118050_initial.Designer.cs">
       <DependentUpon>201701160118050_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701160143554_companies.cs" />
+    <Compile Include="Migrations\201701160143554_companies.Designer.cs">
+      <DependentUpon>201701160143554_companies.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -142,6 +148,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701160118050_initial.resx">
       <DependentUpon>201701160118050_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701160143554_companies.resx">
+      <DependentUpon>201701160143554_companies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

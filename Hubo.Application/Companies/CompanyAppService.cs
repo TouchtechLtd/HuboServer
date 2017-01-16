@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace Hubo.Companies
 {
-    class CompanyAppService
+    public class CompanyAppService
     {
         private CompanyRepository _companyRepository;
 
         public CompanyAppService()
         {
             _companyRepository = new EntityFramework.CompanyRepository();
+        }
+
+        public object GetCompanyList(string driverId)
+        {
+            var result = _companyRepository.GetCompanyList(driverId);
+
+            return result;
         }
     }
 }

@@ -4,6 +4,7 @@ using Abp.Web.Models;
 using Abp.WebApi.Controllers;
 using System;
 using System.Linq;
+using Hubo.Companies;
 
 namespace Hubo.Api.Controllers
 {
@@ -13,6 +14,12 @@ namespace Hubo.Api.Controllers
         public CompanyController()
         {
 
+        }
+
+        [HttpGet]
+        public string HelloWorld()
+        {
+            return "HelloWorld";
         }
 
         [HttpPost]
@@ -26,6 +33,9 @@ namespace Hubo.Api.Controllers
         private AjaxResponse getCompanyList(string driverId)
         {
             AjaxResponse ar = new AjaxResponse();
+
+            CompanyAppService companyService = new CompanyAppService();
+            var result = companyService.GetCompanyList(driverId);
 
             /*
             if (!checkUserNameAndEmail(driver.email, driver.userName))
