@@ -2,6 +2,7 @@
 using Hubo.EntityFramework;
 using Hubo.Respositories;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Hubo.Companies
@@ -15,13 +16,12 @@ namespace Hubo.Companies
             _companyRepository = new EntityFramework.CompanyRepository();
         }
 
-        public object GetCompanyList(string driverId)
+        public List<Company> GetCompanyList(Driver driver)
         {
+            List<Company> result = new List<Company>();
+            result = _companyRepository.GetCompanyList(driver);
 
-            //var result = _companyRepository.GetCompanyList(driverId);
-
-            //return result;
-            return 0;
+            return result;
         }
     }
 }

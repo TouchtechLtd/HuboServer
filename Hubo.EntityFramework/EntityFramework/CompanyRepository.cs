@@ -10,22 +10,42 @@ namespace Hubo.EntityFramework
 {
     public class CompanyRepository : ICompanyRepository
     {
-        //public object GetCompanyList(string driverId)
-        //{
-        //    using (HuboDbContext ctx = new HuboDbContext())
-        //    {
-        //        try
-        //        {
-        //            var list = from b in ctx.CompaniesSet where b.n                    
+        public List<Company> GetCompanyList(Driver driver)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                List<Company> listOfCompanies = new List<Company>();
 
-        //        }
-        //        catch(Exception ex)
-        //        {
-        //            string x = ex.Message;
+                try
+                {
+                    //Get middle man from driver id to find all companies associated with driver
+                    IQueryable<DriverCompany> driveCompanies;
 
-        //            return 0;
-        //        }
-        //    }
-        //}
+                    driveCompanies= from b in ctx.DriverCompaniesSet
+                                          where b.DriverId.Equals(driver.Id)
+                                          select b;
+                                        
+                    foreach (DriverCompany driverCompany in driveCompanies.ToList<DriverCompany>())
+                    {
+                        IQueryable<Company> tempCompany;
+                        tempCompany = from b in ctx.CompaniesSet
+                                  where b.Id.Equals(driverCompany.CompanyId)
+                                  select b;
+                        foreach(Company company in tempCompany.ToList<Company>())
+                        {
+                            listOfCompanies.Add(company);
+                        }
+                    }
+                    
+                    return listOfCompanies;
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.Message;
+
+                    return listOfCompanies;
+                }
+            }
+        }
     }
 }

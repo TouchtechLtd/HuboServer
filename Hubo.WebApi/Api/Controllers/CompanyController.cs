@@ -5,6 +5,8 @@ using Abp.WebApi.Controllers;
 using System;
 using System.Linq;
 using Hubo.Companies;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Hubo.Api.Controllers
 {
@@ -23,20 +25,21 @@ namespace Hubo.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<AjaxResponse> getCompanyListAsync([FromBody] string driverId)
+        public async Task<List<Company>> getCompanyListAsync([FromBody] Driver driver)
         {
-            return await Task<AjaxResponse>.Run(() => getCompanyList(driverId));
+            return await Task<List<Company>>.Run(() => getCompanyList(driver));
         }
 
 
 
-        private AjaxResponse getCompanyList(string driverId)
+
+        private List<Company> getCompanyList(Driver driver)
         {
             AjaxResponse ar = new AjaxResponse();
 
             CompanyAppService companyService = new CompanyAppService();
-            var result = companyService.GetCompanyList(driverId);
-
+            List<Company> result = companyService.GetCompanyList(driver);
+            return result;
             /*
             if (!checkUserNameAndEmail(driver.email, driver.userName))
             {
@@ -44,8 +47,7 @@ namespace Hubo.Api.Controllers
             }
             */
             
-
-            return ar;
+            
         }
 
         // create a custom error object to return in an AjaxResponse
