@@ -17,9 +17,11 @@ namespace Hubo.Companies
 
         public object GetCompanyList(string driverId)
         {
-            var result = _companyRepository.GetCompanyList(driverId);
 
-            return result;
+            //var result = _companyRepository.GetCompanyList(driverId);
+
+            //return result;
+            return 0;
         }
     }
 }
