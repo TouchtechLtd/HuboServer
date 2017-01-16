@@ -11,5 +11,5 @@ In case of Migration issues where Tables are not behaving properly (Will not add
 1. Manually delete DB (Backup any important data!)
 2. Remove all migration files under Migrations/. Obviously do not delete the important classes.
 3. Rebuild project (important step).
-4. Run "Add-Migration-Initial" -> "Update-Database" under Package manager console.
+4. Run "Add-Migration Initial" -> "Update-Database" under Package manager console.
 5. Voila
