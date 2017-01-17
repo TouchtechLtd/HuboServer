@@ -11,7 +11,7 @@ namespace Hubo.EntityFramework
     public class HuboDbContext : AbpZeroDbContext<Tenant, Role, User>, IDisposable 
     {
         //TODO: Define an IDbSet for your Entities...
-        //public virtual DbSet<Shift> Shifts { get; set; }
+        public virtual DbSet<Shift> Shifts { get; set; }
         public virtual DbSet<Company> CompaniesSet { get; set; }
         public virtual DbSet<Vehicle> VehiclesSet { get; set; }
         public virtual DbSet<Driver> DriversSet { get; set; }

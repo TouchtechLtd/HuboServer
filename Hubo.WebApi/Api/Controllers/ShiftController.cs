@@ -5,6 +5,7 @@ using Abp.WebApi.Controllers;
 using System;
 using System.Linq;
 using Hubo.Companies;
+using Hubo.Shifts;
 
 namespace Hubo.Api.Controllers
 {
@@ -18,35 +19,29 @@ namespace Hubo.Api.Controllers
 
         [HttpPost]
         // create a shift record and return the shift ID to the app
-        public async Task<AjaxResponse> startShiftAsync([FromBody] Shift shift)
+        public async Task<int> startShiftAsync([FromBody] Shift shift)
         {
-            return await Task<AjaxResponse>.Run(() => startShift(shift));
+            return await Task<int>.Run(() => startShift(shift));
         }
 
         [HttpPost] 
         // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<AjaxResponse> endShiftAsync([FromBody] Shift shift)
+        public async Task<int> endShiftAsync([FromBody] Shift shift)
         {
-            return await Task<AjaxResponse>.Run(() => endShift(shift));
+            return await Task<int>.Run(() => endShift(shift));
         }
 
 
-        private AjaxResponse startShift(Shift shift)
-        {
-            AjaxResponse ar = new AjaxResponse();
-
-          
-
-            return ar;
+        private int startShift(Shift shift)
+        {            
+            ShiftAppService shiftService = new ShiftAppService();
+            return shiftService.StartShift(shift);
         }
 
-        private AjaxResponse endShift(Shift shift)
+        private int endShift(Shift shift)
         {
-            AjaxResponse ar = new AjaxResponse();
-
-
-
-            return ar;
+            ShiftAppService shiftService = new ShiftAppService();
+            return shiftService.StopShift(shift);
         }
 
         

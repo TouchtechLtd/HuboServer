@@ -113,7 +113,9 @@
     <Compile Include="EntityFramework\Repositories\HuboRepositoryBase.cs" />
     <Compile Include="EntityFramework\Repositories\ICompanyRepository.cs" />
     <Compile Include="EntityFramework\Repositories\IDriverRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\IShiftRepository.cs" />
     <Compile Include="EntityFramework\Repositories\IVehicleRepository.cs" />
+    <Compile Include="EntityFramework\ShiftRepository.cs" />
     <Compile Include="EntityFramework\VehicleRepository.cs" />
     <Compile Include="Migrations\201701160118050_initial.cs" />
     <Compile Include="Migrations\201701160118050_initial.Designer.cs">
@@ -126,6 +128,10 @@
     <Compile Include="Migrations\201701160242198_drivercompanies.cs" />
     <Compile Include="Migrations\201701160242198_drivercompanies.Designer.cs">
       <DependentUpon>201701160242198_drivercompanies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170248259_Shifts.cs" />
+    <Compile Include="Migrations\201701170248259_Shifts.Designer.cs">
+      <DependentUpon>201701170248259_Shifts.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701160242198_drivercompanies.resx">
       <DependentUpon>201701160242198_drivercompanies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170248259_Shifts.resx">
+      <DependentUpon>201701170248259_Shifts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
