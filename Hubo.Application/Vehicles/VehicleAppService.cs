@@ -22,5 +22,12 @@ namespace Hubo.Vehicles
 
             return i;
         }
+
+        public List<Vehicle> GetVehicles(int companyId)
+        {
+            List<Vehicle> listOfVehicles = new List<Vehicle>();
+            listOfVehicles = _vehicleRepository.GetVehicles(companyId);
+            return listOfVehicles;
+        }
     }
 }

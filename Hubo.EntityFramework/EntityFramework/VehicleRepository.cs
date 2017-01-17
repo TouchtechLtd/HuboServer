@@ -45,5 +45,26 @@ namespace Hubo.EntityFramework
 
             }
         }
+
+        public List<Vehicle> GetVehicles(int companyId)
+        {
+            List<Vehicle> listOfVehicles = new List<Vehicle>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    IQueryable<Vehicle> listVehicleQuery;
+                    listVehicleQuery = from b in ctx.VehiclesSet
+                                       where b.CompanyId.Equals(companyId)
+                                       select b;
+                    listOfVehicles = listVehicleQuery.ToList<Vehicle>();
+                    return listOfVehicles;
+                }
+                catch (Exception ex)
+                {
+                    return listOfVehicles;
+                }
+            }
+        }
     }
 }

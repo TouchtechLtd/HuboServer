@@ -6,6 +6,7 @@ using System.Web.Http;
 using System;
 using Hubo.EntityFramework;
 using Hubo.Vehicles;
+using System.Collections.Generic;
 
 namespace Hubo.Api.Controllers
 {
@@ -23,6 +24,19 @@ namespace Hubo.Api.Controllers
             return "Hello World";
         }
 
+        [HttpPost]
+        public async Task<List<Vehicle>> getVehicles([FromBody] Vehicle vehicle)
+        {
+            return await Task<List<Vehicle>>.Run(() => getVehicles(vehicle.CompanyId));
+        }
+
+        private List<Vehicle> getVehicles(int companyId)
+        {
+            List<Vehicle> listOfVehicles = new List<Vehicle>();
+            VehicleAppService vehicleService = new VehicleAppService();
+            listOfVehicles = vehicleService.GetVehicles(companyId);
+            return listOfVehicles;
+        }
 
         // registration, make, model, odo, company
         [HttpPost]
