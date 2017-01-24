@@ -133,6 +133,26 @@
     <Compile Include="Migrations\201701170248259_Shifts.Designer.cs">
       <DependentUpon>201701170248259_Shifts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701170350524_breaks.cs" />
+    <Compile Include="Migrations\201701170350524_breaks.Designer.cs">
+      <DependentUpon>201701170350524_breaks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170358168_breaks1.cs" />
+    <Compile Include="Migrations\201701170358168_breaks1.Designer.cs">
+      <DependentUpon>201701170358168_breaks1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170400155_breaks2.cs" />
+    <Compile Include="Migrations\201701170400155_breaks2.Designer.cs">
+      <DependentUpon>201701170400155_breaks2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170408186_breaks3.cs" />
+    <Compile Include="Migrations\201701170408186_breaks3.Designer.cs">
+      <DependentUpon>201701170408186_breaks3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170425518_shift.cs" />
+    <Compile Include="Migrations\201701170425518_shift.Designer.cs">
+      <DependentUpon>201701170425518_shift.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="HuboDataModule.cs" />
@@ -167,6 +187,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701170248259_Shifts.resx">
       <DependentUpon>201701170248259_Shifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170350524_breaks.resx">
+      <DependentUpon>201701170350524_breaks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170358168_breaks1.resx">
+      <DependentUpon>201701170358168_breaks1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170400155_breaks2.resx">
+      <DependentUpon>201701170400155_breaks2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170408186_breaks3.resx">
+      <DependentUpon>201701170408186_breaks3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170425518_shift.resx">
+      <DependentUpon>201701170425518_shift.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

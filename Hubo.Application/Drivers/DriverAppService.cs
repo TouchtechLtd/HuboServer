@@ -22,5 +22,11 @@ namespace Hubo.Drivers
 
             return i;
         }
+
+        public LoginResponse GetDetails(string userEmail)
+        {
+            LoginResponse response = _driverRepository.GetDetails(userEmail);
+            return response;
+        }
     }
 }

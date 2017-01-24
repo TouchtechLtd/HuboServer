@@ -12,6 +12,7 @@ using Hubo.Users;
 using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using Hubo.Drivers;
 
 namespace Hubo.Api.Controllers
 {
@@ -30,6 +31,21 @@ namespace Hubo.Api.Controllers
         {
             _userManager = userManager;
         }
+
+        [HttpPost]
+        public async Task<LoginResponse> GetDetailsAsync(User user)
+        {
+            return await Task<LoginResponse>.Run(() => GetDetails(user.EmailAddress));
+        }
+
+        private LoginResponse GetDetails(string userEmail)
+        {
+            DriverAppService driverService = new DriverAppService();
+            LoginResponse response = new LoginResponse();
+            response = driverService.GetDetails(userEmail);
+            return response;
+        }
+
 
         [HttpPost]
         public async Task<AjaxResponse> Authenticate(LoginModel loginModel)

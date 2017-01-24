@@ -51,5 +51,47 @@ namespace Hubo.EntityFramework
                 
             }
         }
+
+        public int StartBreak(Break shiftBreak)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    ctx.Breaks.Add(shiftBreak);
+                    ctx.SaveChanges();
+                    return shiftBreak.Id;
+                }
+                catch(Exception ex)
+                {
+                    return -1;
+                }
+            }
+        }
+
+        public int EndBreak(Break shiftBreak)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    if (shiftBreak.Id == 0)
+                    {
+                        return -1;
+                    }
+                    Break updateBreak;
+                    updateBreak = ctx.Breaks.Where(s => s.Id == shiftBreak.Id).FirstOrDefault<Break>();
+                    updateBreak.EndBreakTime = shiftBreak.EndBreakTime;
+                    ctx.Entry(updateBreak).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                    return 1;
+                }
+                catch (Exception ex)
+                {
+                    return -2;
+                }
+
+            }
+        }
     }
 }

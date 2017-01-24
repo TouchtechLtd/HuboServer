@@ -25,5 +25,15 @@ namespace Hubo.Shifts
         {
             return _shiftRepository.StopShift(shift);
         }
+
+        public int StartBreak(Break shiftBreak)
+        {
+            return _shiftRepository.StartBreak(shiftBreak);
+        }
+
+        public int EndBreak(Break shiftBreak)
+        {
+            return _shiftRepository.EndBreak(shiftBreak);
+        }
     }
 }

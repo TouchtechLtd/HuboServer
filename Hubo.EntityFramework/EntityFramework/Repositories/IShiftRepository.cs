@@ -10,5 +10,8 @@ namespace Hubo.EntityFramework.Repositories
     public interface IShiftRepository : IRepository
     {
         int StartShift(Shift shift);
+        int EndShift(Shift shift);
+        int StartBreak(Shift shift);
+        int EndBreak(Shift shift);
     }
 }

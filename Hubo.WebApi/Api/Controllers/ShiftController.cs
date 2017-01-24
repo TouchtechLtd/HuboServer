@@ -19,32 +19,55 @@ namespace Hubo.Api.Controllers
 
         [HttpPost]
         // create a shift record and return the shift ID to the app
-        public async Task<int> startShiftAsync([FromBody] Shift shift)
+        public async Task<int> StartShiftAsync([FromBody] Shift shift)
         {
-            return await Task<int>.Run(() => startShift(shift));
+            return await Task<int>.Run(() => StartShift(shift));
         }
 
         [HttpPost] 
         // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<int> endShiftAsync([FromBody] Shift shift)
+        public async Task<int> EndShiftAsync([FromBody] Shift shift)
         {
-            return await Task<int>.Run(() => endShift(shift));
+            return await Task<int>.Run(() => EndShift(shift));
         }
 
+        [HttpPost]
+        // close off an opern shift by passing in shift ID and closing geo location and time
+        public async Task<int> StartBreakAsync([FromBody] Break shiftBreak)
+        {
+            return await Task<int>.Run(() => StartBreak(shiftBreak));
+        }
 
-        private int startShift(Shift shift)
+        [HttpPost]
+        // close off an opern shift by passing in shift ID and closing geo location and time
+        public async Task<int> EndBreakAsync([FromBody] Break shiftBreak)
+        {
+            return await Task<int>.Run(() => EndBreak(shiftBreak));
+        }
+
+        private int StartShift(Shift shift)
         {            
             ShiftAppService shiftService = new ShiftAppService();
             return shiftService.StartShift(shift);
         }
 
-        private int endShift(Shift shift)
+        private int EndShift(Shift shift)
         {
             ShiftAppService shiftService = new ShiftAppService();
             return shiftService.StopShift(shift);
+        }       
+
+        private int StartBreak(Break shiftBreak)
+        {
+            ShiftAppService shiftService = new ShiftAppService();
+            return shiftService.StartBreak(shiftBreak);
         }
 
-        
+        private int EndBreak(Break shiftBreak)
+        {
+            ShiftAppService shiftService = new ShiftAppService();
+            return shiftService.EndBreak(shiftBreak);
+        }
     }
 }
 

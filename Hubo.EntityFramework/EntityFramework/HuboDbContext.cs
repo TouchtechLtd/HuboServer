@@ -12,6 +12,7 @@ namespace Hubo.EntityFramework
     {
         //TODO: Define an IDbSet for your Entities...
         public virtual DbSet<Shift> Shifts { get; set; }
+        public virtual DbSet<Break> Breaks { get; set; }
         public virtual DbSet<Company> CompaniesSet { get; set; }
         public virtual DbSet<Vehicle> VehiclesSet { get; set; }
         public virtual DbSet<Driver> DriversSet { get; set; }

@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Break.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="DriverCompany.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Authorization\Roles\StaticRoleNames.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
+    <Compile Include="LoginResponse.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
