@@ -14,5 +14,6 @@ namespace Hubo
         public DateTime? EndBreakTime { get; set; }
         public int StartNoteKey { get; set; }
         public int EndNoteKey { get; set; }
+        public ShiftBreakNote ShiftBreakNote { get; set; }
     }
 }

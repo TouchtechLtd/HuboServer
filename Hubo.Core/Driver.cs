@@ -11,8 +11,7 @@ namespace Hubo
 
     public class Driver : FullAuditedEntity
     {
-
-        public virtual User User { get; set; }
+        
         public virtual long UserId { get; set; }
 
         [MaxLength(20)]

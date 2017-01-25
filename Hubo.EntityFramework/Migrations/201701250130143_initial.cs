@@ -54,6 +54,49 @@ namespace Hubo.Migrations
                 .Index(t => new { t.IsAbandoned, t.NextTryTime });
             
             CreateTable(
+                "dbo.Companies",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        City = c.String(),
+                        Country = c.String(),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Company_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.DriverCompanies",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        DriverId = c.Long(nullable: false),
+                        CompanyId = c.Long(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_DriverCompany_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Drivers",
                 c => new
                     {
@@ -77,132 +120,7 @@ namespace Hubo.Migrations
                 {
                     { "DynamicFilter_Driver_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AbpUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
-            
-            CreateTable(
-                "dbo.AbpUsers",
-                c => new
-                    {
-                        Id = c.Long(nullable: false, identity: true),
-                        AuthenticationSource = c.String(maxLength: 64),
-                        Name = c.String(nullable: false, maxLength: 32),
-                        Surname = c.String(nullable: false, maxLength: 32),
-                        Password = c.String(nullable: false, maxLength: 128),
-                        IsEmailConfirmed = c.Boolean(nullable: false),
-                        EmailConfirmationCode = c.String(maxLength: 128),
-                        PasswordResetCode = c.String(maxLength: 328),
-                        IsActive = c.Boolean(nullable: false),
-                        UserName = c.String(nullable: false, maxLength: 32),
-                        TenantId = c.Int(),
-                        EmailAddress = c.String(nullable: false, maxLength: 256),
-                        LastLoginTime = c.DateTime(),
-                        IsDeleted = c.Boolean(nullable: false),
-                        DeleterUserId = c.Long(),
-                        DeletionTime = c.DateTime(),
-                        LastModificationTime = c.DateTime(),
-                        LastModifierUserId = c.Long(),
-                        CreationTime = c.DateTime(nullable: false),
-                        CreatorUserId = c.Long(),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_User_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                    { "DynamicFilter_User_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AbpUsers", t => t.CreatorUserId)
-                .ForeignKey("dbo.AbpUsers", t => t.DeleterUserId)
-                .ForeignKey("dbo.AbpUsers", t => t.LastModifierUserId)
-                .Index(t => t.DeleterUserId)
-                .Index(t => t.LastModifierUserId)
-                .Index(t => t.CreatorUserId);
-            
-            CreateTable(
-                "dbo.AbpUserLogins",
-                c => new
-                    {
-                        Id = c.Long(nullable: false, identity: true),
-                        TenantId = c.Int(),
-                        UserId = c.Long(nullable: false),
-                        LoginProvider = c.String(nullable: false, maxLength: 128),
-                        ProviderKey = c.String(nullable: false, maxLength: 256),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_UserLogin_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AbpUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
-            
-            CreateTable(
-                "dbo.AbpPermissions",
-                c => new
-                    {
-                        Id = c.Long(nullable: false, identity: true),
-                        TenantId = c.Int(),
-                        Name = c.String(nullable: false, maxLength: 128),
-                        IsGranted = c.Boolean(nullable: false),
-                        CreationTime = c.DateTime(nullable: false),
-                        CreatorUserId = c.Long(),
-                        UserId = c.Long(),
-                        RoleId = c.Int(),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_PermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                    { "DynamicFilter_RolePermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                    { "DynamicFilter_UserPermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AbpUsers", t => t.UserId, cascadeDelete: true)
-                .ForeignKey("dbo.AbpRoles", t => t.RoleId, cascadeDelete: true)
-                .Index(t => t.UserId)
-                .Index(t => t.RoleId);
-            
-            CreateTable(
-                "dbo.AbpUserRoles",
-                c => new
-                    {
-                        Id = c.Long(nullable: false, identity: true),
-                        TenantId = c.Int(),
-                        UserId = c.Long(nullable: false),
-                        RoleId = c.Int(nullable: false),
-                        CreationTime = c.DateTime(nullable: false),
-                        CreatorUserId = c.Long(),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_UserRole_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AbpUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
-            
-            CreateTable(
-                "dbo.AbpSettings",
-                c => new
-                    {
-                        Id = c.Long(nullable: false, identity: true),
-                        TenantId = c.Int(),
-                        UserId = c.Long(),
-                        Name = c.String(nullable: false, maxLength: 256),
-                        Value = c.String(maxLength: 2000),
-                        LastModificationTime = c.DateTime(),
-                        LastModifierUserId = c.Long(),
-                        CreationTime = c.DateTime(nullable: false),
-                        CreatorUserId = c.Long(),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_Setting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AbpUsers", t => t.UserId)
-                .Index(t => t.UserId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AbpFeatures",
@@ -359,6 +277,32 @@ namespace Hubo.Migrations
                 .Index(t => t.ParentId);
             
             CreateTable(
+                "dbo.AbpPermissions",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        TenantId = c.Int(),
+                        Name = c.String(nullable: false, maxLength: 128),
+                        IsGranted = c.Boolean(nullable: false),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                        RoleId = c.Int(),
+                        UserId = c.Long(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_PermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_RolePermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_UserPermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AbpUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AbpRoles", t => t.RoleId, cascadeDelete: true)
+                .Index(t => t.RoleId)
+                .Index(t => t.UserId);
+            
+            CreateTable(
                 "dbo.AbpRoles",
                 c => new
                     {
@@ -388,6 +332,103 @@ namespace Hubo.Migrations
                 .Index(t => t.DeleterUserId)
                 .Index(t => t.LastModifierUserId)
                 .Index(t => t.CreatorUserId);
+            
+            CreateTable(
+                "dbo.AbpUsers",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        AuthenticationSource = c.String(maxLength: 64),
+                        Name = c.String(nullable: false, maxLength: 32),
+                        Surname = c.String(nullable: false, maxLength: 32),
+                        Password = c.String(nullable: false, maxLength: 128),
+                        IsEmailConfirmed = c.Boolean(nullable: false),
+                        EmailConfirmationCode = c.String(maxLength: 128),
+                        PasswordResetCode = c.String(maxLength: 328),
+                        IsActive = c.Boolean(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 32),
+                        TenantId = c.Int(),
+                        EmailAddress = c.String(nullable: false, maxLength: 256),
+                        LastLoginTime = c.DateTime(),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_User_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_User_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AbpUsers", t => t.CreatorUserId)
+                .ForeignKey("dbo.AbpUsers", t => t.DeleterUserId)
+                .ForeignKey("dbo.AbpUsers", t => t.LastModifierUserId)
+                .Index(t => t.DeleterUserId)
+                .Index(t => t.LastModifierUserId)
+                .Index(t => t.CreatorUserId);
+            
+            CreateTable(
+                "dbo.AbpUserLogins",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        TenantId = c.Int(),
+                        UserId = c.Long(nullable: false),
+                        LoginProvider = c.String(nullable: false, maxLength: 128),
+                        ProviderKey = c.String(nullable: false, maxLength: 256),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_UserLogin_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AbpUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.AbpUserRoles",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        TenantId = c.Int(),
+                        UserId = c.Long(nullable: false),
+                        RoleId = c.Int(nullable: false),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_UserRole_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AbpUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.AbpSettings",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        TenantId = c.Int(),
+                        UserId = c.Long(),
+                        Name = c.String(nullable: false, maxLength: 256),
+                        Value = c.String(maxLength: 2000),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Setting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AbpUsers", t => t.UserId)
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.AbpTenantNotifications",
@@ -536,8 +577,19 @@ namespace Hubo.Migrations
                         Model = c.String(),
                         StartingOdometer = c.Int(nullable: false),
                         CurrentOdometer = c.Int(nullable: false),
-                        CompanyId = c.Int(nullable: false),
-                    })
+                        CompanyId = c.Long(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Vehicle_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
                 .PrimaryKey(t => t.Id);
             
         }
@@ -552,9 +604,6 @@ namespace Hubo.Migrations
             DropForeignKey("dbo.AbpRoles", "LastModifierUserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpRoles", "DeleterUserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpRoles", "CreatorUserId", "dbo.AbpUsers");
-            DropForeignKey("dbo.AbpOrganizationUnits", "ParentId", "dbo.AbpOrganizationUnits");
-            DropForeignKey("dbo.AbpFeatures", "EditionId", "dbo.AbpEditions");
-            DropForeignKey("dbo.Drivers", "UserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpSettings", "UserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpUserRoles", "UserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpPermissions", "UserId", "dbo.AbpUsers");
@@ -562,6 +611,8 @@ namespace Hubo.Migrations
             DropForeignKey("dbo.AbpUsers", "LastModifierUserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpUsers", "DeleterUserId", "dbo.AbpUsers");
             DropForeignKey("dbo.AbpUsers", "CreatorUserId", "dbo.AbpUsers");
+            DropForeignKey("dbo.AbpOrganizationUnits", "ParentId", "dbo.AbpOrganizationUnits");
+            DropForeignKey("dbo.AbpFeatures", "EditionId", "dbo.AbpEditions");
             DropIndex("dbo.AbpUserNotifications", new[] { "UserId", "State", "CreationTime" });
             DropIndex("dbo.AbpUserLoginAttempts", new[] { "TenancyName", "UserNameOrEmailAddress", "Result" });
             DropIndex("dbo.AbpUserLoginAttempts", new[] { "UserId", "TenantId" });
@@ -569,23 +620,26 @@ namespace Hubo.Migrations
             DropIndex("dbo.AbpTenants", new[] { "LastModifierUserId" });
             DropIndex("dbo.AbpTenants", new[] { "DeleterUserId" });
             DropIndex("dbo.AbpTenants", new[] { "EditionId" });
-            DropIndex("dbo.AbpRoles", new[] { "CreatorUserId" });
-            DropIndex("dbo.AbpRoles", new[] { "LastModifierUserId" });
-            DropIndex("dbo.AbpRoles", new[] { "DeleterUserId" });
-            DropIndex("dbo.AbpOrganizationUnits", new[] { "ParentId" });
-            DropIndex("dbo.AbpNotificationSubscriptions", new[] { "NotificationName", "EntityTypeName", "EntityId", "UserId" });
-            DropIndex("dbo.AbpFeatures", new[] { "EditionId" });
             DropIndex("dbo.AbpSettings", new[] { "UserId" });
             DropIndex("dbo.AbpUserRoles", new[] { "UserId" });
-            DropIndex("dbo.AbpPermissions", new[] { "RoleId" });
-            DropIndex("dbo.AbpPermissions", new[] { "UserId" });
             DropIndex("dbo.AbpUserLogins", new[] { "UserId" });
             DropIndex("dbo.AbpUsers", new[] { "CreatorUserId" });
             DropIndex("dbo.AbpUsers", new[] { "LastModifierUserId" });
             DropIndex("dbo.AbpUsers", new[] { "DeleterUserId" });
-            DropIndex("dbo.Drivers", new[] { "UserId" });
+            DropIndex("dbo.AbpRoles", new[] { "CreatorUserId" });
+            DropIndex("dbo.AbpRoles", new[] { "LastModifierUserId" });
+            DropIndex("dbo.AbpRoles", new[] { "DeleterUserId" });
+            DropIndex("dbo.AbpPermissions", new[] { "UserId" });
+            DropIndex("dbo.AbpPermissions", new[] { "RoleId" });
+            DropIndex("dbo.AbpOrganizationUnits", new[] { "ParentId" });
+            DropIndex("dbo.AbpNotificationSubscriptions", new[] { "NotificationName", "EntityTypeName", "EntityId", "UserId" });
+            DropIndex("dbo.AbpFeatures", new[] { "EditionId" });
             DropIndex("dbo.AbpBackgroundJobs", new[] { "IsAbandoned", "NextTryTime" });
-            DropTable("dbo.Vehicles");
+            DropTable("dbo.Vehicles",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Vehicle_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
             DropTable("dbo.AbpUserOrganizationUnits",
                 removedAnnotations: new Dictionary<string, object>
                 {
@@ -616,11 +670,39 @@ namespace Hubo.Migrations
                 {
                     { "DynamicFilter_TenantNotificationInfo_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
+            DropTable("dbo.AbpSettings",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Setting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.AbpUserRoles",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_UserRole_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.AbpUserLogins",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_UserLogin_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.AbpUsers",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_User_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_User_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
             DropTable("dbo.AbpRoles",
                 removedAnnotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_Role_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                     { "DynamicFilter_Role_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.AbpPermissions",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_PermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_RolePermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_UserPermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.AbpOrganizationUnits",
                 removedAnnotations: new Dictionary<string, object>
@@ -655,38 +737,20 @@ namespace Hubo.Migrations
                 {
                     { "DynamicFilter_TenantFeatureSetting_MustHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
-            DropTable("dbo.AbpSettings",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_Setting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
-            DropTable("dbo.AbpUserRoles",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_UserRole_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
-            DropTable("dbo.AbpPermissions",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_PermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                    { "DynamicFilter_RolePermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                    { "DynamicFilter_UserPermissionSetting_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
-            DropTable("dbo.AbpUserLogins",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_UserLogin_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
-            DropTable("dbo.AbpUsers",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_User_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                    { "DynamicFilter_User_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
             DropTable("dbo.Drivers",
                 removedAnnotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_Driver_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.DriverCompanies",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_DriverCompany_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.Companies",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Company_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.AbpBackgroundJobs");
             DropTable("dbo.AbpAuditLogs",

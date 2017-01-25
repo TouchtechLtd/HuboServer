@@ -48,25 +48,32 @@ namespace Hubo.Api.Controllers
         private int StartShift(Shift shift)
         {            
             ShiftAppService shiftService = new ShiftAppService();
-            return shiftService.StartShift(shift);
+            //return shiftService.StartShift(shift);
+            return 0;
         }
 
         private int EndShift(Shift shift)
         {
             ShiftAppService shiftService = new ShiftAppService();
-            return shiftService.StopShift(shift);
-        }       
+            //return shiftService.StopShift(shift);
+            return 0;
+
+        }
 
         private int StartBreak(Break shiftBreak)
         {
             ShiftAppService shiftService = new ShiftAppService();
-            return shiftService.StartBreak(shiftBreak);
+            //return shiftService.StartBreak(shiftBreak);
+            return 0;
+
         }
 
         private int EndBreak(Break shiftBreak)
         {
             ShiftAppService shiftService = new ShiftAppService();
-            return shiftService.EndBreak(shiftBreak);
+            //return shiftService.EndBreak(shiftBreak);
+            return 0;
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Hubo.Respositories;
+﻿using Abp.Collections.Extensions;
+using Hubo.Respositories;
 using Hubo.Users;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Hubo;
 namespace Hubo.EntityFramework
 {
     public class DriverRepository : IDriverRepository
@@ -41,84 +42,93 @@ namespace Hubo.EntityFramework
             return false;
         }
 
-        public LoginResponse GetDetails(string userEmail)
+        public Driver GetDriverByUserId(long userId)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
-                LoginResponse response = new LoginResponse();
                 try
                 {
-                    //TODO: Code to get all user info properly, currently saying none exists
-                    //User userResponse = ctx.Users.Where(p => p.EmailAddress==userEmail).FirstOrDefault();
-                    //response.UserId = userResponse.Id;
-                    //Driver driverResponse = ctx.DriversSet.Single(p => p.UserId == userResponse.Id);
-
-                    if (userEmail=="ben@triotech.co.nz")
-                    {
-                        response.UserId = 4;
-                    }
-                    else
-                    {
-                        return response;
-                    }
-                    Driver driverResponse = ctx.DriversSet.Single(p => p.UserId == response.UserId);
-
-                    //TODO: Code to get all driver info
-                    response.DriverId = driverResponse.Id;
-                    response.DriverFirstName = driverResponse.FirstName;
-                    response.DriverSurname = driverResponse.LastName;
-                    response.DriverEmail = driverResponse.Email;
-                    response.LicenceNo = driverResponse.LicenceNo;
-                    response.LicenceVersion = driverResponse.LicenceVersion;
-                    response.MobilePh = Int32.Parse(driverResponse.MobilePh);
-
-
-                    //TODO: Code to get all company/Driver info
-                    IQueryable<DriverCompany> driverCompanyResponse;
-                    driverCompanyResponse = from b in ctx.DriverCompaniesSet
-                                            where b.DriverId.Equals(driverResponse.Id)
-                                            select b;
-
-                    List<DriverCompany> listCompanies = driverCompanyResponse.ToList<DriverCompany>();
-
-                    //TODO: Code to get all company info
-                    List<Company> listOfCompanies = new List<Company>();
-                    foreach(DriverCompany driverCompany in listCompanies)
-                    {
-                        Company companyResponse = new Company();
-                        companyResponse = ctx.CompaniesSet.Single(p => p.Id.Equals(driverCompany.CompanyId));
-                        listOfCompanies.Add(companyResponse);
-                    }
-
-                    List<CompanyAndVehicles> listOfCompaniesAndVehicles = new List<CompanyAndVehicles>();
-
-                    //TODO: Code to get all vehicle info
-                    List<Vehicle> listOfVehicles = new List<Vehicle>();
-                    foreach(Company company in listOfCompanies)
-                    {
-
-                        CompanyAndVehicles companyAndVehicles = new CompanyAndVehicles();
-                        IQueryable<Vehicle> vehicleResponse;
-                        vehicleResponse = from b in ctx.VehiclesSet
-                                          where b.CompanyId.Equals(company.Id)
-                                          select b;
-                        companyAndVehicles.Company = company;
-                        companyAndVehicles.Vehicles = vehicleResponse.ToList<Vehicle>();
-                        listOfCompaniesAndVehicles.Add(companyAndVehicles);
-
-                    }
-                    response.CompaniesAndVehicle = listOfCompaniesAndVehicles;
-                    return response;
+                    Driver driverResponse = ctx.DriversSet.Single(p => p.UserId == userId);
+                    return driverResponse;
                 }
                 catch (Exception ex)
                 {
-                    return response;
+                    return null;
                 }
-
-
                 
             }
         }
+
+        public List<Vehicle> GetVehiclesByCompanyId(int id)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                List<Vehicle> listOfVehicles = (from v in ctx.VehiclesSet
+                                                where v.CompanyId.Equals(id)
+                                                select v).ToList<Vehicle>();
+                return listOfVehicles;
+            }
+        }
+
+        public List<Company> GetCompaniesByDriverId(int id)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                List<Company> listOfCompanies = (from dc in ctx.DriverCompaniesSet
+                                                        join c in ctx.CompaniesSet on dc.CompanyId equals c.Id
+                                                        where dc.DriverId == id
+                                                        select c).ToList();
+                return listOfCompanies;
+            }
+        }
+
+        //public LoginResponse GetDetails(long userId)
+        //{
+        //    using (HuboDbContext ctx = new HuboDbContext())
+        //    {
+        //        LoginResponse response = new LoginResponse();
+        //        try
+        //        {
+        //            //Code to get all user info properly, currently saying none exists
+        //            //User userresponse = ctx.Users.Where(p => p.EmailAddress == userEmail).FirstOrDefault();
+        //            //List<User> users = (from u in ctx.Users
+        //            //                 where u.Id.Equals(3)
+        //            //                 select u).ToList<User>();
+        //            //response.UserId = 2;
+        //            Driver driverResponse = ctx.DriversSet.Single(p => p.UserId == userId);                    
+        //            response.Driver = driverResponse;                    
+        //            //Code to get all company/Driver info
+        //            List<Company> listOfCompaniesDrivers =  (from dc in ctx.DriverCompaniesSet
+        //                                                     join c in ctx.CompaniesSet on dc.CompanyId equals c.Id
+        //                                                     where dc.DriverId == driverResponse.Id
+        //                                                     select c).ToList();
+        //            List<CompanyAndVehicles> companyVehicleResponse = new List<CompanyAndVehicles>();
+                    
+        //            foreach(Company company in listOfCompaniesDrivers)
+        //            {
+        //                List<Vehicle> vehicles = new List<Vehicle>();
+        //                CompanyAndVehicles companyAndVehicles = new CompanyAndVehicles();
+
+        //                vehicles = (from v in ctx.VehiclesSet
+        //                            where v.CompanyId == company.Id
+        //                            select v).ToList<Vehicle>();
+        //                companyAndVehicles.Company = company;
+        //                companyAndVehicles.Vehicles = vehicles;
+        //                companyVehicleResponse.Add(companyAndVehicles);
+        //            }
+        //            response.CompaniesAndVehicle = companyVehicleResponse;
+                    
+        //            return response;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return null;
+        //        }
+
+
+                
+        //    }
+        //}
 
         public int RegisterDriver(Driver driver)
         {

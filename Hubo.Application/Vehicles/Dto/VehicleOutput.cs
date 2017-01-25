@@ -1,11 +1,13 @@
-namespace Hubo
-{
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity;
-    using Abp.Domain.Entities.Auditing;
-    using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Abp.Application.Services.Dto;
+using Abp.Auditing;
+using Abp.Authorization.Users;
+using Abp.AutoMapper;
 
-    public class Vehicle : FullAuditedEntity
+namespace Hubo.Drivers.Dto
+{
+    [AutoMap(typeof(Vehicle))]
+    public class VehicleOutput : IInputDto
     {
         public string RegistrationNo { get; set; }
         public string Make { get; set; }

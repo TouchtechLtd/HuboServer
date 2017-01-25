@@ -27,7 +27,7 @@ namespace Hubo.Api.Controllers
         [HttpPost]
         public async Task<List<Vehicle>> getVehicles([FromBody] Vehicle vehicle)
         {
-            return await Task<List<Vehicle>>.Run(() => getVehicles(vehicle.CompanyId));
+            return await Task<List<Vehicle>>.Run(() => getVehicles(2));
         }
 
         private List<Vehicle> getVehicles(int companyId)

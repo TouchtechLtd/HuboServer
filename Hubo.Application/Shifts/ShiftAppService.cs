@@ -16,24 +16,24 @@ namespace Hubo.Shifts
             _shiftRepository = new EntityFramework.ShiftRepository();
         }
 
-        public int StartShift(Shift shift)
-        {
-            return _shiftRepository.StartShift(shift);
-        }
+        //public int StartShift(Shift shift)
+        //{
+        //    return _shiftRepository.StartShift(shift);
+        //}
 
-        public int StopShift(Shift shift)
-        {
-            return _shiftRepository.StopShift(shift);
-        }
+        //public int StopShift(Shift shift)
+        //{
+        //    return _shiftRepository.StopShift(shift);
+        //}
 
-        public int StartBreak(Break shiftBreak)
-        {
-            return _shiftRepository.StartBreak(shiftBreak);
-        }
+        //public int StartBreak(Break shiftBreak)
+        //{
+        //    return _shiftRepository.StartBreak(shiftBreak);
+        //}
 
-        public int EndBreak(Break shiftBreak)
-        {
-            return _shiftRepository.EndBreak(shiftBreak);
-        }
+        //public int EndBreak(Break shiftBreak)
+        //{
+        //    return _shiftRepository.EndBreak(shiftBreak);
+        //}
     }
 }

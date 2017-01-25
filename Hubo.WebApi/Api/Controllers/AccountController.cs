@@ -33,17 +33,27 @@ namespace Hubo.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<LoginResponse> GetDetailsAsync(User user)
+        public async Task<AjaxResponse> GetDetailsAsync(User user)
         {
-            return await Task<LoginResponse>.Run(() => GetDetails(user.EmailAddress));
+            return await Task<AjaxResponse>.Run(() => GetDetails(user.Id));
         }
 
-        private LoginResponse GetDetails(string userEmail)
+        private AjaxResponse GetDetails(long userId)
         {
+            AjaxResponse ar = new AjaxResponse();
             DriverAppService driverService = new DriverAppService();
             LoginResponse response = new LoginResponse();
-            response = driverService.GetDetails(userEmail);
-            return response;
+            response = driverService.GetDetails(userId);
+            if(response==null)
+            {
+                ar.Result = "Driver not found";
+                ar.Success = false;
+            }
+            else
+            {
+                ar.Result = response;
+            }
+            return ar;
         }
 
 
@@ -63,8 +73,8 @@ namespace Hubo.Api.Controllers
             var currentUtc = new SystemClock().UtcNow;
             ticket.Properties.IssuedUtc = currentUtc;
             ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromMinutes(30));
-
-            return new AjaxResponse(OAuthBearerOptions.AccessTokenFormat.Protect(ticket));
+            string token = OAuthBearerOptions.AccessTokenFormat.Protect(ticket);
+            return new AjaxResponse(token);
         }
 
         private async Task<AbpUserManager<Tenant, Role, User>.AbpLoginResult> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)

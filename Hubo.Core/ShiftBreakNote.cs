@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Hubo
 {
-    public class DriverCompany : FullAuditedEntity
+    public class ShiftBreakNote : FullAuditedEntity
     {
-        public long DriverId { get; set; }
-        public long CompanyId { get; set; }
+        public bool StandAloneNote { get; set; }
+        public Note Note { get; set; }
+        public int BreakShiftId { get; set; }
+
     }
 }
