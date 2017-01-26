@@ -32,9 +32,9 @@ namespace Hubo.Shifts
             return _shiftRepository.StartBreak(shiftBreak);
         }
 
-        //public int EndBreak(Break shiftBreak)
-        //{
-        //    return _shiftRepository.EndBreak(shiftBreak);
-        //}
+        public Tuple<int, string> EndBreak(BreakEndRequest shiftBreak)
+        {
+            return _shiftRepository.EndBreak(shiftBreak);
+        }
     }
 }

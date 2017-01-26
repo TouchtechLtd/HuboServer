@@ -41,9 +41,9 @@ namespace Hubo.Api.Controllers
 
         [HttpPost]
         // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<int> EndBreakAsync([FromBody] Break shiftBreak)
+        public async Task<AjaxResponse> EndBreakAsync([FromBody] BreakEndRequest shiftBreak)
         {
-            return await Task<int>.Run(() => EndBreak(shiftBreak));
+            return await Task<AjaxResponse>.Run(() => EndBreak(shiftBreak));
         }
 
         private AjaxResponse StartShift(ShiftStartRequest shift)
@@ -100,11 +100,23 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        private int EndBreak(Break shiftBreak)
+        private AjaxResponse EndBreak(BreakEndRequest shiftBreak)
         {
+            AjaxResponse ar = new AjaxResponse();
             ShiftAppService shiftService = new ShiftAppService();
-            //return shiftService.EndBreak(shiftBreak);
-            return 0;
+            Tuple<int, string> result = shiftService.EndBreak(shiftBreak);
+            
+            if(result.Item1 == 1)
+            {
+                ar.Success = true;
+                ar.Result = result.Item1;
+            }
+            else
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }
+            return ar;
 
         }
     }

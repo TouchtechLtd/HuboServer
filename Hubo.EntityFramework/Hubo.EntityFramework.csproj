@@ -125,6 +125,10 @@
     <Compile Include="Migrations\201701260607071_shiftbreaknote.Designer.cs">
       <DependentUpon>201701260607071_shiftbreaknote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701262130287_shiftbreaknote1.cs" />
+    <Compile Include="Migrations\201701262130287_shiftbreaknote1.Designer.cs">
+      <DependentUpon>201701262130287_shiftbreaknote1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="HuboDataModule.cs" />
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701260607071_shiftbreaknote.resx">
       <DependentUpon>201701260607071_shiftbreaknote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701262130287_shiftbreaknote1.resx">
+      <DependentUpon>201701262130287_shiftbreaknote1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

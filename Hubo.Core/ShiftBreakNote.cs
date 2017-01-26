@@ -12,6 +12,7 @@ namespace Hubo
         public bool StandAloneNote { get; set; }
         public long NoteId { get; set; }
         public long BreakShiftId { get; set; }
+        public bool IsBreak { get; set; }
 
     }
 }
