@@ -10,8 +10,8 @@ namespace Hubo
     public class ShiftBreakNote : FullAuditedEntity
     {
         public bool StandAloneNote { get; set; }
-        public Note Note { get; set; }
-        public int BreakShiftId { get; set; }
+        public long NoteId { get; set; }
+        public long BreakShiftId { get; set; }
 
     }
 }

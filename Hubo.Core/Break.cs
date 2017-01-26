@@ -9,11 +9,8 @@ namespace Hubo
 {
     public class Break : FullAuditedEntity
     {
-        public int ShiftId { get; set; }
-        public DateTime? StartBreakTime { get; set; }
-        public DateTime? EndBreakTime { get; set; }
-        public int StartNoteKey { get; set; }
-        public int EndNoteKey { get; set; }
-        public ShiftBreakNote ShiftBreakNote { get; set; }
+        public long ShiftId { get; set; }
+        public int ShiftBreakNoteStartId { get; set; }
+        public int ShiftBreakNoteStopId { get; set; }
     }
 }

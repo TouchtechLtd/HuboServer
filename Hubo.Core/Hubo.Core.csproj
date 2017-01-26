@@ -95,6 +95,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiRequestClasses\BreakStartRequest.cs" />
+    <Compile Include="ApiRequestClasses\ShiftStartRequest.cs" />
+    <Compile Include="ApiRequestClasses\ShiftStopRequest.cs" />
     <Compile Include="Break.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Driver.cs" />
@@ -108,7 +111,7 @@
     <Compile Include="Authorization\Roles\StaticRoleNames.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
-    <Compile Include="LoginResponse.cs" />
+    <Compile Include="ApiResponseClasses\LoginResponse.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
     <Compile Include="Note.cs" />

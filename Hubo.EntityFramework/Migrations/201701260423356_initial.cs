@@ -54,6 +54,28 @@ namespace Hubo.Migrations
                 .Index(t => new { t.IsAbandoned, t.NextTryTime });
             
             CreateTable(
+                "dbo.Breaks",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ShiftId = c.Long(nullable: false),
+                        ShiftBreakNoteStartId = c.Int(nullable: false),
+                        ShiftBreakNoteStopId = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Break_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Companies",
                 c => new
                     {
@@ -206,6 +228,30 @@ namespace Hubo.Migrations
                 annotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_ApplicationLanguageText_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Notes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        NoteText = c.String(),
+                        Date = c.DateTime(nullable: false),
+                        Hubo = c.Int(nullable: false),
+                        Latitude = c.Double(nullable: false),
+                        Longitude = c.Double(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Note_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
                 .PrimaryKey(t => t.Id);
             
@@ -429,6 +475,51 @@ namespace Hubo.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AbpUsers", t => t.UserId)
                 .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.ShiftBreakNotes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        StandAloneNote = c.Boolean(nullable: false),
+                        NoteId = c.Int(nullable: false),
+                        BreakShiftId = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_ShiftBreakNote_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Shifts",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        DriverId = c.Long(nullable: false),
+                        VehicleId = c.Long(nullable: false),
+                        ShiftBreakNoteStartId = c.Long(nullable: false),
+                        ShiftBreakNoteStopId = c.Long(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Shift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AbpTenantNotifications",
@@ -670,6 +761,16 @@ namespace Hubo.Migrations
                 {
                     { "DynamicFilter_TenantNotificationInfo_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
+            DropTable("dbo.Shifts",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Shift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.ShiftBreakNotes",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_ShiftBreakNote_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
             DropTable("dbo.AbpSettings",
                 removedAnnotations: new Dictionary<string, object>
                 {
@@ -716,6 +817,11 @@ namespace Hubo.Migrations
                     { "DynamicFilter_NotificationSubscriptionInfo_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.AbpNotifications");
+            DropTable("dbo.Notes",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Note_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
             DropTable("dbo.AbpLanguageTexts",
                 removedAnnotations: new Dictionary<string, object>
                 {
@@ -751,6 +857,11 @@ namespace Hubo.Migrations
                 removedAnnotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_Company_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.Breaks",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_Break_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.AbpBackgroundJobs");
             DropTable("dbo.AbpAuditLogs",

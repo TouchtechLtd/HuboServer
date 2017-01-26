@@ -9,12 +9,7 @@ namespace Hubo
     {
         public long DriverId { get; set; }
         public long VehicleId { get; set; }
-        public DateTime? StartDateTime { get; set; }
-        public DateTime? EndDateTime { get; set; }
-        public decimal Start_location_lat { get; set; }
-        public decimal Start_location_long { get; set; }
-        public decimal End_location_lat { get; set; }
-        public decimal End_location_long { get; set; }
-        public long ShiftBreakNote { get; set; }
+        public long ShiftBreakNoteStartId { get; set; }
+        public long ShiftBreakNoteStopId { get; set; }
     }
 }

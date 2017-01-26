@@ -13,9 +13,6 @@ namespace Hubo
         public string NoteText { get; set; }
         public DateTime Date { get; set; }
         public int Hubo { get; set; }
-        public int ShiftKey { get; set; }
-        public string Location { get; set; }
-        public bool StandAloneNote { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
     }

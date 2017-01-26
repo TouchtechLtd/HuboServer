@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using Hubo.Companies;
 using Hubo.Shifts;
+using Hubo.ApiRequestClasses;
 
 namespace Hubo.Api.Controllers
 {
@@ -19,23 +20,23 @@ namespace Hubo.Api.Controllers
 
         [HttpPost]
         // create a shift record and return the shift ID to the app
-        public async Task<int> StartShiftAsync([FromBody] Shift shift)
+        public async Task<AjaxResponse> StartShiftAsync([FromBody] ShiftStartRequest shift)
         {
-            return await Task<int>.Run(() => StartShift(shift));
+            return await Task<AjaxResponse>.Run(() => StartShift(shift));
         }
 
         [HttpPost] 
         // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<int> EndShiftAsync([FromBody] Shift shift)
+        public async Task<AjaxResponse> EndShiftAsync([FromBody] ShiftStopRequest shift)
         {
-            return await Task<int>.Run(() => EndShift(shift));
+            return await Task<AjaxResponse>.Run(() => EndShift(shift));
         }
 
         [HttpPost]
         // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<int> StartBreakAsync([FromBody] Break shiftBreak)
+        public async Task<AjaxResponse> StartBreakAsync([FromBody] BreakStartRequest shiftBreak)
         {
-            return await Task<int>.Run(() => StartBreak(shiftBreak));
+            return await Task<AjaxResponse>.Run(() => StartBreak(shiftBreak));
         }
 
         [HttpPost]
@@ -45,27 +46,58 @@ namespace Hubo.Api.Controllers
             return await Task<int>.Run(() => EndBreak(shiftBreak));
         }
 
-        private int StartShift(Shift shift)
-        {            
+        private AjaxResponse StartShift(ShiftStartRequest shift)
+        {
+            AjaxResponse ar = new AjaxResponse();
             ShiftAppService shiftService = new ShiftAppService();
-            //return shiftService.StartShift(shift);
-            return 0;
+            Tuple<int,string> result = shiftService.StartShift(shift);
+            if(result.Item1>0)
+            {
+                ar.Result = result.Item1;
+                ar.Success = true;
+            }
+            else
+            {
+                ar.Result = result.Item2;
+                ar.Success = false;
+            }
+            return ar;
         }
 
-        private int EndShift(Shift shift)
+        private AjaxResponse EndShift(ShiftStopRequest shift)
         {
+            AjaxResponse ar = new AjaxResponse();
             ShiftAppService shiftService = new ShiftAppService();
-            //return shiftService.StopShift(shift);
-            return 0;
+            Tuple<int, string> result = shiftService.StopShift(shift);
+            if(result.Item1==1)
+            {
+                ar.Success = true;                                
+            }
+            else
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }            
+            return ar;
 
         }
 
-        private int StartBreak(Break shiftBreak)
+        private AjaxResponse StartBreak(BreakStartRequest shiftBreak)
         {
+            AjaxResponse ar = new AjaxResponse();
             ShiftAppService shiftService = new ShiftAppService();
-            //return shiftService.StartBreak(shiftBreak);
-            return 0;
-
+            Tuple<int, string> result = shiftService.StartBreak(shiftBreak);
+            if(result.Item1>0)
+            {
+                ar.Success = true;
+                ar.Result = result.Item1;
+            }
+            else
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }
+            return ar;
         }
 
         private int EndBreak(Break shiftBreak)
