@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Hubo
 {
-    public class Break : FullAuditedEntity
+    public class DrivingShift : FullAuditedEntity
     {
         public long ShiftId { get; set; }
-        public long GeoDataId { get; set; }
         public DateTime TimeStamp { get; set; }
         public bool State { get; set; }
+        public long VehicleId { get; set; }
     }
 }

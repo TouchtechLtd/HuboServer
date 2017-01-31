@@ -11,14 +11,15 @@ namespace Hubo.EntityFramework
     public class HuboDbContext : AbpZeroDbContext<Tenant, Role, User>, IDisposable 
     {
         //TODO: Define an IDbSet for your Entities...
-        public virtual DbSet<Shift> Shifts { get; set; }
-        public virtual DbSet<Break> Breaks { get; set; }
-        public virtual DbSet<Company> CompaniesSet { get; set; }
-        public virtual DbSet<Vehicle> VehiclesSet { get; set; }
-        public virtual DbSet<Driver> DriversSet { get; set; }
+        public virtual DbSet<Break> BreakSet { get; set; }
+        public virtual DbSet<Company> CompanySet { get; set; }
+        public virtual DbSet<Driver> DriverSet { get; set; }
+        public virtual DbSet<DriverCompany> DriverCompanySet { get; set; }
+        public virtual DbSet<DrivingShift> DrivingShiftSet { get; set; }
+        public virtual DbSet<GeoData> GeoDataSet { get; set; }
         public virtual DbSet<Note> NoteSet { get; set; }
-        public virtual DbSet<ShiftBreakNote> ShiftBreakSet { get; set; }
-        public virtual DbSet<DriverCompany> DriverCompaniesSet { get; set; }
+        public virtual DbSet<Vehicle> VehicleSet { get; set; }
+        public virtual DbSet<WorkShift> WorkShiftSet { get; set; }
         //public virtual DbSet<User> UserSet { get; set; }
 
 

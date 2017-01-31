@@ -59,8 +59,9 @@ namespace Hubo.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ShiftId = c.Long(nullable: false),
-                        ShiftBreakNoteStartId = c.Int(nullable: false),
-                        ShiftBreakNoteStopId = c.Int(nullable: false),
+                        GeoDataId = c.Long(nullable: false),
+                        TimeStamp = c.DateTime(nullable: false),
+                        State = c.Boolean(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -81,8 +82,15 @@ namespace Hubo.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Address1 = c.String(),
+                        Address2 = c.String(),
+                        Address3 = c.String(),
+                        PostCode = c.String(),
+                        Suburb = c.String(),
                         City = c.String(),
                         Country = c.String(),
+                        Contact = c.String(),
+                        ContactEmail = c.String(),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -123,13 +131,8 @@ namespace Hubo.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        CompanyId = c.Long(nullable: false),
                         UserId = c.Long(nullable: false),
-                        LicenceNo = c.String(maxLength: 20),
-                        LicenceVersion = c.Int(nullable: false),
-                        Email = c.String(),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        MobilePh = c.String(),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -141,6 +144,29 @@ namespace Hubo.Migrations
                 annotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_Driver_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.DrivingShifts",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ShiftId = c.Long(nullable: false),
+                        TimeStamp = c.DateTime(nullable: false),
+                        State = c.Boolean(nullable: false),
+                        VehicleId = c.Long(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_DrivingShift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
                 .PrimaryKey(t => t.Id);
             
@@ -183,6 +209,29 @@ namespace Hubo.Migrations
                 annotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_Edition_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.GeoDatas",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ShiftId = c.Long(nullable: false),
+                        TimeStamp = c.DateTime(nullable: false),
+                        Latitude = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Longitude = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_GeoData_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
                 .PrimaryKey(t => t.Id);
             
@@ -236,11 +285,12 @@ namespace Hubo.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        ShiftId = c.Long(nullable: false),
+                        BreakId = c.Long(nullable: false),
+                        DrivingShiftId = c.Long(nullable: false),
                         NoteText = c.String(),
-                        Date = c.DateTime(nullable: false),
-                        Hubo = c.Int(nullable: false),
-                        Latitude = c.Double(nullable: false),
-                        Longitude = c.Double(nullable: false),
+                        GeoDataLink = c.Int(nullable: false),
+                        TimeStamp = c.DateTime(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -477,51 +527,6 @@ namespace Hubo.Migrations
                 .Index(t => t.UserId);
             
             CreateTable(
-                "dbo.ShiftBreakNotes",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        StandAloneNote = c.Boolean(nullable: false),
-                        NoteId = c.Int(nullable: false),
-                        BreakShiftId = c.Int(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        DeleterUserId = c.Long(),
-                        DeletionTime = c.DateTime(),
-                        LastModificationTime = c.DateTime(),
-                        LastModifierUserId = c.Long(),
-                        CreationTime = c.DateTime(nullable: false),
-                        CreatorUserId = c.Long(),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_ShiftBreakNote_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Shifts",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        DriverId = c.Long(nullable: false),
-                        VehicleId = c.Long(nullable: false),
-                        ShiftBreakNoteStartId = c.Long(nullable: false),
-                        ShiftBreakNoteStopId = c.Long(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        DeleterUserId = c.Long(),
-                        DeletionTime = c.DateTime(),
-                        LastModificationTime = c.DateTime(),
-                        LastModifierUserId = c.Long(),
-                        CreationTime = c.DateTime(nullable: false),
-                        CreatorUserId = c.Long(),
-                    },
-                annotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_Shift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.AbpTenantNotifications",
                 c => new
                     {
@@ -664,8 +669,7 @@ namespace Hubo.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         RegistrationNo = c.String(),
-                        Make = c.String(),
-                        Model = c.String(),
+                        MakeModel = c.String(),
                         StartingOdometer = c.Int(nullable: false),
                         CurrentOdometer = c.Int(nullable: false),
                         CompanyId = c.Long(nullable: false),
@@ -680,6 +684,34 @@ namespace Hubo.Migrations
                 annotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_Vehicle_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.WorkShifts",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        DriverId = c.Long(nullable: false),
+                        CompanyId = c.Long(nullable: false),
+                        StartDate = c.DateTime(nullable: false),
+                        EndDate = c.DateTime(nullable: false),
+                        StartLocationLat = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        StartLocationLong = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        EndLocationLat = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        EndLocationLong = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        State = c.Boolean(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeleterUserId = c.Long(),
+                        DeletionTime = c.DateTime(),
+                        LastModificationTime = c.DateTime(),
+                        LastModifierUserId = c.Long(),
+                        CreationTime = c.DateTime(nullable: false),
+                        CreatorUserId = c.Long(),
+                    },
+                annotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_WorkShift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
                 .PrimaryKey(t => t.Id);
             
@@ -726,6 +758,11 @@ namespace Hubo.Migrations
             DropIndex("dbo.AbpNotificationSubscriptions", new[] { "NotificationName", "EntityTypeName", "EntityId", "UserId" });
             DropIndex("dbo.AbpFeatures", new[] { "EditionId" });
             DropIndex("dbo.AbpBackgroundJobs", new[] { "IsAbandoned", "NextTryTime" });
+            DropTable("dbo.WorkShifts",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_WorkShift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
             DropTable("dbo.Vehicles",
                 removedAnnotations: new Dictionary<string, object>
                 {
@@ -760,16 +797,6 @@ namespace Hubo.Migrations
                 removedAnnotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_TenantNotificationInfo_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
-            DropTable("dbo.Shifts",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_Shift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
-                });
-            DropTable("dbo.ShiftBreakNotes",
-                removedAnnotations: new Dictionary<string, object>
-                {
-                    { "DynamicFilter_ShiftBreakNote_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.AbpSettings",
                 removedAnnotations: new Dictionary<string, object>
@@ -833,6 +860,11 @@ namespace Hubo.Migrations
                     { "DynamicFilter_ApplicationLanguage_MayHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                     { "DynamicFilter_ApplicationLanguage_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
+            DropTable("dbo.GeoDatas",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_GeoData_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
             DropTable("dbo.AbpEditions",
                 removedAnnotations: new Dictionary<string, object>
                 {
@@ -842,6 +874,11 @@ namespace Hubo.Migrations
                 removedAnnotations: new Dictionary<string, object>
                 {
                     { "DynamicFilter_TenantFeatureSetting_MustHaveTenant", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                });
+            DropTable("dbo.DrivingShifts",
+                removedAnnotations: new Dictionary<string, object>
+                {
+                    { "DynamicFilter_DrivingShift_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
             DropTable("dbo.Drivers",
                 removedAnnotations: new Dictionary<string, object>

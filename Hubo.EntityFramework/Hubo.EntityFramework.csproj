@@ -117,17 +117,9 @@
     <Compile Include="EntityFramework\Repositories\IVehicleRepository.cs" />
     <Compile Include="EntityFramework\ShiftRepository.cs" />
     <Compile Include="EntityFramework\VehicleRepository.cs" />
-    <Compile Include="Migrations\201701260423356_initial.cs" />
-    <Compile Include="Migrations\201701260423356_initial.Designer.cs">
-      <DependentUpon>201701260423356_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701260607071_shiftbreaknote.cs" />
-    <Compile Include="Migrations\201701260607071_shiftbreaknote.Designer.cs">
-      <DependentUpon>201701260607071_shiftbreaknote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701262130287_shiftbreaknote1.cs" />
-    <Compile Include="Migrations\201701262130287_shiftbreaknote1.Designer.cs">
-      <DependentUpon>201701262130287_shiftbreaknote1.cs</DependentUpon>
+    <Compile Include="Migrations\201701312232502_initial.cs" />
+    <Compile Include="Migrations\201701312232502_initial.Designer.cs">
+      <DependentUpon>201701312232502_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -152,14 +144,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701260423356_initial.resx">
-      <DependentUpon>201701260423356_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701260607071_shiftbreaknote.resx">
-      <DependentUpon>201701260607071_shiftbreaknote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701262130287_shiftbreaknote1.resx">
-      <DependentUpon>201701262130287_shiftbreaknote1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701312232502_initial.resx">
+      <DependentUpon>201701312232502_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

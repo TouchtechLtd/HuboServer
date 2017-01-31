@@ -48,7 +48,7 @@ namespace Hubo.EntityFramework
             {
                 try
                 {
-                    Driver driverResponse = ctx.DriversSet.Single(p => p.UserId == userId);
+                    Driver driverResponse = ctx.DriverSet.Single(p => p.UserId == userId);
                     return driverResponse;
                 }
                 catch (Exception ex)
@@ -63,7 +63,7 @@ namespace Hubo.EntityFramework
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
-                List<Vehicle> listOfVehicles = (from v in ctx.VehiclesSet
+                List<Vehicle> listOfVehicles = (from v in ctx.VehicleSet
                                                 where v.CompanyId.Equals(id)
                                                 select v).ToList<Vehicle>();
                 return listOfVehicles;
@@ -74,8 +74,8 @@ namespace Hubo.EntityFramework
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
-                List<Company> listOfCompanies = (from dc in ctx.DriverCompaniesSet
-                                                        join c in ctx.CompaniesSet on dc.CompanyId equals c.Id
+                List<Company> listOfCompanies = (from dc in ctx.DriverCompanySet
+                                                        join c in ctx.CompanySet on dc.CompanyId equals c.Id
                                                         where dc.DriverId == id
                                                         select c).ToList();
                 return listOfCompanies;
@@ -134,46 +134,47 @@ namespace Hubo.EntityFramework
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
-                ctx.DriversSet.Add(driver);
+                //ctx.DriverSet.Add(driver);
 
-                // functionality of this code should be to check if email exists in User table and if not create the user
-                // then save driver as Driver using the created user ID
-                bool userExists = checkUserEmail(driver.Email, ctx);
+                //// functionality of this code should be to check if email exists in User table and if not create the user
+                //// then save driver as Driver using the created user ID
+                //bool userExists = checkUserEmail(driver.Email, ctx);
 
-                // if user doesn't exist need to register them first then go on to save them as a driver
-                if(!userExists)
-                {
-                    // createUser();
-                }
+                //// if user doesn't exist need to register them first then go on to save them as a driver
+                //if(!userExists)
+                //{
+                //    // createUser();
+                //}
 
-                else
-                {
-                    //Matching User was found, thus email is in use, thus invalid
-                    return -1;
-                }
+                //else
+                //{
+                //    //Matching User was found, thus email is in use, thus invalid
+                //    return -1;
+                //}
                 
-                try
-                {
-                    int result = 0;
-                    // check licence number doesn't already exist
-                    if (ctx.DriversSet.Any(o => o.LicenceNo == driver.LicenceNo))
-                    {
-                        // Match!
-                        result = -1;
-                    } else
-                    {
-                        result = ctx.SaveChanges();
-                    }
+                //try
+                //{
+                //    int result = 0;
+                //    // check licence number doesn't already exist
+                //    if (ctx.DriversSet.Any(o => o.LicenceNo == driver.LicenceNo))
+                //    {
+                //        // Match!
+                //        result = -1;
+                //    } else
+                //    {
+                //        result = ctx.SaveChanges();
+                //    }
                     
-                    return result;
-                }
-                catch (Exception ex) {
-                    string x = ex.Message;
+                //    return result;
+                //}
+                //catch (Exception ex) {
+                //    string x = ex.Message;
 
-                    return 0;
-                }
+                //    return 0;
+                //}
                 
             }
+            return 0;
         }
 
         public bool CreateUser()

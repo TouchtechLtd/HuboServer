@@ -23,7 +23,7 @@ namespace Hubo.EntityFramework
                 {
                     int result = 0;
                     // check rego number doesn't already exist
-                    if (ctx.VehiclesSet.Any(o => o.RegistrationNo == vehicle.RegistrationNo))
+                    if (ctx.VehicleSet.Any(o => o.RegistrationNo == vehicle.RegistrationNo))
                     {
                         // Match!
                         result = -1;
@@ -54,7 +54,7 @@ namespace Hubo.EntityFramework
                 try
                 {
                     IQueryable<Vehicle> listVehicleQuery;
-                    listVehicleQuery = from b in ctx.VehiclesSet
+                    listVehicleQuery = from b in ctx.VehicleSet
                                        where b.CompanyId.Equals(companyId)
                                        select b;
                     listOfVehicles = listVehicleQuery.ToList<Vehicle>();

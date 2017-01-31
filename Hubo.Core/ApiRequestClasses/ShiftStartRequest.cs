@@ -8,7 +8,7 @@ namespace Hubo.ApiRequestClasses
 { 
     public class ShiftStartRequest
     {
-        public Shift Shift { get; set; }
+        public WorkShift Shift { get; set; }
         public Note Note { get; set; }
     }
 }

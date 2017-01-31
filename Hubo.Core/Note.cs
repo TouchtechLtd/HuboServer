@@ -10,10 +10,11 @@ namespace Hubo
 {
     public class Note : FullAuditedEntity
     {
+        public long ShiftId { get; set; }
+        public long BreakId { get; set; }
+        public long DrivingShiftId { get; set; }
         public string NoteText { get; set; }
-        public DateTime Date { get; set; }
-        public int Hubo { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public int GeoDataLink { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

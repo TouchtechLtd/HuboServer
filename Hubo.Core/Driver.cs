@@ -11,17 +11,7 @@ namespace Hubo
 
     public class Driver : FullAuditedEntity
     {
-        
-        public virtual long UserId { get; set; }
-
-        [MaxLength(20)]
-        public string LicenceNo { get; set; }
-
-        public int LicenceVersion { get; set; }
-        public string Email { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string MobilePh { get; set; }
-
+        public long CompanyId { get; set; }
+        public long UserId { get; set; }
     }
 }
