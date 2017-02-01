@@ -60,6 +60,62 @@ namespace Hubo.EntityFramework
             return Tuple.Create(1, "1");
         }
 
+        public Tuple<List<DrivingShift>, string, int> GetDrivingShifts(int shiftId)
+        {
+            List<DrivingShift> listOfDrivingShifts = new List<DrivingShift>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    if(!ctx.WorkShiftSet.Any(s => s.Id == shiftId))
+                    {
+                        return Tuple.Create(listOfDrivingShifts, "No Shift exists with the ID = " + shiftId, -1);
+                    }
+
+                    listOfDrivingShifts = (from b in ctx.DrivingShiftSet
+                                           where b.ShiftId == shiftId
+                                           select b).ToList<DrivingShift>();
+
+                    return Tuple.Create(listOfDrivingShifts, "Success", 1);                                           
+
+                }
+                catch(Exception ex)
+                {
+                    return Tuple.Create(listOfDrivingShifts, ex.Message, -1);
+                }
+            }            
+        }
+
+        public Tuple<List<WorkShift>, string, int> GetWorkShifts(int driverId)
+        {
+            List<WorkShift> listOfWorkShifts = new List<WorkShift>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    if(!ctx.DriverSet.Any(d => d.Id == driverId))
+                    {
+                        return Tuple.Create(listOfWorkShifts, "No Driver exists with Driver ID = " + driverId, -1);
+                    }
+
+                    DateTime twoWeeksPrior = new DateTime();
+                    twoWeeksPrior = DateTime.Now;
+                    twoWeeksPrior = twoWeeksPrior.AddDays(-14);
+
+                    listOfWorkShifts = (from b in ctx.WorkShiftSet
+                                        where b.DriverId == driverId &&
+                                        b.StartDate > twoWeeksPrior
+                                        select b).ToList<WorkShift>();
+
+                    return Tuple.Create(listOfWorkShifts, "Success", 1);
+                }
+                catch(Exception ex)
+                {
+                    return Tuple.Create(listOfWorkShifts, ex.Message, -1);
+                }
+            }
+        }
+
         public Tuple<int,string> StopShift(ShiftStopRequest shift)
         {
             //long shiftId = shift.Id;

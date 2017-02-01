@@ -1,5 +1,7 @@
-﻿using Hubo.ApiRequestClasses;
+﻿using AutoMapper;
+using Hubo.ApiRequestClasses;
 using Hubo.EntityFramework;
+using Hubo.Shifts.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +37,28 @@ namespace Hubo.Shifts
         public Tuple<int, string> EndBreak(BreakEndRequest shiftBreak)
         {
             return _shiftRepository.EndBreak(shiftBreak);
+        }
+
+        public Tuple<List<WorkShiftDto>, string, int> GetWorkShifts(int driverId)
+        {
+            Tuple<List<WorkShift>, string, int> result = _shiftRepository.GetWorkShifts(driverId);
+            List<WorkShiftDto> listWorkShiftDto = new List<WorkShiftDto>();
+            foreach(WorkShift workShift in result.Item1)
+            {
+                listWorkShiftDto.Add(Mapper.Map<WorkShift, WorkShiftDto>(workShift));
+            }
+            return Tuple.Create(listWorkShiftDto, result.Item2, result.Item3);
+        }
+
+        public Tuple<List<DrivingShiftDto>, string, int> GetDrivingShifts(int shiftId)
+        {
+            Tuple<List<DrivingShift>, string, int> result = _shiftRepository.GetDrivingShifts(shiftId);
+            List<DrivingShiftDto> listWorkShiftDto = new List<DrivingShiftDto>();
+            foreach (DrivingShift workShift in result.Item1)
+            {
+                listWorkShiftDto.Add(Mapper.Map<DrivingShift, DrivingShiftDto>(workShift));
+            }
+            return Tuple.Create(listWorkShiftDto, result.Item2, result.Item3);
         }
     }
 }

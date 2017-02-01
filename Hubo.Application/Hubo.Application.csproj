@@ -119,7 +119,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
     <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />
+    <Compile Include="Shifts\Dto\DrivingShiftDto.cs" />
     <Compile Include="Shifts\Dto\ShiftStartInput.cs" />
+    <Compile Include="Shifts\Dto\WorkShiftDto.cs" />
     <Compile Include="Shifts\IShiftAppService.cs" />
     <Compile Include="Shifts\ShiftAppService.cs" />
     <Compile Include="Users\Dto\CreateUserInput.cs" />

@@ -7,6 +7,8 @@ using System.Linq;
 using Hubo.Companies;
 using Hubo.Shifts;
 using Hubo.ApiRequestClasses;
+using System.Collections.Generic;
+using Hubo.Shifts.Dto;
 
 namespace Hubo.Api.Controllers
 {
@@ -44,6 +46,58 @@ namespace Hubo.Api.Controllers
         public async Task<AjaxResponse> EndBreakAsync([FromBody] BreakEndRequest shiftBreak)
         {
             return await Task<AjaxResponse>.Run(() => EndBreak(shiftBreak));
+        }
+
+        [HttpPost]
+        public async Task<AjaxResponse> GetWorkShiftsAsync([FromBody] int driverId)
+        {
+            return await Task<AjaxResponse>.Run(() => GetWorkShifts(driverId));
+        }
+
+        private AjaxResponse GetWorkShifts(int driverId)
+        {
+            AjaxResponse ar = new AjaxResponse();
+            ShiftAppService shiftService = new ShiftAppService();
+            Tuple<List<WorkShiftDto>, string, int> result = shiftService.GetWorkShifts(driverId);
+
+            if (result.Item3 == -1)
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }
+            else
+            {
+                ar.Success = true;
+                ar.Result = result.Item1;
+            }
+
+            return ar;
+        }
+
+        [HttpPost]
+        public async Task<AjaxResponse> GetDrivingShiftsAsync([FromBody] int shiftId)
+        {
+            return await Task<AjaxResponse>.Run(() => GetDrivingShifts(shiftId));
+        }
+
+        private AjaxResponse GetDrivingShifts(int shiftId)
+        {
+            AjaxResponse ar = new AjaxResponse();
+            ShiftAppService shiftService = new ShiftAppService();
+            Tuple<List<DrivingShiftDto>, string, int> result = shiftService.GetDrivingShifts(shiftId);
+
+            if(result.Item3 == -1)
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }
+            else
+            {
+                ar.Success = true;
+                ar.Result = result.Item1;
+            }
+
+            return ar;
         }
 
         private AjaxResponse StartShift(ShiftStartRequest shift)
