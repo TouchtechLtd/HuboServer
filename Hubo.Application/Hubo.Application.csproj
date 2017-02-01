@@ -103,6 +103,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Breaks\BreakAppService.cs" />
+    <Compile Include="Breaks\Dto\BreakDto.cs" />
+    <Compile Include="Breaks\IBreakAppService.cs" />
     <Compile Include="Companies\CompanyAppService.cs" />
     <Compile Include="Companies\DTo\CompanyOutput.cs" />
     <Compile Include="Companies\ICompanyAppService.cs" />

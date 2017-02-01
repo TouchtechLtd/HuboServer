@@ -107,6 +107,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\BreakRepository.cs" />
     <Compile Include="EntityFramework\CompanyRepository.cs" />
     <Compile Include="EntityFramework\DriverRepository.cs" />
     <Compile Include="EntityFramework\HuboDbContext.cs" />
@@ -132,6 +133,10 @@
     <Compile Include="Migrations\201702010203149_workshift1.cs" />
     <Compile Include="Migrations\201702010203149_workshift1.Designer.cs">
       <DependentUpon>201702010203149_workshift1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702010340410_geodata.cs" />
+    <Compile Include="Migrations\201702010340410_geodata.Designer.cs">
+      <DependentUpon>201702010340410_geodata.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -167,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702010203149_workshift1.resx">
       <DependentUpon>201702010203149_workshift1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702010340410_geodata.resx">
+      <DependentUpon>201702010340410_geodata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

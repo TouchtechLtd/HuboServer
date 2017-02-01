@@ -9,7 +9,7 @@ namespace Hubo
 {
     public class GeoData : FullAuditedEntity
     {
-        public long ShiftId { get; set; }
+        public long DrivingShiftId { get; set; }
         public DateTime TimeStamp { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }

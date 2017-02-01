@@ -144,6 +144,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Controllers\BreakController.cs" />
     <Compile Include="Api\Controllers\CompanyController.cs" />
     <Compile Include="Api\Controllers\RegistrationController.cs" />
     <Compile Include="Api\Controllers\ShiftController.cs" />
