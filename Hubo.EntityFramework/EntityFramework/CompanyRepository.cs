@@ -10,42 +10,42 @@ namespace Hubo.EntityFramework
 {
     public class CompanyRepository : ICompanyRepository
     {
-        public List<Company> GetCompanyList(Driver driver)
+        public Tuple<List<Company>, string, int> GetCompanyList(int driverId)
         {
+            List<Company> listOfCompanies = new List<Company>();
             using (HuboDbContext ctx = new HuboDbContext())
             {
-                List<Company> listOfCompanies = new List<Company>();
 
-                //try
-                //{
-                //    //Get middle man from driver id to find all companies associated with driver
-                //    IQueryable<DriverCompany> driveCompanies;
+                try
+                {
+                    if (!ctx.DriverSet.Any(d => d.Id == driverId))
+                    {
+                        return Tuple.Create(listOfCompanies, "No Driver found with corresponding ID = " + driverId.ToString(), -1);
+                    }
 
-                //    driveCompanies= from b in ctx.DriverCompaniesSet
-                //                          where b.DriverId.Equals(driver.Id)
-                //                          select b;
+                    List<DriverCompany> driverCompanies = (from b in ctx.DriverCompanySet
+                                                           where b.DriverId.Equals(driverId)
+                                                           select b).ToList<DriverCompany>();
 
-                //    foreach (DriverCompany driverCompany in driveCompanies.ToList<DriverCompany>())
-                //    {
-                //        IQueryable<Company> tempCompany;
-                //        tempCompany = from b in ctx.CompaniesSet
-                //                  where b.Id.Equals(driverCompany.CompanyId)
-                //                  select b;
-                //        foreach(Company company in tempCompany.ToList<Company>())
-                //        {
-                //            listOfCompanies.Add(company);
-                //        }
-                //    }
+                    foreach (DriverCompany driverCompany in driverCompanies)
+                    {
+                        Company tempCompany = ctx.CompanySet.Single<Company>(c => c.Id == driverCompany.CompanyId);
+                        listOfCompanies.Add(tempCompany);
+                    }
 
-                //    return listOfCompanies;
-                //}
-                //catch (Exception ex)
-                //{
-                //    string x = ex.Message;
+                    if (listOfCompanies.Count == 0)
+                    {
+                        return Tuple.Create(listOfCompanies, "No Companies found for Driver ID = " + driverId.ToString(), -1);
+                    }
 
-                //    return listOfCompanies;
-                //}
-                    return listOfCompanies;
+                    return Tuple.Create(listOfCompanies, "Success", 1);
+                }
+                catch(Exception ex)
+                {
+                    return Tuple.Create(listOfCompanies, ex.Message, -1);
+                }
+
+
             }
         }
     }

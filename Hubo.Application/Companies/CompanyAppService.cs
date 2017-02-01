@@ -1,4 +1,6 @@
 ﻿using Abp.Domain.Repositories;
+using AutoMapper;
+using Hubo.Companies.Dto;
 using Hubo.EntityFramework;
 using Hubo.Respositories;
 using System;
@@ -16,12 +18,16 @@ namespace Hubo.Companies
             _companyRepository = new EntityFramework.CompanyRepository();
         }
 
-        public List<Company> GetCompanyList(Driver driver)
+        public Tuple<List<CompanyOutput>, string, int> GetCompanyList(int driverId)
         {
-            List<Company> result = new List<Company>();
-            result = _companyRepository.GetCompanyList(driver);
+            Tuple<List<Company>, string, int> result = _companyRepository.GetCompanyList(driverId);
+            List<CompanyOutput> listCompanyDtoOutput = new List<CompanyOutput>();
+            foreach(Company company in result.Item1)
+            {                
+                listCompanyDtoOutput.Add(Mapper.Map<Company, CompanyOutput>(company));
+            }
 
-            return result;
+            return Tuple.Create(listCompanyDtoOutput, result.Item2, result.Item3);
         }
     }
 }

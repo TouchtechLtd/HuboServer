@@ -46,23 +46,34 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public List<Vehicle> GetVehicles(int companyId)
+        public Tuple<List<Vehicle>, string, int> GetVehicles(int companyId)
         {
             List<Vehicle> listOfVehicles = new List<Vehicle>();
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
                 {
+                    if (!ctx.CompanySet.Any(c => c.Id == companyId))
+                    {                        
+                        return Tuple.Create(listOfVehicles, "Company not found for corresponding CompanyID", -1);
+                    }
+
                     IQueryable<Vehicle> listVehicleQuery;
                     listVehicleQuery = from b in ctx.VehicleSet
                                        where b.CompanyId.Equals(companyId)
                                        select b;
                     listOfVehicles = listVehicleQuery.ToList<Vehicle>();
-                    return listOfVehicles;
+
+                    if(listOfVehicles.Count == 0)
+                    {
+                        return Tuple.Create(listOfVehicles, "No Vehicles found for company", -1);
+                    }
+
+                    return Tuple.Create(listOfVehicles, "Success", 1);
                 }
                 catch (Exception ex)
                 {
-                    return listOfVehicles;
+                    return Tuple.Create(listOfVehicles, ex.Message, -1);
                 }
             }
         }

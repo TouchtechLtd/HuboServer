@@ -7,6 +7,7 @@ using System;
 using Hubo.EntityFramework;
 using Hubo.Vehicles;
 using System.Collections.Generic;
+using Hubo.Vehicles.Dto;
 
 namespace Hubo.Api.Controllers
 {
@@ -25,17 +26,27 @@ namespace Hubo.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<List<Vehicle>> getVehicles([FromBody] Vehicle vehicle)
+        public async Task<AjaxResponse> getVehiclesAsync([FromBody] int companyId)
         {
-            return await Task<List<Vehicle>>.Run(() => getVehicles(2));
+            return await Task<AjaxResponse>.Run(() => getVehicles(companyId));
         }
 
-        private List<Vehicle> getVehicles(int companyId)
+        private AjaxResponse getVehicles(int companyId)
         {
-            List<Vehicle> listOfVehicles = new List<Vehicle>();
+            AjaxResponse ar = new AjaxResponse();         
             VehicleAppService vehicleService = new VehicleAppService();
-            listOfVehicles = vehicleService.GetVehicles(companyId);
-            return listOfVehicles;
+            Tuple<List<VehicleOutput>, string, int> result = vehicleService.GetVehicles(companyId);
+
+            if(result.Item3 == -1)
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+                return ar;
+            }
+
+            ar.Success = true;
+            ar.Result = result.Item1;
+            return ar;            
         }
 
         // registration, make, model, odo, company

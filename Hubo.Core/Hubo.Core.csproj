@@ -114,7 +114,6 @@
     <Compile Include="Authorization\Roles\StaticRoleNames.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
-    <Compile Include="ApiResponseClasses\LoginResponse.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
     <Compile Include="Note.cs" />
@@ -153,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\Hubo-ja.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApiResponseClasses\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

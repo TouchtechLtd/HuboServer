@@ -33,31 +33,6 @@ namespace Hubo.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<AjaxResponse> GetDetailsAsync(User user)
-        {
-            return await Task<AjaxResponse>.Run(() => GetDetails(user.Id));
-        }
-
-        private AjaxResponse GetDetails(long userId)
-        {
-            AjaxResponse ar = new AjaxResponse();
-            DriverAppService driverService = new DriverAppService();
-            LoginResponse response = new LoginResponse();
-            response = driverService.GetDetails(userId);
-            if(response==null)
-            {
-                ar.Result = "Driver not found";
-                ar.Success = false;
-            }
-            else
-            {
-                ar.Result = response;
-            }
-            return ar;
-        }
-
-
-        [HttpPost]
         public async Task<AjaxResponse> Authenticate(LoginModel loginModel)
         {
             CheckModelState();

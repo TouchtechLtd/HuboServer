@@ -11,7 +11,6 @@ namespace Hubo
 
     public class Driver : FullAuditedEntity
     {
-        public long CompanyId { get; set; }
         public long UserId { get; set; }
     }
 }

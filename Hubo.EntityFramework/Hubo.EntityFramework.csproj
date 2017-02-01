@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201701312232502_initial.Designer.cs">
       <DependentUpon>201701312232502_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702010041367_driver.cs" />
+    <Compile Include="Migrations\201702010041367_driver.Designer.cs">
+      <DependentUpon>201702010041367_driver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="HuboDataModule.cs" />
@@ -146,6 +150,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701312232502_initial.resx">
       <DependentUpon>201701312232502_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702010041367_driver.resx">
+      <DependentUpon>201702010041367_driver.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
