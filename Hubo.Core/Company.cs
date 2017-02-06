@@ -3,10 +3,13 @@ namespace Hubo
     using System;
     using System.Linq;
     using Abp.Domain.Entities.Auditing;
-
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Company : FullAuditedEntity
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public override int Id { get; set; }
         public string Name { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }

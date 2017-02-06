@@ -7,6 +7,8 @@ namespace Hubo
 
     public class Vehicle : FullAuditedEntity
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public override int Id { get; set; }
         public string RegistrationNo { get; set; }
         public string MakeModel { get; set; }
         public int StartingOdometer { get; set; }

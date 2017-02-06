@@ -4,9 +4,13 @@ namespace Hubo
     using System.Data.Entity;
     using System.Linq;
     using Abp.Domain.Entities.Auditing;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class WorkShift : FullAuditedEntity
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public override int Id { get; set; }
         public long DriverId { get; set; }
         public long CompanyId { get; set; }
         public DateTime StartDate { get; set; }

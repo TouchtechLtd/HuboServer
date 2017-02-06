@@ -11,6 +11,8 @@ namespace Hubo
 
     public class Driver : FullAuditedEntity
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public override int Id { get; set; }
         public long UserId { get; set; }
     }
 }

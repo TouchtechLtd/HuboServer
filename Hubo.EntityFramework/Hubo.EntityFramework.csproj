@@ -111,6 +111,7 @@
     <Compile Include="EntityFramework\CompanyRepository.cs" />
     <Compile Include="EntityFramework\DriverRepository.cs" />
     <Compile Include="EntityFramework\HuboDbContext.cs" />
+    <Compile Include="EntityFramework\NoteRepository.cs" />
     <Compile Include="EntityFramework\Repositories\HuboRepositoryBase.cs" />
     <Compile Include="EntityFramework\Repositories\ICompanyRepository.cs" />
     <Compile Include="EntityFramework\Repositories\IDriverRepository.cs" />
@@ -118,25 +119,9 @@
     <Compile Include="EntityFramework\Repositories\IVehicleRepository.cs" />
     <Compile Include="EntityFramework\ShiftRepository.cs" />
     <Compile Include="EntityFramework\VehicleRepository.cs" />
-    <Compile Include="Migrations\201701312232502_initial.cs" />
-    <Compile Include="Migrations\201701312232502_initial.Designer.cs">
-      <DependentUpon>201701312232502_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702010041367_driver.cs" />
-    <Compile Include="Migrations\201702010041367_driver.Designer.cs">
-      <DependentUpon>201702010041367_driver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702010201338_workshift.cs" />
-    <Compile Include="Migrations\201702010201338_workshift.Designer.cs">
-      <DependentUpon>201702010201338_workshift.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702010203149_workshift1.cs" />
-    <Compile Include="Migrations\201702010203149_workshift1.Designer.cs">
-      <DependentUpon>201702010203149_workshift1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702010340410_geodata.cs" />
-    <Compile Include="Migrations\201702010340410_geodata.Designer.cs">
-      <DependentUpon>201702010340410_geodata.cs</DependentUpon>
+    <Compile Include="Migrations\201702062219074_initial.cs" />
+    <Compile Include="Migrations\201702062219074_initial.Designer.cs">
+      <DependentUpon>201702062219074_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -161,20 +146,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701312232502_initial.resx">
-      <DependentUpon>201701312232502_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702010041367_driver.resx">
-      <DependentUpon>201702010041367_driver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702010201338_workshift.resx">
-      <DependentUpon>201702010201338_workshift.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702010203149_workshift1.resx">
-      <DependentUpon>201702010203149_workshift1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702010340410_geodata.resx">
-      <DependentUpon>201702010340410_geodata.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702062219074_initial.resx">
+      <DependentUpon>201702062219074_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
