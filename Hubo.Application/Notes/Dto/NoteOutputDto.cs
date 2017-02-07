@@ -18,5 +18,6 @@ namespace Hubo.Notes.Dto
         public int GeoDataLink { get; set; }
         public DateTime TimeStamp { get; set; }
         public long Hubo { get; set; }
+        public bool StandAloneNote { get; set; }
     }
 }

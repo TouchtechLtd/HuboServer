@@ -11,7 +11,7 @@ namespace Hubo.Shifts.Dto
     public class DrivingShiftDto
     {
         public long Id { get; set; }
-        public long ShiftId { get; set; }
+        public long DriveShiftId { get; set; }
         public DateTime TimeStamp { get; set; }
         public bool State { get; set; }
         public long VehicleId { get; set; }

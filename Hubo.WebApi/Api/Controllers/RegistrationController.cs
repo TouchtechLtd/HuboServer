@@ -11,10 +11,11 @@ namespace Hubo.Api.Controllers
 {
     public class RegistrationController : AbpApiController
     {
+        private DriverAppService _driverService;
 
         public RegistrationController()
         {
-            
+            _driverService = new DriverAppService();
         }
 
         [HttpPost]
@@ -23,15 +24,11 @@ namespace Hubo.Api.Controllers
             return await Task<AjaxResponse>.Run(() => registerDriver(driver));
         }
 
-
         
         private AjaxResponse registerDriver(Driver driver)
         {
             AjaxResponse ar = new AjaxResponse();
-            
-            DriverAppService driverService = new DriverAppService();
-            var result =  driverService.RegisterDriver(driver);
-
+            var result = _driverService.RegisterDriver(driver);
             ar.Result = result;
             return ar;
         }

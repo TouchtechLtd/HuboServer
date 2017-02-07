@@ -8,7 +8,7 @@ namespace Hubo.EntityFramework
 {
     public class BreakRepository
     {
-        public Tuple<List<Break>, string, int> GetBreaks(int shiftId)
+        public Tuple<List<Break>, string, int> GetBreaks(int driveShiftId)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
@@ -16,13 +16,13 @@ namespace Hubo.EntityFramework
                 
                 try
                 {
-                    if(!ctx.WorkShiftSet.Any(s => s.Id == shiftId))
+                    if(!ctx.DrivingShiftSet.Any(s => s.Id == driveShiftId))
                     {
-                        return Tuple.Create(listOfBreaks, "No Shift exists with ID = " + shiftId, -1);
+                        return Tuple.Create(listOfBreaks, "No Drive Shift exists with ID = " + driveShiftId, -1);
                     }
 
                     listOfBreaks = (from b in ctx.BreakSet
-                                    where b.ShiftId == shiftId
+                                    where b.DriveShiftId == driveShiftId
                                     select b).ToList<Break>();
 
                     return Tuple.Create(listOfBreaks, "Success", 1);
@@ -41,14 +41,9 @@ namespace Hubo.EntityFramework
             {
                 try
                 {
-                    if(!ctx.GeoDataSet.Any(g => g.Id == newBreak.GeoDataId))
+                    if(!ctx.WorkShiftSet.Any(s => s.Id == newBreak.DriveShiftId))
                     {
-                        return Tuple.Create(-1, "No Geo Data exists for ID = " + newBreak.GeoDataId);
-                    }
-
-                    if(!ctx.WorkShiftSet.Any(s => s.Id == newBreak.ShiftId))
-                    {
-                        return Tuple.Create(-1, "No Shift exists for ID = " + newBreak.ShiftId);
+                        return Tuple.Create(-1, "No Drive Shift exists for ID = " + newBreak.DriveShiftId);
                     }
 
                     newBreak.State = true;

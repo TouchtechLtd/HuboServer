@@ -13,16 +13,11 @@ namespace Hubo.Api.Controllers
 {
     public class CompanyController : AbpApiController
     {
+        private CompanyAppService _companyAppService;
 
         public CompanyController()
         {
-
-        }
-
-        [HttpGet]
-        public string HelloWorld()
-        {
-            return "HelloWorld";
+            _companyAppService = new CompanyAppService();
         }
 
         [HttpPost]
@@ -34,8 +29,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse getCompanyList(int driverId)
         {
             AjaxResponse ar = new AjaxResponse();
-            CompanyAppService companyService = new CompanyAppService();
-            Tuple<List<CompanyOutput>, string, int> result = companyService.GetCompanyList(driverId);
+            Tuple<List<CompanyOutput>, string, int> result = _companyAppService.GetCompanyList(driverId);
 
             if(result.Item3 == -1)
             {

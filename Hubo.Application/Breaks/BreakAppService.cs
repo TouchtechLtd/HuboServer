@@ -16,9 +16,9 @@ namespace Hubo.Breaks
         {
             _breakRepository = new EntityFramework.BreakRepository();
         }
-        public Tuple<List<BreakDto>, string, int> GetBreaks(int shiftId)
+        public Tuple<List<BreakDto>, string, int> GetBreaks(int driveShiftId)
         {
-            Tuple<List<Break>, string, int> result = _breakRepository.GetBreaks(shiftId);
+            Tuple<List<Break>, string, int> result = _breakRepository.GetBreaks(driveShiftId);
             List<BreakDto> listOfBreakDto = new List<BreakDto>();
             foreach(Break breakItem in result.Item1)
             {

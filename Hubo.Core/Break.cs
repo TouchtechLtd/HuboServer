@@ -13,8 +13,7 @@ namespace Hubo
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public override int Id { get; set; }
-        public long ShiftId { get; set; }
-        public long GeoDataId { get; set; }
+        public long DriveShiftId { get; set; }
         public DateTime TimeStamp { get; set; }
         public bool State { get; set; }
     }

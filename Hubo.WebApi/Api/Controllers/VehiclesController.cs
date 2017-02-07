@@ -13,16 +13,11 @@ namespace Hubo.Api.Controllers
 {
     public class VehiclesController : AbpApiController
     {
+        private VehicleAppService _vehicleService;
 
         public VehiclesController()
         {
-            
-        }
-
-        [HttpGet]
-        public string HelloWorld()
-        {
-            return "Hello World";
+            _vehicleService = new VehicleAppService();
         }
 
         [HttpPost]
@@ -34,8 +29,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse getVehicles(int companyId)
         {
             AjaxResponse ar = new AjaxResponse();         
-            VehicleAppService vehicleService = new VehicleAppService();
-            Tuple<List<VehicleOutput>, string, int> result = vehicleService.GetVehicles(companyId);
+            Tuple<List<VehicleOutput>, string, int> result = _vehicleService.GetVehicles(companyId);
 
             if(result.Item3 == -1)
             {
@@ -49,28 +43,17 @@ namespace Hubo.Api.Controllers
             return ar;            
         }
 
-        // registration, make, model, odo, company
         [HttpPost]
         public async Task<AjaxResponse> registerVehicleAsync([FromBody] Vehicle vehicle)
         {
-            Vehicle v = vehicle;
             return await Task<AjaxResponse>.Run(() => registerVehicle(vehicle));
         }
 
-        //[HttpPost]
-        //public async Task<AjaxResponse> getVehiclesFromCompanyAsync()
-        //{
-
-        //}
-
-
-        // accept incoming JSON string, converted to Vehicle object, and saved
         private AjaxResponse registerVehicle(Vehicle vehicle)
         {
             AjaxResponse ar = new AjaxResponse();
 
-            VehicleAppService vehicleService = new VehicleAppService();
-            var result = vehicleService.RegisterVehicle(vehicle);
+            var result = _vehicleService.RegisterVehicle(vehicle);
 
             ar.Result = result;
 

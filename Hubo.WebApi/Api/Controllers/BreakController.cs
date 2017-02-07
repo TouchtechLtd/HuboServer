@@ -24,15 +24,15 @@ namespace Hubo.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<AjaxResponse> GetBreaksAsync([FromBody] int shiftId)
+        public async Task<AjaxResponse> GetBreaksAsync([FromBody] int driveShiftId)
         {
-            return await Task<AjaxResponse>.Run(() => GetBreaks(shiftId));
+            return await Task<AjaxResponse>.Run(() => GetBreaks(driveShiftId));
         }
 
-        private AjaxResponse GetBreaks(int shiftId)
+        private AjaxResponse GetBreaks(int driveShiftId)
         {
             AjaxResponse ar = new AjaxResponse();
-            Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(shiftId);
+            Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(driveShiftId);
 
             if (result.Item3 == -1)
             {

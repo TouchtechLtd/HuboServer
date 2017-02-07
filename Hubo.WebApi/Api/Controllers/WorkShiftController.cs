@@ -14,10 +14,11 @@ namespace Hubo.Api.Controllers
 {
     public class WorkShiftController : AbpApiController
     {
+        private ShiftAppService _shiftService;
 
         public WorkShiftController()
         {
-
+            _shiftService = new ShiftAppService();
         }
 
         [HttpPost]
@@ -30,8 +31,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse StartShift(WorkShift shift)
         {
             AjaxResponse ar = new AjaxResponse();
-            ShiftAppService shiftService = new ShiftAppService();
-            Tuple<int, string> result = shiftService.StartShift(shift);
+            Tuple<int, string> result = _shiftService.StartShift(shift);
             if (result.Item1 > 0)
             {
                 ar.Result = result.Item1;
@@ -55,8 +55,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse StopShift(WorkShift shift)
         {
             AjaxResponse ar = new AjaxResponse();
-            ShiftAppService shiftService = new ShiftAppService();
-            Tuple<int, string> result = shiftService.StopShift(shift);
+            Tuple<int, string> result = _shiftService.StopShift(shift);
             if (result.Item1 == 1)
             {
                 ar.Success = true;
@@ -79,8 +78,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse GetWorkShifts(int driverId)
         {
             AjaxResponse ar = new AjaxResponse();
-            ShiftAppService shiftService = new ShiftAppService();
-            Tuple<List<WorkShiftDto>, string, int> result = shiftService.GetWorkShifts(driverId);
+            Tuple<List<WorkShiftDto>, string, int> result = _shiftService.GetWorkShifts(driverId);
 
             if (result.Item3 == -1)
             {

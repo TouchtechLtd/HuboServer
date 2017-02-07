@@ -28,8 +28,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse GetDrivingShifts(int shiftId)
         {
             AjaxResponse ar = new AjaxResponse();
-            DrivingShiftAppService drivingShiftService = new DrivingShiftAppService();
-            Tuple<List<DrivingShiftDto>, string, int> result = drivingShiftService.GetDrivingShifts(shiftId);
+            Tuple<List<DrivingShiftDto>, string, int> result = _drivingShiftAppService.GetDrivingShifts(shiftId);
 
             if (result.Item3 == -1)
             {
