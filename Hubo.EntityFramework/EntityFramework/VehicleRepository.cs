@@ -64,11 +64,6 @@ namespace Hubo.EntityFramework
                                        select b;
                     listOfVehicles = listVehicleQuery.ToList<Vehicle>();
 
-                    //if(listOfVehicles.Count == 0)
-                    //{
-                    //    return Tuple.Create(listOfVehicles, "No Vehicles found for company", -1);
-                    //}
-
                     return Tuple.Create(listOfVehicles, "Success", 1);
                 }
                 catch (Exception ex)

@@ -31,5 +31,10 @@ namespace Hubo.Notes
 
             return Tuple.Create(listOfNoteDto, result.Item2, result.Item3);
         }
+
+        public Tuple<int, string> InsertNote(Note note)
+        {
+            return _noteRepository.InsertNote(note);
+        }
     }
 }
