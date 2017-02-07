@@ -46,5 +46,20 @@ namespace Hubo.Api.Controllers
 
             return ar;
         }
+
+        [HttpPost]
+        public async Task<AjaxResponse> StartBreakAsync ([FromBody] Break newBreak)
+        {
+            return await Task<AjaxResponse>.Run(() => StartBreak(newBreak));
+        }
+
+        private AjaxResponse StartBreak(Break newBreak)
+        {
+            AjaxResponse ar = new AjaxResponse();
+            BreakAppService breakService = new BreakAppService();
+            Tuple<int, string> result = breakService.StartBreak(newBreak);
+
+            return ar;
+        }
     }
 }

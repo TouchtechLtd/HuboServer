@@ -34,5 +34,21 @@ namespace Hubo.EntityFramework
                 }
             }
         }
+
+        public Tuple<int, string> StartBreak(Break newBreak)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    return Tuple.Create(-1, ex.Message);
+
+                }
+                catch (Exception ex)
+                {
+                    return Tuple.Create(-1, ex.Message);
+                }
+            }
+        }
     }
 }

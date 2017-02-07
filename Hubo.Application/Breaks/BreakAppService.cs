@@ -27,5 +27,10 @@ namespace Hubo.Breaks
 
             return Tuple.Create(listOfBreakDto, result.Item2, result.Item3);
         }
+
+        public Tuple<int, string> StartBreak(Break newBreak)
+        {
+            return _breakRepository.StartBreak(newBreak);
+        }
     }
 }
