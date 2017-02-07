@@ -12,11 +12,11 @@ namespace Hubo.Shifts
 {
     public class ShiftAppService
     {
-        private ShiftRepository _shiftRepository;
+        private WorkShiftRepository _shiftRepository;
 
         public ShiftAppService()
         {
-            _shiftRepository = new EntityFramework.ShiftRepository();
+            _shiftRepository = new EntityFramework.WorkShiftRepository();
         }
 
         public Tuple<int,string> StartShift(WorkShift shift)
@@ -40,15 +40,6 @@ namespace Hubo.Shifts
             return Tuple.Create(listWorkShiftDto, result.Item2, result.Item3);
         }
 
-        public Tuple<List<DrivingShiftDto>, string, int> GetDrivingShifts(int shiftId)
-        {
-            Tuple<List<DrivingShift>, string, int> result = _shiftRepository.GetDrivingShifts(shiftId);
-            List<DrivingShiftDto> listWorkShiftDto = new List<DrivingShiftDto>();
-            foreach (DrivingShift workShift in result.Item1)
-            {
-                listWorkShiftDto.Add(Mapper.Map<DrivingShift, DrivingShiftDto>(workShift));
-            }
-            return Tuple.Create(listWorkShiftDto, result.Item2, result.Item3);
-        }
+
     }
 }

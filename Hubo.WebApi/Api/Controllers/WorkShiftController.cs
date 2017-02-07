@@ -12,10 +12,10 @@ using Hubo.Shifts.Dto;
 
 namespace Hubo.Api.Controllers
 {
-    public class ShiftController : AbpApiController
+    public class WorkShiftController : AbpApiController
     {
 
-        public ShiftController()
+        public WorkShiftController()
         {
 
         }
@@ -96,31 +96,7 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> GetDrivingShiftsAsync([FromBody] int shiftId)
-        {
-            return await Task<AjaxResponse>.Run(() => GetDrivingShifts(shiftId));
-        }
-
-        private AjaxResponse GetDrivingShifts(int shiftId)
-        {
-            AjaxResponse ar = new AjaxResponse();
-            ShiftAppService shiftService = new ShiftAppService();
-            Tuple<List<DrivingShiftDto>, string, int> result = shiftService.GetDrivingShifts(shiftId);
-
-            if(result.Item3 == -1)
-            {
-                ar.Success = false;
-                ar.Result = result.Item2;
-            }
-            else
-            {
-                ar.Success = true;
-                ar.Result = result.Item1;
-            }
-
-            return ar;
-        }
+ 
 
 
     }

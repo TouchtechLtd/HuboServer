@@ -113,6 +113,8 @@
     <Compile Include="Drivers\DTo\CreateDriverInput.cs" />
     <Compile Include="Drivers\DTo\DriverOutput.cs" />
     <Compile Include="Drivers\IDriverAppService.cs" />
+    <Compile Include="DrivingShifts\DrivingShiftAppService.cs" />
+    <Compile Include="DrivingShifts\IDrivingShiftAppService.cs" />
     <Compile Include="HuboApplicationModule.cs" />
     <Compile Include="HuboAppServiceBase.cs" />
     <Compile Include="MultiTenancy\Dto\CreateTenantInput.cs" />
@@ -125,11 +127,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
     <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />
-    <Compile Include="Shifts\Dto\DrivingShiftDto.cs" />
-    <Compile Include="Shifts\Dto\ShiftStartInput.cs" />
-    <Compile Include="Shifts\Dto\WorkShiftDto.cs" />
-    <Compile Include="Shifts\IShiftAppService.cs" />
-    <Compile Include="Shifts\ShiftAppService.cs" />
+    <Compile Include="DrivingShifts\Dto\DrivingShiftDto.cs" />
+    <Compile Include="WorkShifts\Dto\WorkShiftDto.cs" />
+    <Compile Include="WorkShifts\IShiftAppService.cs" />
+    <Compile Include="WorkShifts\ShiftAppService.cs" />
     <Compile Include="Users\Dto\CreateUserInput.cs" />
     <Compile Include="Users\IUserAppService.cs" />
     <Compile Include="Roles\RoleAppService.cs" />

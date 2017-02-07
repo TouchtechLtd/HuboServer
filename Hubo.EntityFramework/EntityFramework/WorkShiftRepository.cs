@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace Hubo.EntityFramework
 {
-    public class ShiftRepository
+    public class WorkShiftRepository
     {
         public Tuple<int,string> StartShift(WorkShift shift)
         {
@@ -68,32 +68,7 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public Tuple<List<DrivingShift>, string, int> GetDrivingShifts(int shiftId)
-        {
-            List<DrivingShift> listOfDrivingShifts = new List<DrivingShift>();
-            using (HuboDbContext ctx = new HuboDbContext())
-            {
-                try
-                {
-                    if(!ctx.WorkShiftSet.Any(s => s.Id == shiftId))
-                    {
-                        return Tuple.Create(listOfDrivingShifts, "No Shift exists with the ID = " + shiftId, -1);
-                    }
-
-                    listOfDrivingShifts = (from b in ctx.DrivingShiftSet
-                                           where b.ShiftId == shiftId
-                                           select b).ToList<DrivingShift>();
-
-                    return Tuple.Create(listOfDrivingShifts, "Success", 1);                                           
-
-                }
-                catch(Exception ex)
-                {
-                    return Tuple.Create(listOfDrivingShifts, ex.Message, -1);
-                }
-            }            
-        }
-
+   
         public Tuple<List<WorkShift>, string, int> GetWorkShifts(int driverId)
         {
             List<WorkShift> listOfWorkShifts = new List<WorkShift>();

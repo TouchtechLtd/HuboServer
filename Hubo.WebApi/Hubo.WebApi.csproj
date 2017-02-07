@@ -146,9 +146,10 @@
   <ItemGroup>
     <Compile Include="Api\Controllers\BreakController.cs" />
     <Compile Include="Api\Controllers\CompanyController.cs" />
+    <Compile Include="Api\Controllers\DrivingShiftController.cs" />
     <Compile Include="Api\Controllers\NoteController.cs" />
     <Compile Include="Api\Controllers\RegistrationController.cs" />
-    <Compile Include="Api\Controllers\ShiftController.cs" />
+    <Compile Include="Api\Controllers\WorkShiftController.cs" />
     <Compile Include="Api\Controllers\VehiclesController.cs" />
     <Compile Include="Api\HuboWebApiModule.cs" />
     <Compile Include="Api\Controllers\AccountController.cs" />

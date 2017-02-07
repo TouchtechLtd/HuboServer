@@ -110,6 +110,7 @@
     <Compile Include="EntityFramework\BreakRepository.cs" />
     <Compile Include="EntityFramework\CompanyRepository.cs" />
     <Compile Include="EntityFramework\DriverRepository.cs" />
+    <Compile Include="EntityFramework\DrivingShiftRepository.cs" />
     <Compile Include="EntityFramework\HuboDbContext.cs" />
     <Compile Include="EntityFramework\NoteRepository.cs" />
     <Compile Include="EntityFramework\Repositories\HuboRepositoryBase.cs" />
@@ -117,7 +118,7 @@
     <Compile Include="EntityFramework\Repositories\IDriverRepository.cs" />
     <Compile Include="EntityFramework\Repositories\IShiftRepository.cs" />
     <Compile Include="EntityFramework\Repositories\IVehicleRepository.cs" />
-    <Compile Include="EntityFramework\ShiftRepository.cs" />
+    <Compile Include="EntityFramework\WorkShiftRepository.cs" />
     <Compile Include="EntityFramework\VehicleRepository.cs" />
     <Compile Include="Migrations\201702062357305_initial.cs" />
     <Compile Include="Migrations\201702062357305_initial.Designer.cs">

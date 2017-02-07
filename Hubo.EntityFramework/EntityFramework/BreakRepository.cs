@@ -41,7 +41,7 @@ namespace Hubo.EntityFramework
             {
                 try
                 {
-                    return Tuple.Create(-1, ex.Message);
+                    return Tuple.Create(-1, "Success");
 
                 }
                 catch (Exception ex)
