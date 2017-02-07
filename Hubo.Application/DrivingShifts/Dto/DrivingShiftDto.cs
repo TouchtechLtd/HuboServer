@@ -10,6 +10,7 @@ namespace Hubo.Shifts.Dto
     [AutoMap(typeof(DrivingShift))]
     public class DrivingShiftDto
     {
+        public long Id { get; set; }
         public long ShiftId { get; set; }
         public DateTime TimeStamp { get; set; }
         public bool State { get; set; }

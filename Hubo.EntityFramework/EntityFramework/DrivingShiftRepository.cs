@@ -69,6 +69,10 @@ namespace Hubo.EntityFramework
                 try
                 {
                     DrivingShift shift = ctx.DrivingShiftSet.Single<DrivingShift>(s => s.Id == drivingShiftId);
+                    if(shift.State == false)
+                    {
+                        return Tuple.Create(-1, "Driving shift has already ended");
+                    }
                     shift.State = false;
                     ctx.Entry(shift).State = EntityState.Modified;
                     ctx.SaveChanges();

@@ -41,10 +41,50 @@ namespace Hubo.EntityFramework
             {
                 try
                 {
-                    return Tuple.Create(-1, "Success");
+                    if(!ctx.GeoDataSet.Any(g => g.Id == newBreak.GeoDataId))
+                    {
+                        return Tuple.Create(-1, "No Geo Data exists for ID = " + newBreak.GeoDataId);
+                    }
+
+                    if(!ctx.WorkShiftSet.Any(s => s.Id == newBreak.ShiftId))
+                    {
+                        return Tuple.Create(-1, "No Shift exists for ID = " + newBreak.ShiftId);
+                    }
+
+                    newBreak.State = true;
+                    ctx.BreakSet.Add(newBreak);
+                    ctx.SaveChanges();
+                    return Tuple.Create(newBreak.Id, "Success");
 
                 }
                 catch (Exception ex)
+                {
+                    return Tuple.Create(-1, ex.Message);
+                }
+            }
+        }
+
+        public Tuple<int, string> StopBreak(int breakId)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    Break currentBreak = ctx.BreakSet.Single<Break>(b => b.Id == breakId);
+                    if(currentBreak.State == false)
+                    {
+                        return Tuple.Create(-1, "Break has already ended");
+                    }
+                    currentBreak.State = false;
+                    ctx.Entry(currentBreak).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                    return Tuple.Create(1, "Success");
+                }
+                catch(ArgumentNullException ex)
+                {
+                    return Tuple.Create(-1, ex.Message);
+                }
+                catch(Exception ex)
                 {
                     return Tuple.Create(-1, ex.Message);
                 }

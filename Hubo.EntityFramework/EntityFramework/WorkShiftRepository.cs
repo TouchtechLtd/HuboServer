@@ -49,6 +49,10 @@ namespace Hubo.EntityFramework
                 try
                 {
                     WorkShift currentShift = ctx.WorkShiftSet.Single<WorkShift>(s => s.Id == shift.Id);
+                    if(currentShift.State == false)
+                    {
+                        return Tuple.Create(-1, "Shift has already ended");
+                    }
                     currentShift.EndDate = shift.EndDate;
                     currentShift.EndLocationLat = shift.EndLocationLat;
                     currentShift.EndLocationLong = shift.EndLocationLong;

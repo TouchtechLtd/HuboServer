@@ -16,9 +16,11 @@ namespace Hubo.Api.Controllers
 {
     public class BreakController : AbpApiController
     {
+        private BreakAppService _breakAppService;
+
         public BreakController()
         {
-
+            _breakAppService = new BreakAppService();
         }
 
         [HttpPost]
@@ -30,8 +32,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse GetBreaks(int shiftId)
         {
             AjaxResponse ar = new AjaxResponse();
-            BreakAppService breakService = new BreakAppService();
-            Tuple<List<BreakDto>, string, int> result = breakService.GetBreaks(shiftId);
+            Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(shiftId);
 
             if (result.Item3 == -1)
             {
@@ -56,8 +57,42 @@ namespace Hubo.Api.Controllers
         private AjaxResponse StartBreak(Break newBreak)
         {
             AjaxResponse ar = new AjaxResponse();
-            BreakAppService breakService = new BreakAppService();
-            Tuple<int, string> result = breakService.StartBreak(newBreak);
+            Tuple<int, string> result = _breakAppService.StartBreak(newBreak);
+
+            if(result.Item1 > 0)
+            {
+                ar.Success = true;
+                ar.Result = result.Item1;
+            }
+            else
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }
+
+            return ar;
+        }
+
+        [HttpPost]
+        public async Task<AjaxResponse> StopBreakAsync ([FromBody] int breakId)
+        {
+            return await Task<AjaxResponse>.Run(() => StopBreak(breakId));
+        }
+
+        private AjaxResponse StopBreak(int breakId)
+        {
+            AjaxResponse ar = new AjaxResponse();
+            Tuple<int, string> result = _breakAppService.StopBreak(breakId);
+
+            if(result.Item1 == -1)
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }
+            else
+            {
+                ar.Success = true;
+            }
 
             return ar;
         }

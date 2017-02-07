@@ -32,5 +32,10 @@ namespace Hubo.Breaks
         {
             return _breakRepository.StartBreak(newBreak);
         }
+
+        public Tuple<int, string> StopBreak(int breakId)
+        {
+            return _breakRepository.StopBreak(breakId);
+        }
     }
 }
