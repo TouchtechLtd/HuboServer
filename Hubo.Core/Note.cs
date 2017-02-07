@@ -10,7 +10,7 @@ namespace Hubo
 {
     public class Note : FullAuditedEntity
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public override int Id { get; set; }
         public long ShiftId { get; set; }
         public long BreakId { get; set; }

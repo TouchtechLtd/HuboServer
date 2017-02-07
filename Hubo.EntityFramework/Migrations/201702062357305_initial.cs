@@ -57,7 +57,7 @@ namespace Hubo.Migrations
                 "dbo.Breaks",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         ShiftId = c.Long(nullable: false),
                         GeoDataId = c.Long(nullable: false),
                         TimeStamp = c.DateTime(nullable: false),
@@ -80,7 +80,7 @@ namespace Hubo.Migrations
                 "dbo.Companies",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Address1 = c.String(),
                         Address2 = c.String(),
@@ -109,7 +109,7 @@ namespace Hubo.Migrations
                 "dbo.DriverCompanies",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         DriverId = c.Long(nullable: false),
                         CompanyId = c.Long(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
@@ -130,7 +130,7 @@ namespace Hubo.Migrations
                 "dbo.Drivers",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         UserId = c.Long(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
@@ -150,7 +150,7 @@ namespace Hubo.Migrations
                 "dbo.DrivingShifts",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         ShiftId = c.Long(nullable: false),
                         TimeStamp = c.DateTime(nullable: false),
                         State = c.Boolean(nullable: false),
@@ -215,7 +215,7 @@ namespace Hubo.Migrations
                 "dbo.GeoDatas",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         DrivingShiftId = c.Long(nullable: false),
                         TimeStamp = c.DateTime(nullable: false),
                         Latitude = c.Decimal(nullable: false, precision: 18, scale: 2),
@@ -283,7 +283,7 @@ namespace Hubo.Migrations
                 "dbo.Notes",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         ShiftId = c.Long(nullable: false),
                         BreakId = c.Long(nullable: false),
                         DrivingShiftId = c.Long(nullable: false),
@@ -667,7 +667,7 @@ namespace Hubo.Migrations
                 "dbo.Vehicles",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         RegistrationNo = c.String(),
                         MakeModel = c.String(),
                         StartingOdometer = c.Int(nullable: false),
@@ -691,11 +691,11 @@ namespace Hubo.Migrations
                 "dbo.WorkShifts",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         DriverId = c.Long(nullable: false),
                         CompanyId = c.Long(nullable: false),
-                        StartDate = c.DateTime(nullable: false),
-                        EndDate = c.DateTime(nullable: false),
+                        StartDate = c.DateTime(),
+                        EndDate = c.DateTime(),
                         StartLocationLat = c.Decimal(nullable: false, precision: 18, scale: 2),
                         StartLocationLong = c.Decimal(nullable: false, precision: 18, scale: 2),
                         EndLocationLat = c.Decimal(nullable: false, precision: 18, scale: 2),

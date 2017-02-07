@@ -11,7 +11,7 @@ namespace Hubo
 {
     public class Break : FullAuditedEntity
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public override int Id { get; set; }
         public long ShiftId { get; set; }
         public long GeoDataId { get; set; }

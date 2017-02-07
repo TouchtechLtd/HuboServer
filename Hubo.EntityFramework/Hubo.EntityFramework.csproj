@@ -119,9 +119,9 @@
     <Compile Include="EntityFramework\Repositories\IVehicleRepository.cs" />
     <Compile Include="EntityFramework\ShiftRepository.cs" />
     <Compile Include="EntityFramework\VehicleRepository.cs" />
-    <Compile Include="Migrations\201702062219074_initial.cs" />
-    <Compile Include="Migrations\201702062219074_initial.Designer.cs">
-      <DependentUpon>201702062219074_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201702062357305_initial.cs" />
+    <Compile Include="Migrations\201702062357305_initial.Designer.cs">
+      <DependentUpon>201702062357305_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -146,8 +146,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702062219074_initial.resx">
-      <DependentUpon>201702062219074_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702062357305_initial.resx">
+      <DependentUpon>201702062357305_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

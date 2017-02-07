@@ -19,24 +19,14 @@ namespace Hubo.Shifts
             _shiftRepository = new EntityFramework.ShiftRepository();
         }
 
-        public Tuple<int,string> StartShift(ShiftStartRequest shift)
+        public Tuple<int,string> StartShift(WorkShift shift)
         {
             return _shiftRepository.StartShift(shift);
         }
 
-        public Tuple<int,string> StopShift(ShiftStopRequest shift)
+        public Tuple<int,string> StopShift(WorkShift shift)
         {
             return _shiftRepository.StopShift(shift);
-        }
-
-        public Tuple<int,string> StartBreak(BreakStartRequest shiftBreak)
-        {
-            return _shiftRepository.StartBreak(shiftBreak);
-        }
-
-        public Tuple<int, string> EndBreak(BreakEndRequest shiftBreak)
-        {
-            return _shiftRepository.EndBreak(shiftBreak);
         }
 
         public Tuple<List<WorkShiftDto>, string, int> GetWorkShifts(int driverId)

@@ -11,7 +11,7 @@ namespace Hubo
 {
     public class GeoData : FullAuditedEntity
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public override int Id { get; set; }
         public long DrivingShiftId { get; set; }
         public DateTime TimeStamp { get; set; }

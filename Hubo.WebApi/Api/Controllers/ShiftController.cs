@@ -22,12 +22,12 @@ namespace Hubo.Api.Controllers
 
         [HttpPost]
         // create a shift record and return the shift ID to the app
-        public async Task<AjaxResponse> StartShiftAsync([FromBody] ShiftStartRequest shift)
+        public async Task<AjaxResponse> StartShiftAsync([FromBody] WorkShift shift)
         {
             return await Task<AjaxResponse>.Run(() => StartShift(shift));
         }
 
-        private AjaxResponse StartShift(ShiftStartRequest shift)
+        private AjaxResponse StartShift(WorkShift shift)
         {
             AjaxResponse ar = new AjaxResponse();
             ShiftAppService shiftService = new ShiftAppService();
@@ -47,12 +47,12 @@ namespace Hubo.Api.Controllers
 
         [HttpPost] 
         // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<AjaxResponse> EndShiftAsync([FromBody] ShiftStopRequest shift)
+        public async Task<AjaxResponse> StopShiftAsync([FromBody] WorkShift shift)
         {
-            return await Task<AjaxResponse>.Run(() => EndShift(shift));
+            return await Task<AjaxResponse>.Run(() => StopShift(shift));
         }
 
-        private AjaxResponse EndShift(ShiftStopRequest shift)
+        private AjaxResponse StopShift(WorkShift shift)
         {
             AjaxResponse ar = new AjaxResponse();
             ShiftAppService shiftService = new ShiftAppService();
@@ -60,58 +60,6 @@ namespace Hubo.Api.Controllers
             if (result.Item1 == 1)
             {
                 ar.Success = true;
-            }
-            else
-            {
-                ar.Success = false;
-                ar.Result = result.Item2;
-            }
-            return ar;
-
-        }
-
-        [HttpPost]
-        // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<AjaxResponse> StartBreakAsync([FromBody] BreakStartRequest shiftBreak)
-        {
-            return await Task<AjaxResponse>.Run(() => StartBreak(shiftBreak));
-        }
-
-        private AjaxResponse StartBreak(BreakStartRequest shiftBreak)
-        {
-            AjaxResponse ar = new AjaxResponse();
-            ShiftAppService shiftService = new ShiftAppService();
-            Tuple<int, string> result = shiftService.StartBreak(shiftBreak);
-            if (result.Item1 > 0)
-            {
-                ar.Success = true;
-                ar.Result = result.Item1;
-            }
-            else
-            {
-                ar.Success = false;
-                ar.Result = result.Item2;
-            }
-            return ar;
-        }
-
-        [HttpPost]
-        // close off an opern shift by passing in shift ID and closing geo location and time
-        public async Task<AjaxResponse> EndBreakAsync([FromBody] BreakEndRequest shiftBreak)
-        {
-            return await Task<AjaxResponse>.Run(() => EndBreak(shiftBreak));
-        }
-
-        private AjaxResponse EndBreak(BreakEndRequest shiftBreak)
-        {
-            AjaxResponse ar = new AjaxResponse();
-            ShiftAppService shiftService = new ShiftAppService();
-            Tuple<int, string> result = shiftService.EndBreak(shiftBreak);
-
-            if (result.Item1 == 1)
-            {
-                ar.Success = true;
-                ar.Result = result.Item1;
             }
             else
             {
