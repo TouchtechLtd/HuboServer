@@ -42,6 +42,23 @@ namespace Hubo.EntityFramework
             return false;
         }
 
+        public Tuple<Driver,int,string> GetDriverDetails(int userId)
+        {
+            Driver currentDriver = new Driver();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    currentDriver = ctx.DriverSet.Single<Driver>(d => d.UserId == userId);
+                    return Tuple.Create(currentDriver, 1, "Success");
+                }
+                catch(Exception ex)
+                {
+                    return Tuple.Create(currentDriver, -1, ex.Message) ;
+                }
+            }
+        }
+
         public long GetDriverId(long id)
         {
             using (HuboDbContext ctx = new HuboDbContext())

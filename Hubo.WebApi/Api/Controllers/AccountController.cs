@@ -16,6 +16,8 @@ using Hubo.Drivers;
 using System.Collections.Generic;
 using Abp.Domain.Entities;
 using Hubo.ApiResponseClasses;
+using System.Linq;
+using Hubo.Drivers.Dto;
 
 namespace Hubo.Api.Controllers
 {
@@ -24,15 +26,52 @@ namespace Hubo.Api.Controllers
         public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
 
         private readonly UserManager _userManager;
+        private DriverAppService _driverService;
 
         static AccountController()
         {
             OAuthBearerOptions = new OAuthBearerAuthenticationOptions();
+            
         }
 
         public AccountController(UserManager userManager)
         {
             _userManager = userManager;
+            _driverService = new DriverAppService();
+        }
+
+        [HttpGet]
+        public async Task<AjaxResponse> GetDriverDetailsAsync()
+        {
+            IEnumerable<string> userIds;
+            if(Request.Headers.TryGetValues("UserId", out userIds))
+            {
+                string userId = userIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetDriverDetails(Int32.Parse(userId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
+        }
+
+        private AjaxResponse GetDriverDetails(int userId)
+        {
+            AjaxResponse ar = new AjaxResponse();
+
+            Tuple<DriverOutput, int, string> result = _driverService.GetDriverDetails(userId);
+
+            if (result.Item2 > 0)
+            {
+                ar.Result = result.Item1;
+            }
+            else
+            {
+                ar.Success = false;
+                ar.Result = result.Item3;
+            }
+
+            return ar;
         }
 
         [HttpPost]
@@ -51,14 +90,15 @@ namespace Hubo.Api.Controllers
             ticket.Properties.IssuedUtc = currentUtc;
             ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromDays(60));
             string token = OAuthBearerOptions.AccessTokenFormat.Protect(ticket);
+
             LoginResponse response = new LoginResponse();
-            DriverAppService driverService = new DriverAppService();
             response.Id = loginResult.User.Id;
             response.FirstName = loginResult.User.Name;
             response.SurName = loginResult.User.Surname;
             response.EmailAddress = loginResult.User.EmailAddress;
-            response.DriverId = driverService.GetDriverId(loginResult.User.Id);
+            response.DriverId = _driverService.GetDriverId(loginResult.User.Id);
             response.Token = token;
+
             AjaxResponse ar = new AjaxResponse();
             ar.Result = response;
             return ar;

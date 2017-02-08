@@ -39,5 +39,15 @@ namespace Hubo.Drivers
             return _driverRepository.GetDriverId(id);
         }
 
+        public Tuple<DriverOutput, int, string> GetDriverDetails(int userId)
+        {
+            Tuple<Driver, int, string> result = _driverRepository.GetDriverDetails(userId);
+            if(result.Item2 == 1)
+            {
+                return Tuple.Create(Mapper.Map<Driver, DriverOutput>(result.Item1), result.Item2, result.Item3);
+            }
+            DriverOutput redundant = new DriverOutput();
+            return Tuple.Create(redundant, result.Item2, result.Item3);
+        }
     }
 }
