@@ -95,10 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiRequestClasses\BreakEndRequest.cs" />
-    <Compile Include="ApiRequestClasses\BreakStartRequest.cs" />
-    <Compile Include="ApiRequestClasses\ShiftStartRequest.cs" />
-    <Compile Include="ApiRequestClasses\ShiftStopRequest.cs" />
+    <Compile Include="ApiResponseClasses\LoginResponse.cs" />
     <Compile Include="Break.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Driver.cs" />
@@ -153,9 +150,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\Hubo-ja.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ApiResponseClasses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

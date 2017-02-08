@@ -20,10 +20,20 @@ namespace Hubo.Api.Controllers
             _companyAppService = new CompanyAppService();
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> getCompanyListAsync([FromBody] int driverId)
+        [Authorize]
+        [HttpGet]
+        public async Task<AjaxResponse> getCompanyListAsync()
         {
-            return await Task<AjaxResponse>.Run(() => getCompanyList(driverId));
+            IEnumerable<string> driverIds;
+            if (Request.Headers.TryGetValues("DriverId", out driverIds))
+            {
+                string driverId = driverIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => getCompanyList(Int32.Parse(driverId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
         }
 
         private AjaxResponse getCompanyList(int driverId)

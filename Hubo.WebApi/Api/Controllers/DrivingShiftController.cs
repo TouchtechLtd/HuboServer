@@ -19,10 +19,21 @@ namespace Hubo.Api.Controllers
             _drivingShiftAppService = new DrivingShiftAppService();
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> GetDrivingShiftsAsync([FromBody] int shiftId)
+        [Authorize]
+        [HttpGet]
+        public async Task<AjaxResponse> GetDrivingShiftsAsync()
         {
-            return await Task<AjaxResponse>.Run(() => GetDrivingShifts(shiftId));
+            IEnumerable<string> shiftIds;
+            if (Request.Headers.TryGetValues("ShiftId", out shiftIds))
+            {
+                string shiftId = shiftIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetDrivingShifts(Int32.Parse(shiftId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
+
         }
 
         private AjaxResponse GetDrivingShifts(int shiftId)
@@ -44,6 +55,7 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> StartDrivingAsync([FromBody] DrivingShift shift)
         {
@@ -69,10 +81,20 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> StopDrivingAsync([FromBody] int drivingShiftId)
+        [Authorize]
+        [HttpPut]
+        public async Task<AjaxResponse> StopDrivingAsync()
         {
-            return await Task<AjaxResponse>.Run(() => StopDriving(drivingShiftId));
+            IEnumerable<string> drivingShiftIds;
+            if (Request.Headers.TryGetValues("DriverShiftId", out drivingShiftIds))
+            {
+                string drivingShiftId = drivingShiftIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => StopDriving(Int32.Parse(drivingShiftId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
         }
 
         private AjaxResponse StopDriving(int drivingShiftId)
@@ -93,6 +115,7 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> InsertGeoPointAsync(GeoData geoData)
         {

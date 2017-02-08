@@ -18,6 +18,7 @@ namespace Hubo.Api.Controllers
             _driverService = new DriverAppService();
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> registerAsync([FromBody] Driver driver)
         {

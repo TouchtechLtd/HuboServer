@@ -8,6 +8,7 @@ using Hubo.EntityFramework;
 using Hubo.Vehicles;
 using System.Collections.Generic;
 using Hubo.Vehicles.Dto;
+using System.Linq;
 
 namespace Hubo.Api.Controllers
 {
@@ -20,10 +21,20 @@ namespace Hubo.Api.Controllers
             _vehicleService = new VehicleAppService();
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> getVehiclesAsync([FromBody] int companyId)
+        [Authorize]
+        [HttpGet]
+        public async Task<AjaxResponse> getVehiclesAsync()
         {
-            return await Task<AjaxResponse>.Run(() => getVehicles(companyId));
+            IEnumerable<string> companyIds;
+            if (Request.Headers.TryGetValues("CompanyId", out companyIds))
+            {
+                string companyId = companyIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => getVehicles(Int32.Parse(companyId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
         }
 
         private AjaxResponse getVehicles(int companyId)
@@ -43,6 +54,7 @@ namespace Hubo.Api.Controllers
             return ar;            
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> registerVehicleAsync([FromBody] Vehicle vehicle)
         {

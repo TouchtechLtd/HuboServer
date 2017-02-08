@@ -13,6 +13,9 @@ using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using Hubo.Drivers;
+using System.Collections.Generic;
+using Abp.Domain.Entities;
+using Hubo.ApiResponseClasses;
 
 namespace Hubo.Api.Controllers
 {
@@ -41,15 +44,24 @@ namespace Hubo.Api.Controllers
                 loginModel.UsernameOrEmailAddress,
                 loginModel.Password,
                 loginModel.TenancyName
-                );
+                );            
 
             var ticket = new AuthenticationTicket(loginResult.Identity, new AuthenticationProperties());
-
             var currentUtc = new SystemClock().UtcNow;
             ticket.Properties.IssuedUtc = currentUtc;
-            ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromMinutes(30));
+            ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromDays(60));
             string token = OAuthBearerOptions.AccessTokenFormat.Protect(ticket);
-            return new AjaxResponse(token);
+            LoginResponse response = new LoginResponse();
+            DriverAppService driverService = new DriverAppService();
+            response.Id = loginResult.User.Id;
+            response.FirstName = loginResult.User.Name;
+            response.SurName = loginResult.User.Surname;
+            response.EmailAddress = loginResult.User.EmailAddress;
+            response.DriverId = driverService.GetDriverId(loginResult.User.Id);
+            response.Token = token;
+            AjaxResponse ar = new AjaxResponse();
+            ar.Result = response;
+            return ar;
         }
 
         private async Task<AbpUserManager<Tenant, Role, User>.AbpLoginResult> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)

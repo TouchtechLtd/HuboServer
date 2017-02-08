@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Hubo.ApiRequestClasses;
 using Hubo.EntityFramework;
 using Hubo.Shifts.Dto;
 using System;

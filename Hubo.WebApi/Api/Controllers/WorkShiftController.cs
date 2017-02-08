@@ -6,9 +6,8 @@ using System;
 using System.Linq;
 using Hubo.Companies;
 using Hubo.Shifts;
-using Hubo.ApiRequestClasses;
-using System.Collections.Generic;
 using Hubo.Shifts.Dto;
+using System.Collections.Generic;
 
 namespace Hubo.Api.Controllers
 {
@@ -21,6 +20,7 @@ namespace Hubo.Api.Controllers
             _shiftService = new ShiftAppService();
         }
 
+        [Authorize]
         [HttpPost]
         // create a shift record and return the shift ID to the app
         public async Task<AjaxResponse> StartShiftAsync([FromBody] WorkShift shift)
@@ -45,7 +45,8 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        [HttpPost] 
+        [Authorize]
+        [HttpPost]
         // close off an opern shift by passing in shift ID and closing geo location and time
         public async Task<AjaxResponse> StopShiftAsync([FromBody] WorkShift shift)
         {
@@ -70,10 +71,19 @@ namespace Hubo.Api.Controllers
         }
 
         [Authorize]
-        [HttpPost]
-        public async Task<AjaxResponse> GetWorkShiftsAsync([FromBody] int driverId)
+        [HttpGet]
+        public async Task<AjaxResponse> GetWorkShiftsAsync()
         {
-            return await Task<AjaxResponse>.Run(() => GetWorkShifts(driverId));
+            IEnumerable<string> driverIds;
+            if (Request.Headers.TryGetValues("DriverId", out driverIds))
+            {
+                string driverId = driverIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetWorkShifts(Int32.Parse(driverId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
         }
 
         private AjaxResponse GetWorkShifts(int driverId)

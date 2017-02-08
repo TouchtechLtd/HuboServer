@@ -6,7 +6,6 @@ using System;
 using System.Linq;
 using Hubo.Companies;
 using Hubo.Shifts;
-using Hubo.ApiRequestClasses;
 using System.Collections.Generic;
 using Hubo.Shifts.Dto;
 using Hubo.Breaks;
@@ -23,10 +22,20 @@ namespace Hubo.Api.Controllers
             _breakAppService = new BreakAppService();
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> GetBreaksAsync([FromBody] int driveShiftId)
+        [Authorize]
+        [HttpGet]
+        public async Task<AjaxResponse> GetBreaksAsync()
         {
-            return await Task<AjaxResponse>.Run(() => GetBreaks(driveShiftId));
+            IEnumerable<string> driveShiftIds;
+            if(Request.Headers.TryGetValues("DriveShiftId", out driveShiftIds))
+            {
+                string driveShiftId = driveShiftIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetBreaks(Int32.Parse(driveShiftId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
         }
 
         private AjaxResponse GetBreaks(int driveShiftId)
@@ -48,6 +57,7 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> StartBreakAsync ([FromBody] Break newBreak)
         {
@@ -73,10 +83,20 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> StopBreakAsync ([FromBody] int breakId)
+        [Authorize]
+        [HttpPut]
+        public async Task<AjaxResponse> StopBreakAsync ()
         {
-            return await Task<AjaxResponse>.Run(() => StopBreak(breakId));
+            IEnumerable<string> breakIds;
+            if (Request.Headers.TryGetValues("BreakId", out breakIds))
+            {
+                string breakId = breakIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => StopBreak(Int32.Parse(breakId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
         }
 
         private AjaxResponse StopBreak(int breakId)

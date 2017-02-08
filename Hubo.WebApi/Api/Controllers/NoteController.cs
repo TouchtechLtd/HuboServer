@@ -21,10 +21,20 @@ namespace Hubo.Api.Controllers
             _noteService = new NoteAppService();
         }
 
-        [HttpPost]
-        public async Task<AjaxResponse> GetNotesAsync([FromBody] int shiftId)
+        [Authorize]
+        [HttpGet]
+        public async Task<AjaxResponse> GetNotesAsync()
         {
-            return await Task<AjaxResponse>.Run(() => GetNotes(shiftId));
+            IEnumerable<string> shiftIds;
+            if (Request.Headers.TryGetValues("ShiftId", out shiftIds))
+            {
+                string shiftId = shiftIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetNotes(Int32.Parse(shiftId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
         }
 
         private AjaxResponse GetNotes(int shiftId)
@@ -46,6 +56,7 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> InsertNoteAsync([FromBody] Note note)
         {

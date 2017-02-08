@@ -10,7 +10,7 @@ namespace Hubo.Breaks.Dto
     [AutoMap(typeof(Break))]
     public class BreakDto
     {
-        public long DriveShiftId { get; set; }
+        public int Id { get; set; }
         public DateTime TimeStamp { get; set; }
         public bool State { get; set; }
     }

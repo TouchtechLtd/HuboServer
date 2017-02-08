@@ -42,93 +42,38 @@ namespace Hubo.EntityFramework
             return false;
         }
 
-        public Driver GetDriverByUserId(long userId)
+        public long GetDriverId(long id)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
                 {
-                    Driver driverResponse = ctx.DriverSet.Single(p => p.UserId == userId);
-                    return driverResponse;
+                    Driver driver = ctx.DriverSet.Single<Driver>(d => d.UserId == id);
+                    return driver.Id;
                 }
-                catch (Exception ex)
+                catch
+                {
+                    return 0;
+                }
+            }
+        }
+
+        public User GetUserDetails(string usernameOrEmailAddress)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    User test = ctx.Users.Single<User>(b => b.EmailAddress == usernameOrEmailAddress);
+                    return test;
+                }
+                catch(Exception ex)
                 {
                     return null;
                 }
                 
             }
         }
-
-        public List<Vehicle> GetVehiclesByCompanyId(int id)
-        {
-            using (HuboDbContext ctx = new HuboDbContext())
-            {
-                List<Vehicle> listOfVehicles = (from v in ctx.VehicleSet
-                                                where v.CompanyId.Equals(id)
-                                                select v).ToList<Vehicle>();
-                return listOfVehicles;
-            }
-        }
-
-        public List<Company> GetCompaniesByDriverId(int id)
-        {
-            using (HuboDbContext ctx = new HuboDbContext())
-            {
-                List<Company> listOfCompanies = (from dc in ctx.DriverCompanySet
-                                                        join c in ctx.CompanySet on dc.CompanyId equals c.Id
-                                                        where dc.DriverId == id
-                                                        select c).ToList();
-                return listOfCompanies;
-            }
-        }
-
-        //public LoginResponse GetDetails(long userId)
-        //{
-        //    using (HuboDbContext ctx = new HuboDbContext())
-        //    {
-        //        LoginResponse response = new LoginResponse();
-        //        try
-        //        {
-        //            //Code to get all user info properly, currently saying none exists
-        //            //User userresponse = ctx.Users.Where(p => p.EmailAddress == userEmail).FirstOrDefault();
-        //            //List<User> users = (from u in ctx.Users
-        //            //                 where u.Id.Equals(3)
-        //            //                 select u).ToList<User>();
-        //            //response.UserId = 2;
-        //            Driver driverResponse = ctx.DriversSet.Single(p => p.UserId == userId);                    
-        //            response.Driver = driverResponse;                    
-        //            //Code to get all company/Driver info
-        //            List<Company> listOfCompaniesDrivers =  (from dc in ctx.DriverCompaniesSet
-        //                                                     join c in ctx.CompaniesSet on dc.CompanyId equals c.Id
-        //                                                     where dc.DriverId == driverResponse.Id
-        //                                                     select c).ToList();
-        //            List<CompanyAndVehicles> companyVehicleResponse = new List<CompanyAndVehicles>();
-                    
-        //            foreach(Company company in listOfCompaniesDrivers)
-        //            {
-        //                List<Vehicle> vehicles = new List<Vehicle>();
-        //                CompanyAndVehicles companyAndVehicles = new CompanyAndVehicles();
-
-        //                vehicles = (from v in ctx.VehiclesSet
-        //                            where v.CompanyId == company.Id
-        //                            select v).ToList<Vehicle>();
-        //                companyAndVehicles.Company = company;
-        //                companyAndVehicles.Vehicles = vehicles;
-        //                companyVehicleResponse.Add(companyAndVehicles);
-        //            }
-        //            response.CompaniesAndVehicle = companyVehicleResponse;
-                    
-        //            return response;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            return null;
-        //        }
-
-
-                
-        //    }
-        //}
 
         public int RegisterDriver(Driver driver)
         {
