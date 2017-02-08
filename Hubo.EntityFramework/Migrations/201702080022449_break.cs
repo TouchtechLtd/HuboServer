@@ -7,14 +7,12 @@ namespace Hubo.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Breaks", "DriveShiftId", c => c.Long(nullable: false));
-            DropColumn("dbo.Breaks", "ShiftId");
+            DropColumn("dbo.Breaks", "GeoDataId");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Breaks", "ShiftId", c => c.Long(nullable: false));
-            DropColumn("dbo.Breaks", "DriveShiftId");
+            AddColumn("dbo.Breaks", "GeoDataId", c => c.Long(nullable: false));
         }
     }
 }

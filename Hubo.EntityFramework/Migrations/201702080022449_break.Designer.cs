@@ -13,7 +13,7 @@ namespace Hubo.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201702072213211_break"; }
+            get { return "201702080022449_break"; }
         }
         
         string IMigrationMetadata.Source

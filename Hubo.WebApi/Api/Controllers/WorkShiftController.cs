@@ -69,6 +69,7 @@ namespace Hubo.Api.Controllers
 
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> GetWorkShiftsAsync([FromBody] int driverId)
         {
