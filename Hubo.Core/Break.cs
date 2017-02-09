@@ -16,6 +16,8 @@ namespace Hubo
         public long ShiftId { get; set; }
         public DateTime? StartBreakDateTime { get; set; }
         public DateTime? StopBreakDateTime { get; set; }
+        public string StartBreakLocation { get; set; }
+        public string StopBreakLocation { get; set; }
         public bool isActive { get; set; }
     }
 }

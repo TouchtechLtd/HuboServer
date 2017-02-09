@@ -83,25 +83,16 @@ namespace Hubo.Api.Controllers
         }
 
         [Authorize]
-        [HttpPut]
-        public async Task<AjaxResponse> StopDrivingAsync()
+        [HttpPost]
+        public async Task<AjaxResponse> StopDrivingAsync([FromBody] DrivingShift shift)
         {
-            IEnumerable<string> drivingShiftIds;
-            if (Request.Headers.TryGetValues("DriverShiftId", out drivingShiftIds))
-            {
-                string drivingShiftId = drivingShiftIds.FirstOrDefault();
-                return await Task<AjaxResponse>.Run(() => StopDriving(Int32.Parse(drivingShiftId)));
-            }
-            AjaxResponse ar = new AjaxResponse();
-            ar.Success = false;
-            ar.Result = "Invalid Headers";
-            return ar;
+            return await Task<AjaxResponse>.Run(() => StopDriving(shift));
         }
 
-        private AjaxResponse StopDriving(int drivingShiftId)
+        private AjaxResponse StopDriving(DrivingShift shift)
         {
             AjaxResponse ar = new AjaxResponse();
-            Tuple<int, string> result = _drivingShiftAppService.StopDriving(drivingShiftId);
+            Tuple<int, string> result = _drivingShiftAppService.StopDriving(shift);
 
             if(result.Item1 == -1)
             {

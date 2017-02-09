@@ -3,32 +3,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Hubo.EntityFramework
 {
     public class BreakRepository
     {
-        public Tuple<List<Break>, string, int> GetBreaks(int shiftId)
+
+        //NOTE: For driveShift id
+
+        //public Tuple<List<Break>, string, int> GetBreaks(int shiftId)
+        //{
+        //    using (HuboDbContext ctx = new HuboDbContext())
+        //    {
+        //        List<Break> listOfBreaks = new List<Break>();
+
+        //        try
+        //        {
+        //            if(!ctx.DrivingShiftSet.Any(s => s.Id == shiftId))
+        //            {
+        //                return Tuple.Create(listOfBreaks, "No Shift exists with ID = " + shiftId, -1);
+        //            }
+
+        //            listOfBreaks = (from b in ctx.BreakSet
+        //                            where b.ShiftId == shiftId
+        //                            select b).ToList<Break>();
+
+        //            return Tuple.Create(listOfBreaks, "Success", 1);
+
+        //        }
+        //        catch(Exception ex)
+        //        {
+        //            return Tuple.Create(listOfBreaks, ex.Message, -1);
+        //        }
+        //    }
+        //}
+
+
+        public Tuple<List<Break>, string, int> GetBreaks(int driverId)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 List<Break> listOfBreaks = new List<Break>();
-                
+
                 try
                 {
-                    if(!ctx.DrivingShiftSet.Any(s => s.Id == shiftId))
+                    if(!ctx.DriverSet.Any<Driver>(d => d.Id == driverId))
                     {
-                        return Tuple.Create(listOfBreaks, "No Shift exists with ID = " + shiftId, -1);
+                        return Tuple.Create(listOfBreaks, "No Driver exists with ID = " + driverId, -1);
                     }
 
-                    listOfBreaks = (from b in ctx.BreakSet
-                                    where b.ShiftId == shiftId
-                                    select b).ToList<Break>();
-
+                    listOfBreaks = (from breaks in ctx.BreakSet
+                                    join shift in ctx.WorkShiftSet on breaks.ShiftId equals shift.Id
+                                    where shift.DriverId == driverId
+                                    select breaks).ToList<Break>();
                     return Tuple.Create(listOfBreaks, "Success", 1);
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     return Tuple.Create(listOfBreaks, ex.Message, -1);
                 }
@@ -59,19 +91,21 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public Tuple<int, string> StopBreak(int breakId)
+        public Tuple<int, string> StopBreak(Break stopBreak)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
                 {
-                    Break currentBreak = ctx.BreakSet.Single<Break>(b => b.Id == breakId);
+                    Break currentBreak = ctx.BreakSet.Single<Break>(b => b.Id == stopBreak.Id);
                     if(currentBreak.isActive == false)
                     {
                         return Tuple.Create(-1, "Break has already ended");
                     }
                     currentBreak.isActive = false;
-                    ctx.Entry(currentBreak).State = System.Data.Entity.EntityState.Modified;
+                    currentBreak.StopBreakDateTime = stopBreak.StopBreakDateTime;
+                    currentBreak.StopBreakLocation = stopBreak.StopBreakLocation;
+                    ctx.Entry(currentBreak).State = EntityState.Modified;
                     ctx.SaveChanges();
                     return Tuple.Create(1, "Success");
                 }

@@ -62,20 +62,25 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public Tuple<int, string> StopDriving(int drivingShiftId)
+        public Tuple<int, string> StopDriving(DrivingShift shiftDetails)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
                 {
-                    DrivingShift shift = ctx.DrivingShiftSet.Single<DrivingShift>(s => s.Id == drivingShiftId);
+                    DrivingShift shift = ctx.DrivingShiftSet.Single<DrivingShift>(s => s.Id == shiftDetails.Id);
                     if(shift.isActive == false)
                     {
                         return Tuple.Create(-1, "Driving shift has already ended");
                     }
+
+                    shift.StopDrivingDateTime = shiftDetails.StopDrivingDateTime;
+                    shift.StopHubo= shiftDetails.StopHubo;
                     shift.isActive = false;
+                    
                     ctx.Entry(shift).State = EntityState.Modified;
                     ctx.SaveChanges();
+
                     return Tuple.Create(1, "Success");
                 }
                 catch(ArgumentNullException ex)

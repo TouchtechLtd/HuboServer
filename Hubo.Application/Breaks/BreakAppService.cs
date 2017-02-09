@@ -16,11 +16,27 @@ namespace Hubo.Breaks
         {
             _breakRepository = new EntityFramework.BreakRepository();
         }
-        public Tuple<List<BreakDto>, string, int> GetBreaks(int driveShiftId)
+
+        //NOTE: Was for driveshift
+
+        //public Tuple<List<BreakDto>, string, int> GetBreaks(int driveShiftId)
+        //{
+        //    Tuple<List<Break>, string, int> result = _breakRepository.GetBreaks(driveShiftId);
+        //    List<BreakDto> listOfBreakDto = new List<BreakDto>();
+        //    foreach(Break breakItem in result.Item1)
+        //    {
+        //        listOfBreakDto.Add(Mapper.Map<Break, BreakDto>(breakItem));
+        //    }
+
+        //    return Tuple.Create(listOfBreakDto, result.Item2, result.Item3);
+        //}
+
+
+        public Tuple<List<BreakDto>, string, int> GetBreaks(int driverId)
         {
-            Tuple<List<Break>, string, int> result = _breakRepository.GetBreaks(driveShiftId);
+            Tuple<List<Break>, string, int> result = _breakRepository.GetBreaks(driverId);
             List<BreakDto> listOfBreakDto = new List<BreakDto>();
-            foreach(Break breakItem in result.Item1)
+            foreach (Break breakItem in result.Item1)
             {
                 listOfBreakDto.Add(Mapper.Map<Break, BreakDto>(breakItem));
             }
@@ -33,9 +49,9 @@ namespace Hubo.Breaks
             return _breakRepository.StartBreak(newBreak);
         }
 
-        public Tuple<int, string> StopBreak(int breakId)
+        public Tuple<int, string> StopBreak(Break stopBreak)
         {
-            return _breakRepository.StopBreak(breakId);
+            return _breakRepository.StopBreak(stopBreak);
         }
     }
 }

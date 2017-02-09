@@ -34,9 +34,9 @@ namespace Hubo.DrivingShifts
             return _drivingShiftRepository.StartDriving(shift);
         }
 
-        public Tuple<int, string> StopDriving(int drivingShiftId)
+        public Tuple<int, string> StopDriving(DrivingShift shift)
         {
-            return _drivingShiftRepository.StopDriving(drivingShiftId);
+            return _drivingShiftRepository.StopDriving(shift);
         }
 
         public Tuple<int, string> InsertGeoData(GeoData geoData)

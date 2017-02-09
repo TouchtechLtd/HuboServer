@@ -22,15 +22,52 @@ namespace Hubo.Api.Controllers
             _breakAppService = new BreakAppService();
         }
 
+        //NOTE: This was retriving through driveShiftId, would have had to make multiple calls
+
+        //[Authorize]
+        //[HttpGet]
+        //public async Task<AjaxResponse> GetBreaksAsync()
+        //{
+        //    IEnumerable<string> driveShiftIds;
+        //    if(Request.Headers.TryGetValues("DriveShiftId", out driveShiftIds))
+        //    {
+        //        string driveShiftId = driveShiftIds.FirstOrDefault();
+        //        return await Task<AjaxResponse>.Run(() => GetBreaks(Int32.Parse(driveShiftId)));
+        //    }
+        //    AjaxResponse ar = new AjaxResponse();
+        //    ar.Success = false;
+        //    ar.Result = "Invalid Headers";
+        //    return ar;
+        //}
+
+        //private AjaxResponse GetBreaks(int driveShiftId)
+        //{
+        //    AjaxResponse ar = new AjaxResponse();
+        //    Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(driveShiftId);
+
+        //    if (result.Item3 == -1)
+        //    {
+        //        ar.Success = false;
+        //        ar.Result = result.Item2;
+        //    }
+        //    else
+        //    {
+        //        ar.Success = true;
+        //        ar.Result = result.Item1;
+        //    }
+
+        //    return ar;
+        //}
+
         [Authorize]
         [HttpGet]
         public async Task<AjaxResponse> GetBreaksAsync()
         {
-            IEnumerable<string> driveShiftIds;
-            if(Request.Headers.TryGetValues("DriveShiftId", out driveShiftIds))
+            IEnumerable<string> driverIds;
+            if (Request.Headers.TryGetValues("DriverId", out driverIds))
             {
-                string driveShiftId = driveShiftIds.FirstOrDefault();
-                return await Task<AjaxResponse>.Run(() => GetBreaks(Int32.Parse(driveShiftId)));
+                string driverId = driverIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetBreaks(Int32.Parse(driverId)));
             }
             AjaxResponse ar = new AjaxResponse();
             ar.Success = false;
@@ -38,10 +75,10 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        private AjaxResponse GetBreaks(int driveShiftId)
+        private AjaxResponse GetBreaks(int driverId)
         {
             AjaxResponse ar = new AjaxResponse();
-            Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(driveShiftId);
+            Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(driverId);
 
             if (result.Item3 == -1)
             {
@@ -84,25 +121,16 @@ namespace Hubo.Api.Controllers
         }
 
         [Authorize]
-        [HttpPut]
-        public async Task<AjaxResponse> StopBreakAsync ()
+        [HttpPost]
+        public async Task<AjaxResponse> StopBreakAsync ([FromBody] Break stopBreak)
         {
-            IEnumerable<string> breakIds;
-            if (Request.Headers.TryGetValues("BreakId", out breakIds))
-            {
-                string breakId = breakIds.FirstOrDefault();
-                return await Task<AjaxResponse>.Run(() => StopBreak(Int32.Parse(breakId)));
-            }
-            AjaxResponse ar = new AjaxResponse();
-            ar.Success = false;
-            ar.Result = "Invalid Headers";
-            return ar;
+            return await Task<AjaxResponse>.Run(() => StopBreak(stopBreak));
         }
 
-        private AjaxResponse StopBreak(int breakId)
+        private AjaxResponse StopBreak(Break stopBreak)
         {
             AjaxResponse ar = new AjaxResponse();
-            Tuple<int, string> result = _breakAppService.StopBreak(breakId);
+            Tuple<int, string> result = _breakAppService.StopBreak(stopBreak);
 
             if(result.Item1 == -1)
             {
