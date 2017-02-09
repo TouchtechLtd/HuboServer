@@ -9,11 +9,9 @@ namespace Hubo.Drivers.Dto
     [AutoMap(typeof(Driver))]
     public class DriverOutput : IInputDto
     {
-        public long UserId { get; set; }
+        public int Id { get; set; }
         public int PhoneNumber { get; set; }
         public string LicenceNumber { get; set; }
-        public string LicenceVersion { get; set; }
-        public string LicenceEndorsement { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string Address3 { get; set; }

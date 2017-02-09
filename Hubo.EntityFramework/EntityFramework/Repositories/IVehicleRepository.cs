@@ -9,6 +9,6 @@ namespace Hubo.EntityFramework.Repositories
 {
     public interface IVehicleRepository : IRepository
     {
-        int RegisterVehicle(Vehicle vehicle);
+        Tuple<int,string> RegisterVehicle(Vehicle vehicle);
     }
 }

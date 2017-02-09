@@ -12,13 +12,11 @@ namespace Hubo.EntityFramework
     {
 
 
-        public int RegisterVehicle(Vehicle vehicle)
+        public Tuple<int,string> RegisterVehicle(Vehicle vehicle)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
                  
-                //ctx.VehiclesSet.Add(testVehicle);
-
                 try
                 {
                     int result = 0;
@@ -26,21 +24,18 @@ namespace Hubo.EntityFramework
                     if (ctx.VehicleSet.Any(o => o.RegistrationNo == vehicle.RegistrationNo))
                     {
                         // Match!
-                        result = -1;
+                        return Tuple.Create(-1, "Registration Number already exists");
                     }
-                    else
-                    {
-                        ctx.Entry(vehicle).State = System.Data.Entity.EntityState.Added;
-                        result = ctx.SaveChanges();
-                    }
+                    
+                    ctx.Entry(vehicle).State = System.Data.Entity.EntityState.Added;
+                    result = ctx.SaveChanges();
+                    
 
-                    return result;
+                    return Tuple.Create(result, "Success");
                 }
                 catch (Exception ex)
                 {
-                    string x = ex.Message;
-
-                    return 0;
+                    return Tuple.Create(-1, ex.Message);
                 }
 
             }

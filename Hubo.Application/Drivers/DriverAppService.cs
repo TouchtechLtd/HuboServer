@@ -39,15 +39,20 @@ namespace Hubo.Drivers
             return _driverRepository.GetDriverId(id);
         }
 
-        public Tuple<DriverOutput, int, string> GetDriverDetails(int userId)
+        public Tuple<DriverOutput,List<LicenceOutputDto>, int, string> GetDriverDetails(int userId)
         {
-            Tuple<Driver, int, string> result = _driverRepository.GetDriverDetails(userId);
-            if(result.Item2 == 1)
+            List<Licence> listOfLicences = new List<Licence>();
+            List<LicenceOutputDto> listOfLicenceDtos = new List<LicenceOutputDto>();
+
+            Tuple<Driver, int, string> driverDetailsresult = _driverRepository.GetDriverDetails(userId);
+
+            listOfLicences = _driverRepository.GetLicences(driverDetailsresult.Item1.Id);
+            foreach(Licence licence in listOfLicences)
             {
-                return Tuple.Create(Mapper.Map<Driver, DriverOutput>(result.Item1), result.Item2, result.Item3);
+                listOfLicenceDtos.Add(Mapper.Map<Licence, LicenceOutputDto>(licence));
             }
-            DriverOutput redundant = new DriverOutput();
-            return Tuple.Create(redundant, result.Item2, result.Item3);
+            return Tuple.Create(Mapper.Map<Driver, DriverOutput>(driverDetailsresult.Item1), listOfLicenceDtos, driverDetailsresult.Item2, driverDetailsresult.Item3);
+
         }
     }
 }

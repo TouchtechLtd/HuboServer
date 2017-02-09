@@ -94,20 +94,23 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public Tuple<int, string> InsertGeoData(GeoData geoData)
+        public Tuple<int, string> InsertGeoData(List<GeoData> geoData)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
-                {
-                    if(!ctx.DrivingShiftSet.Any(s => s.Id == geoData.DrivingShiftId))
+                {                    
+                    foreach(GeoData geoInsert in geoData)
                     {
-                        return Tuple.Create(-1, "No Driving Shift exists with ID = " + geoData.DrivingShiftId);
+                        if(!ctx.DrivingShiftSet.Any(d => d.Id == geoInsert.DrivingShiftId))
+                        {
+                            return Tuple.Create(-1, "No Driving Shift exists with ID : " + geoInsert.DrivingShiftId);
+                        }
+                        ctx.GeoDataSet.Add(geoInsert);
                     }
-
-                    ctx.GeoDataSet.Add(geoData);
+                    
                     ctx.SaveChanges();
-                    return Tuple.Create(geoData.Id, "Success");
+                    return Tuple.Create(1, "Success");
                 }
                 catch(Exception ex)
                 {

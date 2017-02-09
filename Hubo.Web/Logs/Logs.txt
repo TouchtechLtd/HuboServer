@@ -14072,3 +14072,1208 @@ DEBUG 2017-02-09 16:59:21,961 [1    ] Abp.Logging.LogHelper                    -
 DEBUG 2017-02-09 16:59:21,963 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
 DEBUG 2017-02-09 16:59:21,964 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
 DEBUG 2017-02-09 16:59:21,965 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 09:09:49,748 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 09:09:51,500 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 09:09:51,502 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,504 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,504 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,504 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,504 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,504 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:09:51,509 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 09:09:51,558 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:09:51,558 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:09:51,558 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:09:51,558 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 09:09:51,609 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 09:09:51,671 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 09:09:52,410 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 09:09:52,416 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 09:09:52,417 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 09:09:52,418 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 09:09:52,419 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 09:09:52,423 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 09:09:52,435 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 09:09:52,437 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 09:09:52,454 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 09:09:52,554 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes defines auto mapping attributes
+DEBUG 2017-02-10 09:09:52,554 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 09:09:52,581 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 09:09:52,583 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 09:09:52,587 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 09:09:52,590 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 09:09:52,590 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 09:09:52,591 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 09:09:52,591 [0458c] Hangfire.Server.Worker                   - Background process 'Worker #dfe0458c' started.
+DEBUG 2017-02-10 09:09:52,594 [7b3d0] Hangfire.Server.Worker                   - Background process 'Worker #4e37b3d0' started.
+DEBUG 2017-02-10 09:09:52,599 [01f94] Hangfire.Server.Worker                   - Background process 'Worker #49801f94' started.
+DEBUG 2017-02-10 09:09:52,600 [1d14e] Hangfire.Server.Worker                   - Background process 'Worker #40a1d14e' started.
+INFO  2017-02-10 09:09:52,604 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
+DEBUG 2017-02-10 09:09:52,604 [3704d] Hangfire.Server.Worker                   - Background process 'Worker #62f3704d' started.
+DEBUG 2017-02-10 09:09:52,606 [2376c] Hangfire.Server.Worker                   - Background process 'Worker #1822376c' started.
+DEBUG 2017-02-10 09:09:52,610 [06949] Hangfire.Server.Worker                   - Background process 'Worker #89606949' started.
+DEBUG 2017-02-10 09:09:52,613 [772a6] Hangfire.Server.Worker                   - Background process 'Worker #810772a6' started.
+DEBUG 2017-02-10 09:09:52,613 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 09:09:52,615 [3b72e] Hangfire.Server.Worker                   - Background process 'Worker #15e3b72e' started.
+DEBUG 2017-02-10 09:09:52,618 [a8f18] Hangfire.Server.Worker                   - Background process 'Worker #d7ea8f18' started.
+DEBUG 2017-02-10 09:09:52,619 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 09:09:52,622 [ce3b1] Hangfire.Server.Worker                   - Background process 'Worker #61fce3b1' started.
+DEBUG 2017-02-10 09:09:52,626 [744b3] Hangfire.Server.Worker                   - Background process 'Worker #cd5744b3' started.
+DEBUG 2017-02-10 09:09:52,628 [2b3ad] Hangfire.Server.Worker                   - Background process 'Worker #c8a2b3ad' started.
+DEBUG 2017-02-10 09:09:52,656 [e465d] Hangfire.Server.Worker                   - Background process 'Worker #256e465d' started.
+DEBUG 2017-02-10 09:09:52,657 [38e54] Hangfire.Server.Worker                   - Background process 'Worker #4ae38e54' started.
+DEBUG 2017-02-10 09:09:52,659 [b7677] Hangfire.Server.Worker                   - Background process 'Worker #cd5b7677' started.
+DEBUG 2017-02-10 09:09:52,661 [762e9] Hangfire.Server.Worker                   - Background process 'Worker #476762e9' started.
+DEBUG 2017-02-10 09:09:52,667 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 09:09:52,668 [5e9d7] Hangfire.Server.Worker                   - Background process 'Worker #1485e9d7' started.
+DEBUG 2017-02-10 09:09:52,672 [6c11d] Hangfire.Server.Worker                   - Background process 'Worker #3a46c11d' started.
+DEBUG 2017-02-10 09:09:52,672 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 09:09:52,673 [29b13] Hangfire.Server.Worker                   - Background process 'Worker #78a29b13' started.
+DEBUG 2017-02-10 09:09:52,675 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 09:09:52,677 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 09:09:52,731 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 09:09:52,732 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 09:09:52,737 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 09:09:52,742 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 09:09:52,750 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 09:09:52,751 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 09:09:52,752 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 09:09:52,754 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 09:09:52,756 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 09:09:52,759 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 09:09:52,759 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 09:09:52,761 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 09:09:52,763 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 09:09:52,765 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 09:09:52,766 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 09:09:52,780 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 09:09:52,781 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 09:09:52,781 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 09:09:52,782 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 09:10:46,028 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 09:10:47,817 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 09:10:47,819 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,822 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,822 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,822 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,824 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,824 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,824 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:10:47,827 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 09:10:47,876 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:10:47,876 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:10:47,876 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:10:47,876 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 09:10:47,929 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 09:10:47,979 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 09:10:48,730 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 09:10:48,735 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 09:10:48,736 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 09:10:48,737 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 09:10:48,738 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 09:10:48,742 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 09:10:48,751 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 09:10:48,753 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 09:10:48,754 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 09:10:48,754 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 09:10:48,754 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 09:10:48,754 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 09:10:48,754 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 09:10:48,754 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 09:10:48,754 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 09:10:48,769 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 09:10:48,871 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes defines auto mapping attributes
+DEBUG 2017-02-10 09:10:48,872 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 09:10:48,918 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 09:10:48,919 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 09:10:48,923 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 09:10:48,923 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 09:10:48,926 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 09:10:48,926 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 09:10:48,928 [c7261] Hangfire.Server.Worker                   - Background process 'Worker #26bc7261' started.
+DEBUG 2017-02-10 09:10:48,931 [e2a2c] Hangfire.Server.Worker                   - Background process 'Worker #18be2a2c' started.
+DEBUG 2017-02-10 09:10:48,934 [2c1aa] Hangfire.Server.Worker                   - Background process 'Worker #9712c1aa' started.
+DEBUG 2017-02-10 09:10:48,937 [889b6] Hangfire.Server.Worker                   - Background process 'Worker #a5a889b6' started.
+DEBUG 2017-02-10 09:10:48,943 [9fe73] Hangfire.Server.Worker                   - Background process 'Worker #f589fe73' started.
+DEBUG 2017-02-10 09:10:48,945 [817c1] Hangfire.Server.Worker                   - Background process 'Worker #be9817c1' started.
+DEBUG 2017-02-10 09:10:48,949 [19d5e] Hangfire.Server.Worker                   - Background process 'Worker #6dd19d5e' started.
+DEBUG 2017-02-10 09:10:48,950 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 09:10:48,951 [457ba] Hangfire.Server.Worker                   - Background process 'Worker #b92457ba' started.
+DEBUG 2017-02-10 09:10:48,976 [e108f] Hangfire.Server.Worker                   - Background process 'Worker #627e108f' started.
+DEBUG 2017-02-10 09:10:48,980 [bdbca] Hangfire.Server.Worker                   - Background process 'Worker #8a6bdbca' started.
+DEBUG 2017-02-10 09:10:49,004 [cd770] Hangfire.Server.Worker                   - Background process 'Worker #e91cd770' started.
+DEBUG 2017-02-10 09:10:49,007 [57472] Hangfire.Server.Worker                   - Background process 'Worker #dbc57472' started.
+DEBUG 2017-02-10 09:10:49,011 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 09:10:49,013 [fd4b9] Hangfire.Server.Worker                   - Background process 'Worker #bc7fd4b9' started.
+DEBUG 2017-02-10 09:10:49,016 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 09:10:49,017 [3fd88] Hangfire.Server.Worker                   - Background process 'Worker #7303fd88' started.
+DEBUG 2017-02-10 09:10:49,020 [5f769] Hangfire.Server.Worker                   - Background process 'Worker #2365f769' started.
+DEBUG 2017-02-10 09:10:49,023 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 09:10:49,024 [feacb] Hangfire.Server.Worker                   - Background process 'Worker #f41feacb' started.
+DEBUG 2017-02-10 09:10:49,027 [17bf2] Hangfire.Server.Worker                   - Background process 'Worker #6f317bf2' started.
+DEBUG 2017-02-10 09:10:49,029 [e0128] Hangfire.Server.Worker                   - Background process 'Worker #b33e0128' started.
+DEBUG 2017-02-10 09:10:49,031 [e4061] Hangfire.Server.Worker                   - Background process 'Worker #844e4061' started.
+DEBUG 2017-02-10 09:10:49,033 [b2109] Hangfire.Server.Worker                   - Background process 'Worker #252b2109' started.
+DEBUG 2017-02-10 09:10:49,035 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 09:10:49,037 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 09:10:49,073 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 09:10:49,074 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 09:10:49,078 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 09:10:49,083 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 09:10:49,091 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 09:10:49,092 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 09:10:49,093 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 09:10:49,095 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 09:10:49,096 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 09:10:49,099 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 09:10:49,099 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 09:10:49,101 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 09:10:49,103 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 09:10:49,105 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 09:10:49,107 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 09:10:49,120 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 09:10:49,121 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 09:10:49,122 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 09:10:49,123 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 09:14:02,145 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 09:14:03,933 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 09:14:03,936 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:14:03,943 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 09:14:03,992 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:14:03,992 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:14:03,992 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:14:03,992 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 09:14:04,045 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 09:14:04,102 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 09:14:04,839 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 09:14:04,844 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 09:14:04,845 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 09:14:04,846 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 09:14:04,847 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 09:14:04,851 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 09:14:04,861 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 09:14:04,863 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 09:14:04,879 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 09:14:04,985 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes defines auto mapping attributes
+DEBUG 2017-02-10 09:14:04,985 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 09:14:05,015 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 09:14:05,016 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 09:14:05,021 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 09:14:05,023 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 09:14:05,024 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 09:14:05,026 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 09:14:05,028 [022c3] Hangfire.Server.Worker                   - Background process 'Worker #1ee022c3' started.
+DEBUG 2017-02-10 09:14:05,032 [52517] Hangfire.Server.Worker                   - Background process 'Worker #59f52517' started.
+DEBUG 2017-02-10 09:14:05,039 [fa1bb] Hangfire.Server.Worker                   - Background process 'Worker #b49fa1bb' started.
+DEBUG 2017-02-10 09:14:05,042 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 09:14:05,045 [6dcf9] Hangfire.Server.Worker                   - Background process 'Worker #f4a6dcf9' started.
+DEBUG 2017-02-10 09:14:05,049 [21db2] Hangfire.Server.Worker                   - Background process 'Worker #44921db2' started.
+DEBUG 2017-02-10 09:14:05,051 [5c366] Hangfire.Server.Worker                   - Background process 'Worker #01c5c366' started.
+DEBUG 2017-02-10 09:14:05,054 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 09:14:05,057 [08615] Hangfire.Server.Worker                   - Background process 'Worker #b4408615' started.
+DEBUG 2017-02-10 09:14:05,062 [8fed4] Hangfire.Server.Worker                   - Background process 'Worker #2368fed4' started.
+DEBUG 2017-02-10 09:14:05,064 [d0517] Hangfire.Server.Worker                   - Background process 'Worker #44ad0517' started.
+DEBUG 2017-02-10 09:14:05,067 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 09:14:05,067 [da941] Hangfire.Server.Worker                   - Background process 'Worker #8dfda941' started.
+DEBUG 2017-02-10 09:14:05,072 [aed95] Hangfire.Server.Worker                   - Background process 'Worker #5edaed95' started.
+DEBUG 2017-02-10 09:14:05,073 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 09:14:05,074 [af059] Hangfire.Server.Worker                   - Background process 'Worker #858af059' started.
+DEBUG 2017-02-10 09:14:05,076 [df1e4] Hangfire.Server.Worker                   - Background process 'Worker #8b1df1e4' started.
+DEBUG 2017-02-10 09:14:05,079 [ae844] Hangfire.Server.Worker                   - Background process 'Worker #9eeae844' started.
+DEBUG 2017-02-10 09:14:05,080 [9f033] Hangfire.Server.Worker                   - Background process 'Worker #e7e9f033' started.
+DEBUG 2017-02-10 09:14:05,082 [e82bc] Hangfire.Server.Worker                   - Background process 'Worker #78fe82bc' started.
+DEBUG 2017-02-10 09:14:05,084 [b2e60] Hangfire.Server.Worker                   - Background process 'Worker #c24b2e60' started.
+DEBUG 2017-02-10 09:14:05,088 [dcf04] Hangfire.Server.Worker                   - Background process 'Worker #649dcf04' started.
+DEBUG 2017-02-10 09:14:05,090 [1dbf6] Hangfire.Server.Worker                   - Background process 'Worker #e3e1dbf6' started.
+DEBUG 2017-02-10 09:14:05,092 [f27c3] Hangfire.Server.Worker                   - Background process 'Worker #8b4f27c3' started.
+DEBUG 2017-02-10 09:14:05,095 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 09:14:05,099 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 09:14:05,153 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 09:14:05,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 09:14:05,158 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 09:14:05,163 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 09:14:05,173 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 09:14:05,174 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 09:14:05,176 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 09:14:05,178 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 09:14:05,179 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 09:14:05,181 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 09:14:05,182 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 09:14:05,184 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 09:14:05,186 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 09:14:05,188 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 09:14:05,190 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 09:14:05,203 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 09:14:05,204 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 09:14:05,204 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 09:14:05,205 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 09:15:41,416 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 09:15:43,237 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 09:15:43,241 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:15:43,248 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 09:15:43,295 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:15:43,295 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:15:43,295 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:15:43,295 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 09:15:43,346 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 09:15:43,393 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 09:15:44,127 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 09:15:44,134 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 09:15:44,135 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 09:15:44,136 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 09:15:44,137 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 09:15:44,141 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 09:15:44,153 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 09:15:44,156 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 09:15:44,193 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 09:15:44,296 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes defines auto mapping attributes
+DEBUG 2017-02-10 09:15:44,296 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 09:15:44,329 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 09:15:44,331 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 09:15:44,334 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 09:15:44,337 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 09:15:44,341 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 09:15:44,342 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+INFO  2017-02-10 09:15:44,350 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
+DEBUG 2017-02-10 09:15:44,357 [726af] Hangfire.Server.Worker                   - Background process 'Worker #f45726af' started.
+DEBUG 2017-02-10 09:15:44,358 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 09:15:44,361 [2693f] Hangfire.Server.Worker                   - Background process 'Worker #0bf2693f' started.
+DEBUG 2017-02-10 09:15:44,365 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 09:15:44,366 [fefe6] Hangfire.Server.Worker                   - Background process 'Worker #378fefe6' started.
+DEBUG 2017-02-10 09:15:44,370 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 09:15:44,372 [059d6] Hangfire.Server.Worker                   - Background process 'Worker #da4059d6' started.
+DEBUG 2017-02-10 09:15:44,375 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 09:15:44,378 [7aa32] Hangfire.Server.Worker                   - Background process 'Worker #3507aa32' started.
+DEBUG 2017-02-10 09:15:44,381 [774cd] Hangfire.Server.Worker                   - Background process 'Worker #353774cd' started.
+DEBUG 2017-02-10 09:15:44,395 [ea78f] Hangfire.Server.Worker                   - Background process 'Worker #f67ea78f' started.
+DEBUG 2017-02-10 09:15:44,397 [723ab] Hangfire.Server.Worker                   - Background process 'Worker #4e9723ab' started.
+DEBUG 2017-02-10 09:15:44,399 [edd31] Hangfire.Server.Worker                   - Background process 'Worker #9c3edd31' started.
+DEBUG 2017-02-10 09:15:44,401 [f3a30] Hangfire.Server.Worker                   - Background process 'Worker #67df3a30' started.
+DEBUG 2017-02-10 09:15:44,406 [c0846] Hangfire.Server.Worker                   - Background process 'Worker #0d6c0846' started.
+DEBUG 2017-02-10 09:15:44,406 [68424] Hangfire.Server.Worker                   - Background process 'Worker #ba568424' started.
+DEBUG 2017-02-10 09:15:44,409 [f59a0] Hangfire.Server.Worker                   - Background process 'Worker #ac3f59a0' started.
+DEBUG 2017-02-10 09:15:44,411 [ae318] Hangfire.Server.Worker                   - Background process 'Worker #9abae318' started.
+DEBUG 2017-02-10 09:15:44,415 [791a8] Hangfire.Server.Worker                   - Background process 'Worker #0dc791a8' started.
+DEBUG 2017-02-10 09:15:44,418 [c3cd6] Hangfire.Server.Worker                   - Background process 'Worker #4dbc3cd6' started.
+DEBUG 2017-02-10 09:15:44,421 [6f72e] Hangfire.Server.Worker                   - Background process 'Worker #5bb6f72e' started.
+DEBUG 2017-02-10 09:15:44,423 [2f9aa] Hangfire.Server.Worker                   - Background process 'Worker #2fd2f9aa' started.
+DEBUG 2017-02-10 09:15:44,426 [d6828] Hangfire.Server.Worker                   - Background process 'Worker #e39d6828' started.
+DEBUG 2017-02-10 09:15:44,428 [b8e5d] Hangfire.Server.Worker                   - Background process 'Worker #48fb8e5d' started.
+DEBUG 2017-02-10 09:15:44,451 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 09:15:44,454 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 09:15:44,489 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 09:15:44,491 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 09:15:44,494 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 09:15:44,499 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 09:15:44,506 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 09:15:44,506 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 09:15:44,508 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 09:15:44,510 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 09:15:44,511 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 09:15:44,514 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 09:15:44,514 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 09:15:44,516 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 09:15:44,518 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 09:15:44,520 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 09:15:44,521 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 09:15:44,534 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 09:15:44,535 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 09:15:44,536 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 09:15:44,537 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 09:35:01,344 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 09:35:03,137 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 09:35:03,139 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,141 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,142 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,142 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,142 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,142 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:35:03,146 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 09:35:03,193 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:35:03,193 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:35:03,193 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:35:03,193 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 09:35:03,248 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 09:35:03,298 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 09:35:04,033 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 09:35:04,038 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 09:35:04,039 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 09:35:04,040 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 09:35:04,041 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 09:35:04,046 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 09:35:04,055 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 09:35:04,057 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 09:35:04,072 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 09:35:04,176 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 09:35:04,176 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 09:35:04,210 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 09:35:04,221 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 09:35:04,223 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 09:35:04,226 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 09:35:04,226 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 09:35:04,231 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 09:35:04,232 [ba840] Hangfire.Server.Worker                   - Background process 'Worker #904ba840' started.
+DEBUG 2017-02-10 09:35:04,232 [4bbf9] Hangfire.Server.Worker                   - Background process 'Worker #5794bbf9' started.
+DEBUG 2017-02-10 09:35:04,236 [96ec5] Hangfire.Server.Worker                   - Background process 'Worker #cdc96ec5' started.
+DEBUG 2017-02-10 09:35:04,239 [265e0] Hangfire.Server.Worker                   - Background process 'Worker #d63265e0' started.
+INFO  2017-02-10 09:35:04,240 [chdog] Hangfire.Server.ServerWatchdog           - 3 servers were removed due to timeout
+DEBUG 2017-02-10 09:35:04,243 [609e5] Hangfire.Server.Worker                   - Background process 'Worker #45f609e5' started.
+DEBUG 2017-02-10 09:35:04,243 [4adee] Hangfire.Server.Worker                   - Background process 'Worker #8ab4adee' started.
+DEBUG 2017-02-10 09:35:04,245 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 09:35:04,247 [40da0] Hangfire.Server.Worker                   - Background process 'Worker #33140da0' started.
+DEBUG 2017-02-10 09:35:04,270 [3c981] Hangfire.Server.Worker                   - Background process 'Worker #0103c981' started.
+DEBUG 2017-02-10 09:35:04,272 [5d9a3] Hangfire.Server.Worker                   - Background process 'Worker #50b5d9a3' started.
+DEBUG 2017-02-10 09:35:04,273 [ed62e] Hangfire.Server.Worker                   - Background process 'Worker #06aed62e' started.
+DEBUG 2017-02-10 09:35:04,275 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 09:35:04,276 [382eb] Hangfire.Server.Worker                   - Background process 'Worker #54b382eb' started.
+DEBUG 2017-02-10 09:35:04,277 [c33ab] Hangfire.Server.Worker                   - Background process 'Worker #658c33ab' started.
+DEBUG 2017-02-10 09:35:04,282 [eb307] Hangfire.Server.Worker                   - Background process 'Worker #75beb307' started.
+DEBUG 2017-02-10 09:35:04,287 [66687] Hangfire.Server.Worker                   - Background process 'Worker #a4666687' started.
+DEBUG 2017-02-10 09:35:04,292 [5dc30] Hangfire.Server.Worker                   - Background process 'Worker #6215dc30' started.
+DEBUG 2017-02-10 09:35:04,294 [5010b] Hangfire.Server.Worker                   - Background process 'Worker #e605010b' started.
+DEBUG 2017-02-10 09:35:04,298 [056cd] Hangfire.Server.Worker                   - Background process 'Worker #62d056cd' started.
+DEBUG 2017-02-10 09:35:04,300 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 09:35:04,300 [82eb3] Hangfire.Server.Worker                   - Background process 'Worker #0a782eb3' started.
+DEBUG 2017-02-10 09:35:04,303 [61e34] Hangfire.Server.Worker                   - Background process 'Worker #a5b61e34' started.
+DEBUG 2017-02-10 09:35:04,304 [be900] Hangfire.Server.Worker                   - Background process 'Worker #a90be900' started.
+DEBUG 2017-02-10 09:35:04,306 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 09:35:04,307 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 09:35:04,309 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 09:35:04,361 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 09:35:04,363 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 09:35:04,366 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 09:35:04,371 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 09:35:04,377 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 09:35:04,378 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 09:35:04,380 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 09:35:04,382 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 09:35:04,383 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 09:35:04,386 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 09:35:04,386 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 09:35:04,388 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 09:35:04,389 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 09:35:04,390 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 09:35:04,392 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 09:35:04,394 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 09:35:04,407 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 09:35:04,407 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 09:35:04,408 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 09:35:04,409 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 09:41:56,789 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 09:42:01,561 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 09:42:01,564 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,565 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,567 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,567 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,567 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,567 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:42:01,571 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 09:42:01,614 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:42:01,614 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:42:01,614 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:42:01,615 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 09:42:01,703 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 09:42:01,756 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 09:42:02,250 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 09:42:02,255 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 09:42:02,256 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 09:42:02,257 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 09:42:02,258 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 09:42:02,261 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 09:42:02,273 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 09:42:02,275 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 09:42:02,276 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 09:42:02,276 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 09:42:02,276 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 09:42:02,276 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 09:42:02,276 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 09:42:02,276 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 09:42:02,276 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 09:42:02,293 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 09:42:02,397 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 09:42:02,397 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 09:42:02,426 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 09:42:02,427 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 09:42:02,431 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 09:42:02,456 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 09:42:02,456 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 09:42:02,459 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 09:42:02,459 [c9964] Hangfire.Server.Worker                   - Background process 'Worker #6a5c9964' started.
+DEBUG 2017-02-10 09:42:02,461 [40595] Hangfire.Server.Worker                   - Background process 'Worker #11c40595' started.
+DEBUG 2017-02-10 09:42:02,466 [ab4bf] Hangfire.Server.Worker                   - Background process 'Worker #81aab4bf' started.
+DEBUG 2017-02-10 09:42:02,468 [75f18] Hangfire.Server.Worker                   - Background process 'Worker #7c075f18' started.
+DEBUG 2017-02-10 09:42:02,470 [596f4] Hangfire.Server.Worker                   - Background process 'Worker #86d596f4' started.
+DEBUG 2017-02-10 09:42:02,473 [fea4c] Hangfire.Server.Worker                   - Background process 'Worker #482fea4c' started.
+DEBUG 2017-02-10 09:42:02,474 [8bed2] Hangfire.Server.Worker                   - Background process 'Worker #74b8bed2' started.
+DEBUG 2017-02-10 09:42:02,477 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 09:42:02,478 [8e5b8] Hangfire.Server.Worker                   - Background process 'Worker #77a8e5b8' started.
+DEBUG 2017-02-10 09:42:02,479 [048a9] Hangfire.Server.Worker                   - Background process 'Worker #dcd048a9' started.
+INFO  2017-02-10 09:42:02,481 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
+DEBUG 2017-02-10 09:42:02,483 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 09:42:02,489 [4f3ec] Hangfire.Server.Worker                   - Background process 'Worker #af24f3ec' started.
+DEBUG 2017-02-10 09:42:02,494 [27f86] Hangfire.Server.Worker                   - Background process 'Worker #9e227f86' started.
+DEBUG 2017-02-10 09:42:02,501 [f1137] Hangfire.Server.Worker                   - Background process 'Worker #473f1137' started.
+DEBUG 2017-02-10 09:42:02,503 [58c3e] Hangfire.Server.Worker                   - Background process 'Worker #e7a58c3e' started.
+DEBUG 2017-02-10 09:42:02,510 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 09:42:02,515 [1e23f] Hangfire.Server.Worker                   - Background process 'Worker #1cc1e23f' started.
+DEBUG 2017-02-10 09:42:02,519 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 09:42:02,519 [8c253] Hangfire.Server.Worker                   - Background process 'Worker #5938c253' started.
+DEBUG 2017-02-10 09:42:02,520 [7f7ba] Hangfire.Server.Worker                   - Background process 'Worker #7e07f7ba' started.
+DEBUG 2017-02-10 09:42:02,522 [9ab11] Hangfire.Server.Worker                   - Background process 'Worker #e3f9ab11' started.
+DEBUG 2017-02-10 09:42:02,524 [15710] Hangfire.Server.Worker                   - Background process 'Worker #b9615710' started.
+DEBUG 2017-02-10 09:42:02,526 [aa272] Hangfire.Server.Worker                   - Background process 'Worker #e7faa272' started.
+DEBUG 2017-02-10 09:42:02,527 [93ee2] Hangfire.Server.Worker                   - Background process 'Worker #5c493ee2' started.
+DEBUG 2017-02-10 09:42:02,530 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 09:42:02,533 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 09:42:02,575 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 09:42:02,577 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 09:42:02,581 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 09:42:02,585 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 09:42:02,592 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 09:42:02,592 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 09:42:02,594 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 09:42:02,597 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 09:42:02,598 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 09:42:02,601 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 09:42:02,602 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 09:42:02,603 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 09:42:02,605 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 09:42:02,606 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 09:42:02,608 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 09:42:02,609 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 09:42:02,625 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 09:42:02,625 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 09:42:02,626 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 09:42:02,627 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+ERROR 2017-02-10 09:43:55,437 [9    ] lers.Filters.AbpExceptionFilterAttribute - Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Licence -> LicenceOutputDto
+Hubo.Licence -> Hubo.Drivers.Dto.LicenceOutputDto
+
+Destination path:
+LicenceOutputDto
+
+Source value:
+[Licence 3]
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Licence -> LicenceOutputDto
+Hubo.Licence -> Hubo.Drivers.Dto.LicenceOutputDto
+
+Destination path:
+LicenceOutputDto
+
+Source value:
+[Licence 3]
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at Hubo.Drivers.DriverAppService.GetDriverDetails(Int32 userId) in C:\Dev\HuboServer\Hubo.Application\Drivers\DriverAppService.cs:line 52
+   at Hubo.Api.Controllers.AccountController.GetDriverDetails(Int32 userId) in C:\Dev\HuboServer\Hubo.WebApi\Api\Controllers\AccountController.cs:line 62
+   at Hubo.Api.Controllers.AccountController.<>c__DisplayClass8_0.<GetDriverDetailsAsync>b__0() in C:\Dev\HuboServer\Hubo.WebApi\Api\Controllers\AccountController.cs:line 50
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Hubo.Api.Controllers.AccountController.<GetDriverDetailsAsync>d__8.MoveNext() in C:\Dev\HuboServer\Hubo.WebApi\Api\Controllers\AccountController.cs:line 50
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+DEBUG 2017-02-10 09:58:56,497 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 09:59:41,198 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 09:59:43,203 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 09:59:43,206 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,208 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,209 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,210 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,210 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 09:59:43,213 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 09:59:43,264 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:59:43,264 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:59:43,264 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 09:59:43,264 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 09:59:43,326 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 09:59:43,365 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 09:59:44,189 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 09:59:44,197 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 09:59:44,198 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 09:59:44,199 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 09:59:44,200 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 09:59:44,204 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 09:59:44,215 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 09:59:44,218 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 09:59:44,219 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 09:59:44,219 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 09:59:44,219 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 09:59:44,219 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 09:59:44,219 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 09:59:44,219 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 09:59:44,219 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 09:59:44,236 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 09:59:44,374 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 09:59:44,374 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 09:59:44,418 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 09:59:44,441 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 09:59:44,446 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 09:59:44,448 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 09:59:44,453 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 09:59:44,455 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 09:59:44,460 [bf761] Hangfire.Server.Worker                   - Background process 'Worker #407bf761' started.
+DEBUG 2017-02-10 09:59:44,469 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 09:59:44,476 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 09:59:44,480 [de670] Hangfire.Server.Worker                   - Background process 'Worker #286de670' started.
+DEBUG 2017-02-10 09:59:44,484 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 09:59:44,486 [42b81] Hangfire.Server.Worker                   - Background process 'Worker #93142b81' started.
+DEBUG 2017-02-10 09:59:44,493 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 09:59:44,495 [541f0] Hangfire.Server.Worker                   - Background process 'Worker #d5c541f0' started.
+DEBUG 2017-02-10 09:59:44,499 [8c324] Hangfire.Server.Worker                   - Background process 'Worker #aca8c324' started.
+DEBUG 2017-02-10 09:59:44,503 [db27b] Hangfire.Server.Worker                   - Background process 'Worker #e56db27b' started.
+DEBUG 2017-02-10 09:59:44,510 [ec60f] Hangfire.Server.Worker                   - Background process 'Worker #ce4ec60f' started.
+DEBUG 2017-02-10 09:59:44,514 [92d40] Hangfire.Server.Worker                   - Background process 'Worker #8a192d40' started.
+DEBUG 2017-02-10 09:59:44,517 [8c58d] Hangfire.Server.Worker                   - Background process 'Worker #68f8c58d' started.
+DEBUG 2017-02-10 09:59:44,520 [0924e] Hangfire.Server.Worker                   - Background process 'Worker #0de0924e' started.
+DEBUG 2017-02-10 09:59:44,523 [8c6b2] Hangfire.Server.Worker                   - Background process 'Worker #0288c6b2' started.
+DEBUG 2017-02-10 09:59:44,526 [d9b5d] Hangfire.Server.Worker                   - Background process 'Worker #2ded9b5d' started.
+DEBUG 2017-02-10 09:59:44,529 [8e974] Hangfire.Server.Worker                   - Background process 'Worker #b368e974' started.
+DEBUG 2017-02-10 09:59:44,551 [96b02] Hangfire.Server.Worker                   - Background process 'Worker #2db96b02' started.
+DEBUG 2017-02-10 09:59:44,554 [b3e70] Hangfire.Server.Worker                   - Background process 'Worker #041b3e70' started.
+DEBUG 2017-02-10 09:59:44,557 [19f50] Hangfire.Server.Worker                   - Background process 'Worker #a1d19f50' started.
+DEBUG 2017-02-10 09:59:44,562 [19af4] Hangfire.Server.Worker                   - Background process 'Worker #f5219af4' started.
+DEBUG 2017-02-10 09:59:44,567 [38013] Hangfire.Server.Worker                   - Background process 'Worker #4b038013' started.
+DEBUG 2017-02-10 09:59:44,576 [9dab4] Hangfire.Server.Worker                   - Background process 'Worker #8479dab4' started.
+DEBUG 2017-02-10 09:59:44,579 [d0922] Hangfire.Server.Worker                   - Background process 'Worker #0bdd0922' started.
+DEBUG 2017-02-10 09:59:44,584 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 09:59:44,584 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 09:59:44,615 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 09:59:44,616 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 09:59:44,620 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 09:59:44,627 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 09:59:44,635 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 09:59:44,636 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 09:59:44,637 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 09:59:44,639 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 09:59:44,641 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 09:59:44,644 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 09:59:44,645 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 09:59:44,647 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 09:59:44,648 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 09:59:44,650 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 09:59:44,651 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 09:59:44,653 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 09:59:44,667 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 09:59:44,667 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 09:59:44,668 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 09:59:44,669 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 10:00:47,179 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 10:00:48,966 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 10:00:48,969 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,970 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,970 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:00:48,977 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 10:00:49,027 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:00:49,027 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:00:49,027 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:00:49,027 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 10:00:49,079 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 10:00:49,122 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 10:00:49,856 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 10:00:49,862 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 10:00:49,862 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 10:00:49,863 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 10:00:49,865 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 10:00:49,869 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 10:00:49,877 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 10:00:49,880 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 10:00:49,895 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 10:00:49,998 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 10:00:49,999 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 10:00:50,026 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 10:00:50,047 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 10:00:50,070 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 10:00:50,073 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 10:00:50,074 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 10:00:50,075 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 10:00:50,098 [ed202] Hangfire.Server.Worker                   - Background process 'Worker #734ed202' started.
+DEBUG 2017-02-10 10:00:50,100 [40b16] Hangfire.Server.Worker                   - Background process 'Worker #7f140b16' started.
+DEBUG 2017-02-10 10:00:50,106 [981b9] Hangfire.Server.Worker                   - Background process 'Worker #1bf981b9' started.
+DEBUG 2017-02-10 10:00:50,109 [0e275] Hangfire.Server.Worker                   - Background process 'Worker #c390e275' started.
+DEBUG 2017-02-10 10:00:50,115 [28670] Hangfire.Server.Worker                   - Background process 'Worker #6f928670' started.
+DEBUG 2017-02-10 10:00:50,119 [cb15e] Hangfire.Server.Worker                   - Background process 'Worker #436cb15e' started.
+DEBUG 2017-02-10 10:00:50,126 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 10:00:50,128 [7ec8b] Hangfire.Server.Worker                   - Background process 'Worker #79f7ec8b' started.
+DEBUG 2017-02-10 10:00:50,132 [d85e5] Hangfire.Server.Worker                   - Background process 'Worker #3d5d85e5' started.
+DEBUG 2017-02-10 10:00:50,144 [5bb91] Hangfire.Server.Worker                   - Background process 'Worker #6625bb91' started.
+DEBUG 2017-02-10 10:00:50,146 [58c21] Hangfire.Server.Worker                   - Background process 'Worker #c9c58c21' started.
+DEBUG 2017-02-10 10:00:50,147 [debbf] Hangfire.Server.Worker                   - Background process 'Worker #63fdebbf' started.
+DEBUG 2017-02-10 10:00:50,149 [f556f] Hangfire.Server.Worker                   - Background process 'Worker #21ef556f' started.
+DEBUG 2017-02-10 10:00:50,151 [69955] Hangfire.Server.Worker                   - Background process 'Worker #c8f69955' started.
+DEBUG 2017-02-10 10:00:50,153 [5202d] Hangfire.Server.Worker                   - Background process 'Worker #6cb5202d' started.
+DEBUG 2017-02-10 10:00:50,154 [ff07d] Hangfire.Server.Worker                   - Background process 'Worker #6d2ff07d' started.
+DEBUG 2017-02-10 10:00:50,155 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 10:00:50,156 [f62ff] Hangfire.Server.Worker                   - Background process 'Worker #2e2f62ff' started.
+DEBUG 2017-02-10 10:00:50,160 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 10:00:50,163 [4d931] Hangfire.Server.Worker                   - Background process 'Worker #0064d931' started.
+DEBUG 2017-02-10 10:00:50,165 [ef05d] Hangfire.Server.Worker                   - Background process 'Worker #d6cef05d' started.
+DEBUG 2017-02-10 10:00:50,167 [3858c] Hangfire.Server.Worker                   - Background process 'Worker #dbe3858c' started.
+DEBUG 2017-02-10 10:00:50,168 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 10:00:50,170 [00510] Hangfire.Server.Worker                   - Background process 'Worker #78500510' started.
+DEBUG 2017-02-10 10:00:50,172 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 10:00:50,174 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 10:00:50,228 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 10:00:50,230 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 10:00:50,233 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 10:00:50,238 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 10:00:50,245 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 10:00:50,246 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 10:00:50,248 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 10:00:50,249 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 10:00:50,251 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 10:00:50,253 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 10:00:50,253 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 10:00:50,256 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 10:00:50,257 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 10:00:50,259 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 10:00:50,260 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 10:00:50,262 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 10:00:50,275 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 10:00:50,276 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 10:00:50,276 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 10:00:50,277 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 10:46:15,908 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 10:46:17,683 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 10:46:17,687 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,688 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,688 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,688 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:46:17,693 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 10:46:17,738 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:46:17,738 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:46:17,738 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:46:17,738 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 10:46:17,789 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 10:46:17,848 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 10:46:18,592 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 10:46:18,598 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 10:46:18,599 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 10:46:18,600 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 10:46:18,601 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 10:46:18,605 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 10:46:18,615 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 10:46:18,617 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 10:46:18,632 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 10:46:18,757 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 10:46:18,757 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 10:46:18,786 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 10:46:18,797 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 10:46:18,800 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 10:46:18,802 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 10:46:18,804 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+INFO  2017-02-10 10:46:18,808 [chdog] Hangfire.Server.ServerWatchdog           - 3 servers were removed due to timeout
+DEBUG 2017-02-10 10:46:18,809 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 10:46:18,809 [f2542] Hangfire.Server.Worker                   - Background process 'Worker #cd9f2542' started.
+DEBUG 2017-02-10 10:46:18,811 [67210] Hangfire.Server.Worker                   - Background process 'Worker #2d867210' started.
+DEBUG 2017-02-10 10:46:18,814 [e67f1] Hangfire.Server.Worker                   - Background process 'Worker #c88e67f1' started.
+DEBUG 2017-02-10 10:46:18,823 [a02a4] Hangfire.Server.Worker                   - Background process 'Worker #64ea02a4' started.
+DEBUG 2017-02-10 10:46:18,830 [bf668] Hangfire.Server.Worker                   - Background process 'Worker #037bf668' started.
+DEBUG 2017-02-10 10:46:18,832 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 10:46:18,834 [0c786] Hangfire.Server.Worker                   - Background process 'Worker #7d80c786' started.
+DEBUG 2017-02-10 10:46:18,842 [d00cf] Hangfire.Server.Worker                   - Background process 'Worker #fe6d00cf' started.
+DEBUG 2017-02-10 10:46:18,844 [783cd] Hangfire.Server.Worker                   - Background process 'Worker #645783cd' started.
+DEBUG 2017-02-10 10:46:18,846 [4836e] Hangfire.Server.Worker                   - Background process 'Worker #0044836e' started.
+DEBUG 2017-02-10 10:46:18,848 [ff60b] Hangfire.Server.Worker                   - Background process 'Worker #037ff60b' started.
+DEBUG 2017-02-10 10:46:18,850 [ccf3e] Hangfire.Server.Worker                   - Background process 'Worker #d1cccf3e' started.
+DEBUG 2017-02-10 10:46:18,852 [833f1] Hangfire.Server.Worker                   - Background process 'Worker #1da833f1' started.
+DEBUG 2017-02-10 10:46:18,853 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 10:46:18,856 [fa3b1] Hangfire.Server.Worker                   - Background process 'Worker #42bfa3b1' started.
+DEBUG 2017-02-10 10:46:18,857 [48c25] Hangfire.Server.Worker                   - Background process 'Worker #f5e48c25' started.
+DEBUG 2017-02-10 10:46:18,858 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 10:46:18,858 [bb66a] Hangfire.Server.Worker                   - Background process 'Worker #3c1bb66a' started.
+DEBUG 2017-02-10 10:46:18,860 [d87f4] Hangfire.Server.Worker                   - Background process 'Worker #e35d87f4' started.
+DEBUG 2017-02-10 10:46:18,863 [2a54d] Hangfire.Server.Worker                   - Background process 'Worker #ee32a54d' started.
+DEBUG 2017-02-10 10:46:18,864 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 10:46:18,864 [34a5f] Hangfire.Server.Worker                   - Background process 'Worker #b0934a5f' started.
+DEBUG 2017-02-10 10:46:18,866 [5bb78] Hangfire.Server.Worker                   - Background process 'Worker #47a5bb78' started.
+DEBUG 2017-02-10 10:46:18,868 [82f31] Hangfire.Server.Worker                   - Background process 'Worker #a9d82f31' started.
+DEBUG 2017-02-10 10:46:18,872 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 10:46:18,873 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 10:46:18,921 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 10:46:18,923 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 10:46:18,927 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 10:46:18,931 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 10:46:18,938 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 10:46:18,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 10:46:18,941 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 10:46:18,943 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 10:46:18,944 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 10:46:18,947 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 10:46:18,947 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 10:46:18,949 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 10:46:18,950 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 10:46:18,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 10:46:18,953 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 10:46:18,955 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 10:46:18,970 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 10:46:18,971 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 10:46:18,972 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 10:46:18,973 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 10:56:16,896 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 10:56:18,668 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 10:56:18,671 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,672 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,673 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,674 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 10:56:18,678 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 10:56:18,726 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:56:18,726 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:56:18,726 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 10:56:18,726 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 10:56:18,777 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 10:56:18,836 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 10:56:19,559 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 10:56:19,565 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 10:56:19,565 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 10:56:19,567 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 10:56:19,569 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 10:56:19,573 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 10:56:19,582 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 10:56:19,584 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 10:56:19,584 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 10:56:19,585 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 10:56:19,585 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 10:56:19,585 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 10:56:19,585 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 10:56:19,585 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 10:56:19,585 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 10:56:19,600 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 10:56:19,705 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 10:56:19,705 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 10:56:19,740 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 10:56:19,741 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 10:56:19,745 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 10:56:19,747 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 10:56:19,747 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 10:56:19,749 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 10:56:19,750 [f7f89] Hangfire.Server.Worker                   - Background process 'Worker #039f7f89' started.
+DEBUG 2017-02-10 10:56:19,757 [b7397] Hangfire.Server.Worker                   - Background process 'Worker #a42b7397' started.
+DEBUG 2017-02-10 10:56:19,761 [6c9fb] Hangfire.Server.Worker                   - Background process 'Worker #1526c9fb' started.
+DEBUG 2017-02-10 10:56:19,764 [621a5] Hangfire.Server.Worker                   - Background process 'Worker #6b4621a5' started.
+DEBUG 2017-02-10 10:56:19,767 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 10:56:19,767 [225e0] Hangfire.Server.Worker                   - Background process 'Worker #071225e0' started.
+INFO  2017-02-10 10:56:19,769 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
+DEBUG 2017-02-10 10:56:19,773 [a0376] Hangfire.Server.Worker                   - Background process 'Worker #e5aa0376' started.
+DEBUG 2017-02-10 10:56:19,775 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 10:56:19,779 [54fe2] Hangfire.Server.Worker                   - Background process 'Worker #ab654fe2' started.
+DEBUG 2017-02-10 10:56:19,812 [71a2e] Hangfire.Server.Worker                   - Background process 'Worker #d4a71a2e' started.
+DEBUG 2017-02-10 10:56:19,818 [77122] Hangfire.Server.Worker                   - Background process 'Worker #8ce77122' started.
+DEBUG 2017-02-10 10:56:19,819 [79d56] Hangfire.Server.Worker                   - Background process 'Worker #7a479d56' started.
+DEBUG 2017-02-10 10:56:19,822 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 10:56:19,825 [fba2b] Hangfire.Server.Worker                   - Background process 'Worker #020fba2b' started.
+DEBUG 2017-02-10 10:56:19,827 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 10:56:19,827 [af168] Hangfire.Server.Worker                   - Background process 'Worker #5b8af168' started.
+DEBUG 2017-02-10 10:56:19,851 [3ead4] Hangfire.Server.Worker                   - Background process 'Worker #c9d3ead4' started.
+DEBUG 2017-02-10 10:56:19,852 [a479c] Hangfire.Server.Worker                   - Background process 'Worker #9c3a479c' started.
+DEBUG 2017-02-10 10:56:19,855 [2ac26] Hangfire.Server.Worker                   - Background process 'Worker #dc82ac26' started.
+DEBUG 2017-02-10 10:56:19,857 [ebcbc] Hangfire.Server.Worker                   - Background process 'Worker #dadebcbc' started.
+DEBUG 2017-02-10 10:56:19,858 [fb921] Hangfire.Server.Worker                   - Background process 'Worker #338fb921' started.
+DEBUG 2017-02-10 10:56:19,861 [1a1f9] Hangfire.Server.Worker                   - Background process 'Worker #5d81a1f9' started.
+DEBUG 2017-02-10 10:56:19,865 [03125] Hangfire.Server.Worker                   - Background process 'Worker #5ee03125' started.
+DEBUG 2017-02-10 10:56:19,867 [5e41e] Hangfire.Server.Worker                   - Background process 'Worker #4b75e41e' started.
+DEBUG 2017-02-10 10:56:19,868 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 10:56:19,870 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 10:56:19,918 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 10:56:19,919 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 10:56:19,924 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 10:56:19,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 10:56:19,935 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 10:56:19,936 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 10:56:19,937 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 10:56:19,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 10:56:19,941 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 10:56:19,943 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 10:56:19,944 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 10:56:19,946 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 10:56:19,947 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 10:56:19,948 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 10:56:19,950 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 10:56:19,951 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 10:56:19,965 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 10:56:19,966 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 10:56:19,966 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 10:56:19,967 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 11:01:19,773 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 11:03:23,146 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 11:03:24,906 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 11:03:24,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:03:24,915 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 11:03:24,970 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 11:03:24,970 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 11:03:24,970 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 11:03:24,970 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 11:03:25,024 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 11:03:25,063 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 11:03:25,801 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 11:03:25,806 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 11:03:25,807 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 11:03:25,808 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 11:03:25,809 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 11:03:25,813 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 11:03:25,822 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 11:03:25,824 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 11:03:25,824 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 11:03:25,824 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 11:03:25,824 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 11:03:25,824 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 11:03:25,825 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 11:03:25,825 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 11:03:25,825 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 11:03:25,841 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 11:03:25,942 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 11:03:25,942 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 11:03:25,975 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 11:03:25,977 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 11:03:25,979 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 11:03:25,981 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 11:03:25,981 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 11:03:25,983 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 11:03:25,984 [db829] Hangfire.Server.Worker                   - Background process 'Worker #61ddb829' started.
+DEBUG 2017-02-10 11:03:25,987 [1df01] Hangfire.Server.Worker                   - Background process 'Worker #e851df01' started.
+DEBUG 2017-02-10 11:03:25,988 [59a4e] Hangfire.Server.Worker                   - Background process 'Worker #c5b59a4e' started.
+DEBUG 2017-02-10 11:03:25,995 [5b18a] Hangfire.Server.Worker                   - Background process 'Worker #2125b18a' started.
+DEBUG 2017-02-10 11:03:26,000 [56b92] Hangfire.Server.Worker                   - Background process 'Worker #9a356b92' started.
+DEBUG 2017-02-10 11:03:26,003 [0b5da] Hangfire.Server.Worker                   - Background process 'Worker #fb30b5da' started.
+DEBUG 2017-02-10 11:03:26,010 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 11:03:26,011 [e7311] Hangfire.Server.Worker                   - Background process 'Worker #742e7311' started.
+DEBUG 2017-02-10 11:03:26,020 [c0015] Hangfire.Server.Worker                   - Background process 'Worker #8c1c0015' started.
+DEBUG 2017-02-10 11:03:26,022 [27a66] Hangfire.Server.Worker                   - Background process 'Worker #2fc27a66' started.
+DEBUG 2017-02-10 11:03:26,024 [52822] Hangfire.Server.Worker                   - Background process 'Worker #fe452822' started.
+DEBUG 2017-02-10 11:03:26,026 [dde4b] Hangfire.Server.Worker                   - Background process 'Worker #708dde4b' started.
+DEBUG 2017-02-10 11:03:26,028 [ce0f9] Hangfire.Server.Worker                   - Background process 'Worker #0c2ce0f9' started.
+DEBUG 2017-02-10 11:03:26,030 [378c1] Hangfire.Server.Worker                   - Background process 'Worker #d88378c1' started.
+DEBUG 2017-02-10 11:03:26,031 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 11:03:26,032 [18ff8] Hangfire.Server.Worker                   - Background process 'Worker #45c18ff8' started.
+DEBUG 2017-02-10 11:03:26,055 [8683b] Hangfire.Server.Worker                   - Background process 'Worker #97a8683b' started.
+DEBUG 2017-02-10 11:03:26,057 [3d321] Hangfire.Server.Worker                   - Background process 'Worker #4373d321' started.
+DEBUG 2017-02-10 11:03:26,057 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 11:03:26,060 [bb8d2] Hangfire.Server.Worker                   - Background process 'Worker #2b6bb8d2' started.
+DEBUG 2017-02-10 11:03:26,063 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 11:03:26,063 [0f265] Hangfire.Server.Worker                   - Background process 'Worker #76e0f265' started.
+DEBUG 2017-02-10 11:03:26,067 [e66e2] Hangfire.Server.Worker                   - Background process 'Worker #7fde66e2' started.
+DEBUG 2017-02-10 11:03:26,072 [100ec] Hangfire.Server.Worker                   - Background process 'Worker #777100ec' started.
+DEBUG 2017-02-10 11:03:26,074 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 11:03:26,076 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 11:03:26,117 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 11:03:26,119 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 11:03:26,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 11:03:26,127 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 11:03:26,134 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 11:03:26,135 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 11:03:26,136 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 11:03:26,138 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 11:03:26,139 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 11:03:26,142 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 11:03:26,142 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 11:03:26,144 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 11:03:26,146 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 11:03:26,147 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 11:03:26,149 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 11:03:26,150 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 11:03:26,163 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 11:03:26,163 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 11:03:26,164 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 11:03:26,165 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 11:13:25,652 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-02-10 11:13:27,441 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-02-10 11:13:27,445 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,446 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboApplicationModule, Hubo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboCoreModule, Hubo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.HuboDataModule, Hubo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Web.HuboWebModule, Hubo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,448 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hubo.Api.HuboWebApiModule, Hubo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-02-10 11:13:27,452 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-02-10 11:13:27,497 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 11:13:27,497 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 11:13:27,497 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-02-10 11:13:27,497 [1    ] o.Configuration.LanguageManagementConfig - Converted Hubo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2017-02-10 11:13:27,549 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2017-02-10 11:13:27,594 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2017-02-10 11:13:28,306 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-02-10 11:13:28,311 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-02-10 11:13:28,312 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-02-10 11:13:28,313 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-02-10 11:13:28,314 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Hubo
+DEBUG 2017-02-10 11:13:28,318 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2017-02-10 11:13:28,328 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: Server2@HuboDbDev'.
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20.
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2017-02-10 11:13:28,330 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2017-02-10 11:13:28,347 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2017-02-10 11:13:28,448 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 17 classes defines auto mapping attributes
+DEBUG 2017-02-10 11:13:28,448 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.Dto.VehicleOutput
+DEBUG 2017-02-10 11:13:28,482 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2017-02-10 11:13:28,484 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2017-02-10 11:13:28,506 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2017-02-10 11:13:28,508 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2017-02-10 11:13:28,509 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2017-02-10 11:13:28,509 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 11:13:28,512 [02faf] Hangfire.Server.Worker                   - Background process 'Worker #a3102faf' started.
+DEBUG 2017-02-10 11:13:28,514 [c0a8c] Hangfire.Server.Worker                   - Background process 'Worker #44dc0a8c' started.
+DEBUG 2017-02-10 11:13:28,518 [475af] Hangfire.Server.Worker                   - Background process 'Worker #6ba475af' started.
+DEBUG 2017-02-10 11:13:28,518 [8144b] Hangfire.Server.Worker                   - Background process 'Worker #7538144b' started.
+DEBUG 2017-02-10 11:13:28,521 [5592d] Hangfire.Server.Worker                   - Background process 'Worker #4105592d' started.
+DEBUG 2017-02-10 11:13:28,523 [d0929] Hangfire.Server.Worker                   - Background process 'Worker #c71d0929' started.
+INFO  2017-02-10 11:13:28,527 [chdog] Hangfire.Server.ServerWatchdog           - 2 servers were removed due to timeout
+DEBUG 2017-02-10 11:13:28,528 [d6550] Hangfire.Server.Worker                   - Background process 'Worker #dacd6550' started.
+DEBUG 2017-02-10 11:13:28,529 [ec720] Hangfire.Server.Worker                   - Background process 'Worker #983ec720' started.
+DEBUG 2017-02-10 11:13:28,534 [c876d] Hangfire.Server.Worker                   - Background process 'Worker #598c876d' started.
+DEBUG 2017-02-10 11:13:28,540 [12bee] Hangfire.Server.Worker                   - Background process 'Worker #51b12bee' started.
+DEBUG 2017-02-10 11:13:28,543 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2017-02-10 11:13:28,545 [a1b70] Hangfire.Server.Worker                   - Background process 'Worker #c03a1b70' started.
+DEBUG 2017-02-10 11:13:28,554 [25cdc] Hangfire.Server.Worker                   - Background process 'Worker #af425cdc' started.
+DEBUG 2017-02-10 11:13:28,562 [f0c74] Hangfire.Server.Worker                   - Background process 'Worker #00ef0c74' started.
+DEBUG 2017-02-10 11:13:28,562 [dfab9] Hangfire.Server.Worker                   - Background process 'Worker #f10dfab9' started.
+DEBUG 2017-02-10 11:13:28,565 [b22ff] Hangfire.Server.Worker                   - Background process 'Worker #525b22ff' started.
+DEBUG 2017-02-10 11:13:28,569 [8cb37] Hangfire.Server.Worker                   - Background process 'Worker #3178cb37' started.
+DEBUG 2017-02-10 11:13:28,572 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2017-02-10 11:13:28,574 [2f4a5] Hangfire.Server.Worker                   - Background process 'Worker #d072f4a5' started.
+DEBUG 2017-02-10 11:13:28,575 [531e1] Hangfire.Server.Worker                   - Background process 'Worker #2ff531e1' started.
+DEBUG 2017-02-10 11:13:28,577 [728f9] Hangfire.Server.Worker                   - Background process 'Worker #9cc728f9' started.
+DEBUG 2017-02-10 11:13:28,579 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2017-02-10 11:13:28,580 [6aa1f] Hangfire.Server.Worker                   - Background process 'Worker #dab6aa1f' started.
+DEBUG 2017-02-10 11:13:28,582 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2017-02-10 11:13:28,586 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2017-02-10 11:13:28,588 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2017-02-10 11:13:28,632 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Vehicles.DTo.CreateVehicleInput
+DEBUG 2017-02-10 11:13:28,634 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-02-10 11:13:28,638 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-02-10 11:13:28,642 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.CreateUserInput
+DEBUG 2017-02-10 11:13:28,650 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Users.Dto.UserListDto
+DEBUG 2017-02-10 11:13:28,651 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.DrivingShiftDto
+DEBUG 2017-02-10 11:13:28,653 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Shifts.Dto.WorkShiftDto
+DEBUG 2017-02-10 11:13:28,654 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Notes.Dto.NoteOutputDto
+DEBUG 2017-02-10 11:13:28,655 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-02-10 11:13:28,658 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-02-10 11:13:28,658 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.CreateDriverInput
+DEBUG 2017-02-10 11:13:28,660 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.DriverOutput
+DEBUG 2017-02-10 11:13:28,661 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Drivers.Dto.LicenceOutputDto
+DEBUG 2017-02-10 11:13:28,663 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Companies.Dto.CompanyOutput
+DEBUG 2017-02-10 11:13:28,664 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Breaks.Dto.BreakDto
+DEBUG 2017-02-10 11:13:28,666 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hubo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-02-10 11:13:28,678 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-02-10 11:13:28,679 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-02-10 11:13:28,680 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-02-10 11:13:28,680 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Hubo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-02-10 11:20:07,299 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 11:25:07,318 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2017-02-10 11:30:07,322 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...

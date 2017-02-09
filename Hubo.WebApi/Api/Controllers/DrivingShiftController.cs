@@ -109,12 +109,12 @@ namespace Hubo.Api.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<AjaxResponse> InsertGeoPointAsync(GeoData geoData)
+        public async Task<AjaxResponse> InsertGeoPointAsync(List<GeoData> geoData)
         {
             return await Task<AjaxResponse>.Run(() => InsertGeoPoint(geoData));
         }
 
-        private AjaxResponse InsertGeoPoint(GeoData geoData)
+        private AjaxResponse InsertGeoPoint(List<GeoData> geoData)
         {
             AjaxResponse ar = new AjaxResponse();
             Tuple<int, string> result = _drivingShiftAppService.InsertGeoData(geoData);

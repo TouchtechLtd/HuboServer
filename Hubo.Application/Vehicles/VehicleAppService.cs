@@ -18,23 +18,11 @@ namespace Hubo.Vehicles
             _vehicleRepository = new EntityFramework.VehicleRepository();
         }
 
-        public int RegisterVehicle(Vehicle vehicle)
+        public Tuple<int,string> RegisterVehicle(Vehicle vehicle)
         {
-            int i = _vehicleRepository.RegisterVehicle(vehicle);
-
-            return i;
+            vehicle.RegistrationNo = vehicle.RegistrationNo.ToUpper();
+            return _vehicleRepository.RegisterVehicle(vehicle);
         }
-
-        //public Tuple<List<VehicleOutput>,string,int> GetVehiclesByCompany(int companyId)
-        //{
-        //    Tuple<List<Vehicle>, string, int> result = _vehicleRepository.GetVehiclesByCompany(companyId);
-        //    List<VehicleOutput> listOfDtoVehicles = new List<VehicleOutput>();
-        //    foreach(Vehicle vehicle in result.Item1)
-        //    {
-        //        listOfDtoVehicles.Add(Mapper.Map<Vehicle, VehicleOutput>(vehicle));
-        //    }
-        //    return Tuple.Create(listOfDtoVehicles, result.Item2, result.Item3);
-        //}
 
         public Tuple<List<VehicleOutput>, string, int> GetVehiclesByDriver(int driverId)
         {

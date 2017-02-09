@@ -59,16 +59,19 @@ namespace Hubo.Api.Controllers
         {
             AjaxResponse ar = new AjaxResponse();
 
-            Tuple<DriverOutput, int, string> result = _driverService.GetDriverDetails(userId);
-
-            if (result.Item2 > 0)
+            Tuple<DriverOutput,List<LicenceOutputDto>, int, string> driverResult = _driverService.GetDriverDetails(userId);
+            
+            if(driverResult.Item3 < 1)
             {
-                ar.Result = result.Item1;
+                ar.Success = false;
+                ar.Result = driverResult.Item3;
             }
             else
             {
-                ar.Success = false;
-                ar.Result = result.Item3;
+                DriverDetailsResponseModel response = new DriverDetailsResponseModel();
+                response.driverInfo = driverResult.Item1;
+                response.listOfLicences = driverResult.Item2;
+                ar.Result = response;
             }
 
             return ar;

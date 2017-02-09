@@ -95,7 +95,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiResponseClasses\LoginResponse.cs" />
     <Compile Include="Break.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Driver.cs" />

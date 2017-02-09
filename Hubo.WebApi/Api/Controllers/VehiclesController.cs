@@ -54,42 +54,6 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-
-        //May no longer be needed as we grab all the vehicles and store them with the driver information
-
-        //[Authorize]
-        //[HttpGet]
-        //public async Task<AjaxResponse> getVehiclesByCompanyAsync()
-        //{
-        //    IEnumerable<string> companyIds;
-        //    if (Request.Headers.TryGetValues("CompanyId", out companyIds))
-        //    {
-        //        string companyId = companyIds.FirstOrDefault();
-        //        return await Task<AjaxResponse>.Run(() => getVehiclesByCompany(Int32.Parse(companyId)));
-        //    }
-        //    AjaxResponse ar = new AjaxResponse();
-        //    ar.Success = false;
-        //    ar.Result = "Invalid Headers";
-        //    return ar;
-        //}
-
-        //private AjaxResponse getVehiclesByCompany(int companyId)
-        //{
-        //    AjaxResponse ar = new AjaxResponse();         
-        //    Tuple<List<VehicleOutput>, string, int> result = _vehicleService.GetVehiclesByCompany(companyId);
-
-        //    if(result.Item3 == -1)
-        //    {
-        //        ar.Success = false;
-        //        ar.Result = result.Item2;
-        //        return ar;
-        //    }
-
-        //    ar.Success = true;
-        //    ar.Result = result.Item1;
-        //    return ar;            
-        //}
-
         [Authorize]
         [HttpPost]
         public async Task<AjaxResponse> registerVehicleAsync([FromBody] Vehicle vehicle)
@@ -101,9 +65,17 @@ namespace Hubo.Api.Controllers
         {
             AjaxResponse ar = new AjaxResponse();
 
-            var result = _vehicleService.RegisterVehicle(vehicle);
+            Tuple<int,string> result = _vehicleService.RegisterVehicle(vehicle);
 
-            ar.Result = result;
+            if(result.Item1 == -1)
+            {
+                ar.Result = result.Item2;
+                ar.Success = false;
+            }
+            else
+            {
+                ar.Result = result.Item1;
+            }
 
             return ar;
         }

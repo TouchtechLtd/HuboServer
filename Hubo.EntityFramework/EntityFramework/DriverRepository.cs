@@ -59,6 +59,25 @@ namespace Hubo.EntityFramework
             }
         }
 
+        public List<Licence> GetLicences(int driverId)
+        {
+            List<Licence> listOfLicences = new List<Licence>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    listOfLicences = (from licences in ctx.LicenceSet
+                                      where licences.DriverId == driverId
+                                      select licences).ToList<Licence>();
+                    return listOfLicences;
+                }
+                catch(Exception ex)
+                {
+                    return listOfLicences;
+                }
+            }
+        }
+
         public long GetDriverId(long id)
         {
             using (HuboDbContext ctx = new HuboDbContext())

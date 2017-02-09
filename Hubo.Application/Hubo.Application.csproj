@@ -112,6 +112,7 @@
     <Compile Include="Drivers\DriverAppService.cs" />
     <Compile Include="Drivers\DTo\CreateDriverInput.cs" />
     <Compile Include="Drivers\DTo\DriverOutput.cs" />
+    <Compile Include="Drivers\DTo\LicenceOutput.cs" />
     <Compile Include="Drivers\IDriverAppService.cs" />
     <Compile Include="DrivingShifts\DrivingShiftAppService.cs" />
     <Compile Include="DrivingShifts\IDrivingShiftAppService.cs" />

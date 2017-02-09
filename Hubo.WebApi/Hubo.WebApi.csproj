@@ -153,7 +153,9 @@
     <Compile Include="Api\Controllers\VehiclesController.cs" />
     <Compile Include="Api\HuboWebApiModule.cs" />
     <Compile Include="Api\Controllers\AccountController.cs" />
+    <Compile Include="Api\Models\DriverDetailsResponseModel.cs" />
     <Compile Include="Api\Models\LoginModel.cs" />
+    <Compile Include="Api\Models\LoginResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
