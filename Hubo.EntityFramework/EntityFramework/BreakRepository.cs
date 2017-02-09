@@ -8,7 +8,7 @@ namespace Hubo.EntityFramework
 {
     public class BreakRepository
     {
-        public Tuple<List<Break>, string, int> GetBreaks(int driveShiftId)
+        public Tuple<List<Break>, string, int> GetBreaks(int shiftId)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
@@ -16,13 +16,13 @@ namespace Hubo.EntityFramework
                 
                 try
                 {
-                    if(!ctx.DrivingShiftSet.Any(s => s.Id == driveShiftId))
+                    if(!ctx.DrivingShiftSet.Any(s => s.Id == shiftId))
                     {
-                        return Tuple.Create(listOfBreaks, "No Drive Shift exists with ID = " + driveShiftId, -1);
+                        return Tuple.Create(listOfBreaks, "No Shift exists with ID = " + shiftId, -1);
                     }
 
                     listOfBreaks = (from b in ctx.BreakSet
-                                    where b.DriveShiftId == driveShiftId
+                                    where b.ShiftId == shiftId
                                     select b).ToList<Break>();
 
                     return Tuple.Create(listOfBreaks, "Success", 1);
@@ -41,12 +41,12 @@ namespace Hubo.EntityFramework
             {
                 try
                 {
-                    if(!ctx.WorkShiftSet.Any(s => s.Id == newBreak.DriveShiftId))
+                    if(!ctx.WorkShiftSet.Any(s => s.Id == newBreak.ShiftId))
                     {
-                        return Tuple.Create(-1, "No Drive Shift exists for ID = " + newBreak.DriveShiftId);
+                        return Tuple.Create(-1, "No Shift exists for ID = " + newBreak.ShiftId);
                     }
 
-                    newBreak.State = true;
+                    newBreak.isActive = true;
                     ctx.BreakSet.Add(newBreak);
                     ctx.SaveChanges();
                     return Tuple.Create(newBreak.Id, "Success");
@@ -66,11 +66,11 @@ namespace Hubo.EntityFramework
                 try
                 {
                     Break currentBreak = ctx.BreakSet.Single<Break>(b => b.Id == breakId);
-                    if(currentBreak.State == false)
+                    if(currentBreak.isActive == false)
                     {
                         return Tuple.Create(-1, "Break has already ended");
                     }
-                    currentBreak.State = false;
+                    currentBreak.isActive = false;
                     ctx.Entry(currentBreak).State = System.Data.Entity.EntityState.Modified;
                     ctx.SaveChanges();
                     return Tuple.Create(1, "Success");

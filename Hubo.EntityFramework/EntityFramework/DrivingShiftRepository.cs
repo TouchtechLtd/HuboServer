@@ -50,7 +50,7 @@ namespace Hubo.EntityFramework
                         return Tuple.Create(-1, "No Vehicle exists with the ID = " + shift.VehicleId);
                     }
 
-                    shift.State = true;
+                    shift.isActive = true;
                     ctx.DrivingShiftSet.Add(shift);
                     ctx.SaveChanges();
                     return Tuple.Create(shift.Id, "Success");
@@ -69,11 +69,11 @@ namespace Hubo.EntityFramework
                 try
                 {
                     DrivingShift shift = ctx.DrivingShiftSet.Single<DrivingShift>(s => s.Id == drivingShiftId);
-                    if(shift.State == false)
+                    if(shift.isActive == false)
                     {
                         return Tuple.Create(-1, "Driving shift has already ended");
                     }
-                    shift.State = false;
+                    shift.isActive = false;
                     ctx.Entry(shift).State = EntityState.Modified;
                     ctx.SaveChanges();
                     return Tuple.Create(1, "Success");

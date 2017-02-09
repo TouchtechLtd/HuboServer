@@ -67,11 +67,12 @@ namespace Hubo.Api.Controllers
             AjaxResponse ar = new AjaxResponse();
             Tuple<int, string> result = _drivingShiftAppService.StartDriving(shift);
 
+            //A valid ID was returned, thus successful
             if(result.Item1 > 0)
             {
                 ar.Success = true;
                 ar.Result = result.Item1;
-            }
+            }            
             else
             {
                 ar.Success = false;

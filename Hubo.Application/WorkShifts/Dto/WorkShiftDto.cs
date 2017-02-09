@@ -19,6 +19,6 @@ namespace Hubo.Shifts.Dto
         public decimal StartLocationLong { get; set; }
         public decimal EndLocationLat { get; set; }
         public decimal EndLocationLong { get; set; }
-        public bool State { get; set; }
+        public bool isActive { get; set; }
     }
 }

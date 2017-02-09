@@ -26,7 +26,7 @@ namespace Hubo.EntityFramework
                         return Tuple.Create(-1, "No Company exists with the ID = " + shift.CompanyId);
                     }
 
-                    shift.State = true;
+                    shift.isActive = true;
                     ctx.WorkShiftSet.Add(shift);
                     ctx.SaveChanges();
                     return Tuple.Create(shift.Id, "Success");
@@ -48,14 +48,14 @@ namespace Hubo.EntityFramework
                 try
                 {
                     WorkShift currentShift = ctx.WorkShiftSet.Single<WorkShift>(s => s.Id == shift.Id);
-                    if(currentShift.State == false)
+                    if(currentShift.isActive == false)
                     {
                         return Tuple.Create(-1, "Shift has already ended");
                     }
                     currentShift.EndDate = shift.EndDate;
                     currentShift.EndLocationLat = shift.EndLocationLat;
                     currentShift.EndLocationLong = shift.EndLocationLong;
-                    currentShift.State = false;
+                    currentShift.isActive = false;
                     ctx.Entry(currentShift).State = EntityState.Modified;
                     ctx.SaveChanges();
                     return Tuple.Create(1, "Success");

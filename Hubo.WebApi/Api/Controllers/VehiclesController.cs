@@ -23,13 +23,13 @@ namespace Hubo.Api.Controllers
 
         [Authorize]
         [HttpGet]
-        public async Task<AjaxResponse> getVehiclesAsync()
+        public async Task<AjaxResponse> getVehiclesByDriverAsync()
         {
-            IEnumerable<string> companyIds;
-            if (Request.Headers.TryGetValues("CompanyId", out companyIds))
+            IEnumerable<string> driverIds;
+            if(Request.Headers.TryGetValues("DriverId", out driverIds))
             {
-                string companyId = companyIds.FirstOrDefault();
-                return await Task<AjaxResponse>.Run(() => getVehicles(Int32.Parse(companyId)));
+                string driverId = driverIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => getVehiclesByDriver(Int32.Parse(driverId)));
             }
             AjaxResponse ar = new AjaxResponse();
             ar.Success = false;
@@ -37,12 +37,12 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        private AjaxResponse getVehicles(int companyId)
+        private AjaxResponse getVehiclesByDriver(int driverId)
         {
-            AjaxResponse ar = new AjaxResponse();         
-            Tuple<List<VehicleOutput>, string, int> result = _vehicleService.GetVehicles(companyId);
+            AjaxResponse ar = new AjaxResponse();
+            Tuple<List<VehicleOutput>, string, int> result = _vehicleService.GetVehiclesByDriver(driverId);
 
-            if(result.Item3 == -1)
+            if (result.Item3 == -1)
             {
                 ar.Success = false;
                 ar.Result = result.Item2;
@@ -51,8 +51,44 @@ namespace Hubo.Api.Controllers
 
             ar.Success = true;
             ar.Result = result.Item1;
-            return ar;            
+            return ar;
         }
+
+
+        //May no longer be needed as we grab all the vehicles and store them with the driver information
+
+        //[Authorize]
+        //[HttpGet]
+        //public async Task<AjaxResponse> getVehiclesByCompanyAsync()
+        //{
+        //    IEnumerable<string> companyIds;
+        //    if (Request.Headers.TryGetValues("CompanyId", out companyIds))
+        //    {
+        //        string companyId = companyIds.FirstOrDefault();
+        //        return await Task<AjaxResponse>.Run(() => getVehiclesByCompany(Int32.Parse(companyId)));
+        //    }
+        //    AjaxResponse ar = new AjaxResponse();
+        //    ar.Success = false;
+        //    ar.Result = "Invalid Headers";
+        //    return ar;
+        //}
+
+        //private AjaxResponse getVehiclesByCompany(int companyId)
+        //{
+        //    AjaxResponse ar = new AjaxResponse();         
+        //    Tuple<List<VehicleOutput>, string, int> result = _vehicleService.GetVehiclesByCompany(companyId);
+
+        //    if(result.Item3 == -1)
+        //    {
+        //        ar.Success = false;
+        //        ar.Result = result.Item2;
+        //        return ar;
+        //    }
+
+        //    ar.Success = true;
+        //    ar.Result = result.Item1;
+        //    return ar;            
+        //}
 
         [Authorize]
         [HttpPost]

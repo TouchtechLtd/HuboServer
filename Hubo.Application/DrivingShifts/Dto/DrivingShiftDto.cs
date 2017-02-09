@@ -13,7 +13,7 @@ namespace Hubo.Shifts.Dto
         public long Id { get; set; }
         public long DriveShiftId { get; set; }
         public DateTime TimeStamp { get; set; }
-        public bool State { get; set; }
+        public bool isActive { get; set; }
         public long VehicleId { get; set; }
     }
 }

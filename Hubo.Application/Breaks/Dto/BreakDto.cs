@@ -12,6 +12,6 @@ namespace Hubo.Breaks.Dto
     {
         public int Id { get; set; }
         public DateTime TimeStamp { get; set; }
-        public bool State { get; set; }
+        public bool isActive { get; set; }
     }
 }

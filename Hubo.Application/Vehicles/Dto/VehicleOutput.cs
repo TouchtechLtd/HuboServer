@@ -11,8 +11,7 @@ namespace Hubo.Vehicles.Dto
     {
         public string RegistrationNo { get; set; }
         public string MakeModel { get; set; }
-        public int StartingOdometer { get; set; }
-        public int CurrentOdometer { get; set; }
+        public string FleetNumber { get; set; }
         public long CompanyId { get; set; }
     }
 }

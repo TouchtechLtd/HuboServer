@@ -46,27 +46,57 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public Tuple<List<Vehicle>, string, int> GetVehicles(int companyId)
+        //public Tuple<List<Vehicle>, string, int> GetVehiclesByCompany(int companyId)
+        //{
+        //    List<Vehicle> listOfVehicles = new List<Vehicle>();
+        //    using (HuboDbContext ctx = new HuboDbContext())
+        //    {
+        //        try
+        //        {
+        //            if (!ctx.CompanySet.Any(c => c.Id == companyId))
+        //            {                        
+        //                return Tuple.Create(listOfVehicles, "Company not found for corresponding CompanyID", -1);
+        //            }
+
+        //            IQueryable<Vehicle> listVehicleQuery;
+        //            listVehicleQuery = from b in ctx.VehicleSet
+        //                               where b.CompanyId.Equals(companyId)
+        //                               select b;
+        //            listOfVehicles = listVehicleQuery.ToList<Vehicle>();
+
+        //            return Tuple.Create(listOfVehicles, "Success", 1);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return Tuple.Create(listOfVehicles, ex.Message, -1);
+        //        }
+        //    }
+        //}
+
+        public Tuple<List<Vehicle>, string, int> GetVehiclesByDriver(int driverId)
         {
             List<Vehicle> listOfVehicles = new List<Vehicle>();
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
                 {
-                    if (!ctx.CompanySet.Any(c => c.Id == companyId))
-                    {                        
-                        return Tuple.Create(listOfVehicles, "Company not found for corresponding CompanyID", -1);
-                    }
+                    if(!ctx.DriverSet.Any(d => d.Id == driverId))
+                    {
+                        return Tuple.Create(listOfVehicles, "Company not found for corresponding ID : " + driverId.ToString(), -1);
+                    }                   
 
-                    IQueryable<Vehicle> listVehicleQuery;
-                    listVehicleQuery = from b in ctx.VehicleSet
-                                       where b.CompanyId.Equals(companyId)
-                                       select b;
-                    listOfVehicles = listVehicleQuery.ToList<Vehicle>();
+                    listOfVehicles                       = (from vehicle in ctx.VehicleSet
+                                                           join company in ctx.CompanySet on vehicle.CompanyId equals company.Id
+                                                           join driveCompany in ctx.DriverCompanySet on company.Id equals driveCompany.CompanyId
+                                                           where driveCompany.DriverId == driverId
+                                                           select vehicle).ToList<Vehicle>();
 
-                    return Tuple.Create(listOfVehicles, "Success", 1);
+
+
+                    return Tuple.Create(listOfVehicles, "success", 1);
+
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
                     return Tuple.Create(listOfVehicles, ex.Message, -1);
                 }
