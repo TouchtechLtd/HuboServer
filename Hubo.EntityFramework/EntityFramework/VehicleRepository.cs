@@ -31,7 +31,7 @@ namespace Hubo.EntityFramework
                     result = ctx.SaveChanges();
                     
 
-                    return Tuple.Create(result, "Success");
+                    return Tuple.Create(vehicle.Id, "Success");
                 }
                 catch (Exception ex)
                 {
@@ -40,33 +40,6 @@ namespace Hubo.EntityFramework
 
             }
         }
-
-        //public Tuple<List<Vehicle>, string, int> GetVehiclesByCompany(int companyId)
-        //{
-        //    List<Vehicle> listOfVehicles = new List<Vehicle>();
-        //    using (HuboDbContext ctx = new HuboDbContext())
-        //    {
-        //        try
-        //        {
-        //            if (!ctx.CompanySet.Any(c => c.Id == companyId))
-        //            {                        
-        //                return Tuple.Create(listOfVehicles, "Company not found for corresponding CompanyID", -1);
-        //            }
-
-        //            IQueryable<Vehicle> listVehicleQuery;
-        //            listVehicleQuery = from b in ctx.VehicleSet
-        //                               where b.CompanyId.Equals(companyId)
-        //                               select b;
-        //            listOfVehicles = listVehicleQuery.ToList<Vehicle>();
-
-        //            return Tuple.Create(listOfVehicles, "Success", 1);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            return Tuple.Create(listOfVehicles, ex.Message, -1);
-        //        }
-        //    }
-        //}
 
         public Tuple<List<Vehicle>, string, int> GetVehiclesByDriver(int driverId)
         {

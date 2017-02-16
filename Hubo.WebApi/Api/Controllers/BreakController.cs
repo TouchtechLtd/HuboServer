@@ -22,43 +22,6 @@ namespace Hubo.Api.Controllers
             _breakAppService = new BreakAppService();
         }
 
-        //NOTE: This was retriving through driveShiftId, would have had to make multiple calls
-
-        //[Authorize]
-        //[HttpGet]
-        //public async Task<AjaxResponse> GetBreaksAsync()
-        //{
-        //    IEnumerable<string> driveShiftIds;
-        //    if(Request.Headers.TryGetValues("DriveShiftId", out driveShiftIds))
-        //    {
-        //        string driveShiftId = driveShiftIds.FirstOrDefault();
-        //        return await Task<AjaxResponse>.Run(() => GetBreaks(Int32.Parse(driveShiftId)));
-        //    }
-        //    AjaxResponse ar = new AjaxResponse();
-        //    ar.Success = false;
-        //    ar.Result = "Invalid Headers";
-        //    return ar;
-        //}
-
-        //private AjaxResponse GetBreaks(int driveShiftId)
-        //{
-        //    AjaxResponse ar = new AjaxResponse();
-        //    Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(driveShiftId);
-
-        //    if (result.Item3 == -1)
-        //    {
-        //        ar.Success = false;
-        //        ar.Result = result.Item2;
-        //    }
-        //    else
-        //    {
-        //        ar.Success = true;
-        //        ar.Result = result.Item1;
-        //    }
-
-        //    return ar;
-        //}
-
         [Authorize]
         [HttpGet]
         public async Task<AjaxResponse> GetBreaksAsync()
@@ -140,6 +103,7 @@ namespace Hubo.Api.Controllers
             else
             {
                 ar.Success = true;
+                ar.Result = result.Item1;
             }
 
             return ar;

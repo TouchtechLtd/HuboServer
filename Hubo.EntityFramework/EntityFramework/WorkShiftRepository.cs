@@ -55,6 +55,7 @@ namespace Hubo.EntityFramework
                     currentShift.EndDate = shift.EndDate;
                     currentShift.EndLocationLat = shift.EndLocationLat;
                     currentShift.EndLocationLong = shift.EndLocationLong;
+                    currentShift.EndLocation = shift.EndLocation;
                     currentShift.isActive = false;
                     ctx.Entry(currentShift).State = EntityState.Modified;
                     ctx.SaveChanges();

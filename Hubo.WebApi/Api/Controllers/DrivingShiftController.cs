@@ -101,7 +101,8 @@ namespace Hubo.Api.Controllers
             }
             else
             {
-                ar.Success = true;                
+                ar.Success = true;
+                ar.Result = result.Item1;                
             }
 
             return ar;

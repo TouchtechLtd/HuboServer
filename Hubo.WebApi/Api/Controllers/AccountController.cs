@@ -40,6 +40,7 @@ namespace Hubo.Api.Controllers
             _driverService = new DriverAppService();
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<AjaxResponse> GetDriverDetailsAsync()
         {
@@ -64,7 +65,7 @@ namespace Hubo.Api.Controllers
             if(driverResult.Item3 < 1)
             {
                 ar.Success = false;
-                ar.Result = driverResult.Item3;
+                ar.Result = driverResult.Item4;
             }
             else
             {

@@ -60,6 +60,7 @@ namespace Hubo.Api.Controllers
             if (result.Item1 == 1)
             {
                 ar.Success = true;
+                ar.Result = result.Item1;
             }
             else
             {

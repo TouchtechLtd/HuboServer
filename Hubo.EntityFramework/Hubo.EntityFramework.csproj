@@ -132,6 +132,10 @@
     <Compile Include="Migrations\201702090332366_break.Designer.cs">
       <DependentUpon>201702090332366_break.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702140135265_workshifts.cs" />
+    <Compile Include="Migrations\201702140135265_workshifts.Designer.cs">
+      <DependentUpon>201702140135265_workshifts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="HuboDataModule.cs" />
@@ -163,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702090332366_break.resx">
       <DependentUpon>201702090332366_break.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702140135265_workshifts.resx">
+      <DependentUpon>201702140135265_workshifts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
