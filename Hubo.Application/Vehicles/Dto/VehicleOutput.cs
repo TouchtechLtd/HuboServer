@@ -9,6 +9,7 @@ namespace Hubo.Vehicles.Dto
     [AutoMap(typeof(Vehicle))]
     public class VehicleOutput : IInputDto
     {
+        public long Id { get; set; }
         public string RegistrationNo { get; set; }
         public string MakeModel { get; set; }
         public string FleetNumber { get; set; }
