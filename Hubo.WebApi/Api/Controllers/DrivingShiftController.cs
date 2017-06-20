@@ -21,6 +21,41 @@ namespace Hubo.Api.Controllers
 
         [Authorize]
         [HttpGet]
+        public async Task<AjaxResponse> GetVehicleHuboAsync()
+        {
+            IEnumerable<string> vehicleIds;
+            if (Request.Headers.TryGetValues("VehicleId", out vehicleIds))
+            {
+                string vehicleId = vehicleIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetVehicleHubo(Int32.Parse(vehicleId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
+        }
+
+        private AjaxResponse GetVehicleHubo(int vehicleId)
+        {
+            AjaxResponse ar = new AjaxResponse();
+            Tuple<long, string, int> result = _drivingShiftAppService.GetVehicleHubo(vehicleId);
+
+            if (result.Item3 == -1)
+            {
+                ar.Success = false;
+                ar.Result = result.Item2;
+            }
+            else
+            {
+                ar.Success = true;
+                ar.Result = result.Item1;
+            }
+
+            return ar;
+        }
+
+        [Authorize]
+        [HttpGet]
         public async Task<AjaxResponse> GetDrivingShiftsAsync()
         {
             IEnumerable<string> shiftIds;
@@ -33,7 +68,6 @@ namespace Hubo.Api.Controllers
             ar.Success = false;
             ar.Result = "Invalid Headers";
             return ar;
-
         }
 
         private AjaxResponse GetDrivingShifts(int shiftId)

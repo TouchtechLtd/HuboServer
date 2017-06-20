@@ -31,7 +31,6 @@ namespace Hubo.Api.Controllers
         static AccountController()
         {
             OAuthBearerOptions = new OAuthBearerAuthenticationOptions();
-            
         }
 
         public AccountController(UserManager userManager)
@@ -39,6 +38,40 @@ namespace Hubo.Api.Controllers
             _userManager = userManager;
             _driverService = new DriverAppService();
         }
+
+        //[Authorize]
+        //[HttpGet]
+        //public async Task<AjaxResponse> ExportUserDataAsync()
+        //{
+        //    IEnumerable<string> driverIds;
+        //    if(Request.Headers.TryGetValues("DriverId", out driverIds))
+        //    {
+        //        string driverId = driverIds.FirstOrDefault();
+        //        return await Task<AjaxResponse>.Run(() => ExportUserDataAsync(Int32.Parse(driverId)));
+        //    }
+        //    AjaxResponse ar = new AjaxResponse();
+        //    ar.Success = false;
+        //    ar.Result = "Invalid Headers";
+        //    return ar;
+        //}
+
+        //private AjaxResponse ExportUserDataAsync(int driverId)
+        //{
+        //    AjaxResponse ar = new AjaxResponse();
+        //    Tuple<int, string> result = _driverService.ExportData(driverId);
+
+        //    if(result.Item1 > 0)
+        //    {
+        //        ar.Result = result.Item1;
+        //    }
+        //    else
+        //    {
+        //        ar.Success = false;
+        //        ar.Result = result.Item2;
+        //    }
+
+        //    return ar;
+        //}
 
         [Authorize]
         [HttpGet]

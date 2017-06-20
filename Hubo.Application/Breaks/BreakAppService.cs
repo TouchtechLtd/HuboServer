@@ -32,9 +32,9 @@ namespace Hubo.Breaks
         //}
 
 
-        public Tuple<List<BreakDto>, string, int> GetBreaks(int driverId)
+        public Tuple<List<BreakDto>, string, int> GetBreaks(int shiftId)
         {
-            Tuple<List<Break>, string, int> result = _breakRepository.GetBreaks(driverId);
+            Tuple<List<Break>, string, int> result = _breakRepository.GetBreaks(shiftId);
             List<BreakDto> listOfBreakDto = new List<BreakDto>();
             foreach (Break breakItem in result.Item1)
             {

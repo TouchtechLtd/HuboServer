@@ -5,18 +5,16 @@ namespace Hubo.Migrations
     using System.Data.Entity.Infrastructure.Annotations;
     using System.Data.Entity.Migrations;
     
-    public partial class licence : DbMigration
+    public partial class supervisor : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Licences",
+                "dbo.Supervisors",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        DriverId = c.Long(nullable: false),
-                        Class = c.String(),
-                        Endorsement = c.String(),
+                        UserId = c.Long(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         DeleterUserId = c.Long(),
                         DeletionTime = c.DateTime(),
@@ -27,7 +25,7 @@ namespace Hubo.Migrations
                     },
                 annotations: new Dictionary<string, object>
                 {
-                    { "DynamicFilter_Licence_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_Supervisor_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 })
                 .PrimaryKey(t => t.Id);
             
@@ -35,10 +33,10 @@ namespace Hubo.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Licences",
+            DropTable("dbo.Supervisors",
                 removedAnnotations: new Dictionary<string, object>
                 {
-                    { "DynamicFilter_Licence_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
+                    { "DynamicFilter_Supervisor_SoftDelete", "EntityFramework.DynamicFilters.DynamicFilterDefinition" },
                 });
         }
     }

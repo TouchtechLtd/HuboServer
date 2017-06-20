@@ -20,5 +20,9 @@ namespace Hubo
         public long StopHubo { get; set; }
         public bool isActive { get; set; }
         public long VehicleId { get; set; }
+        public string StartNote { get; set; }
+        public string EndNote { get; set; }
+        public string StartLocation { get; set; }
+        public string EndLocation { get; set; }
     }
 }

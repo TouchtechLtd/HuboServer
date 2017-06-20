@@ -13,5 +13,6 @@ namespace Hubo
         public string MakeModel { get; set; }
         public string FleetNumber { get; set; }
         public long CompanyId { get; set; }
+        public bool IsManuallyEntered { get; set; }
     }
 }

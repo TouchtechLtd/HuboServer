@@ -19,5 +19,7 @@ namespace Hubo
         public string StartBreakLocation { get; set; }
         public string StopBreakLocation { get; set; }
         public bool isActive { get; set; }
+        public string StartNote { get; set; }
+        public string EndNote { get; set; }
     }
 }

@@ -26,6 +26,11 @@ namespace Hubo.EntityFramework
                         return Tuple.Create(-1, "No Company exists with the ID = " + shift.CompanyId);
                     }
 
+                    if (ctx.WorkShiftSet.Any(c => c.isActive == true && shift.DriverId == c.DriverId))
+                    {
+                        return Tuple.Create(-1, "An active shift already exists");
+                    }
+
                     shift.isActive = true;
                     ctx.WorkShiftSet.Add(shift);
                     ctx.SaveChanges();
@@ -56,6 +61,7 @@ namespace Hubo.EntityFramework
                     currentShift.EndLocationLat = shift.EndLocationLat;
                     currentShift.EndLocationLong = shift.EndLocationLong;
                     currentShift.EndLocation = shift.EndLocation;
+                    currentShift.EndNote = shift.EndNote;
                     currentShift.isActive = false;
                     ctx.Entry(currentShift).State = EntityState.Modified;
                     ctx.SaveChanges();
@@ -72,7 +78,72 @@ namespace Hubo.EntityFramework
             }
         }
 
-   
+        public Tuple<int, string> StartDay(int driverId)
+        {
+            //Get all workshifts with driverid
+
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    if (!ctx.DriverSet.Any(d => d.Id == driverId))
+                    {
+                        return Tuple.Create(-1, "No Driver exists with Driver ID = " + driverId);
+                    }
+
+                    DateTime twoWeeksPrior = default(DateTime);
+                    twoWeeksPrior = DateTime.Now;
+                    twoWeeksPrior = twoWeeksPrior.AddDays(-14);
+
+                    List<long> listOfDayIds = (from b in ctx.WorkShiftSet
+                                              where b.DriverId == driverId &&
+                                              b.StartDate > twoWeeksPrior
+                                              orderby b.DayShiftId descending
+                                              select b.DayShiftId).ToList<long>();
+
+                    if (listOfDayIds.Count == 0)
+                    {
+                        // Start new day
+                        DayShift newDayShift = new DayShift();
+                        ctx.DayShiftSet.Add(newDayShift);
+                        ctx.SaveChanges();
+                        return Tuple.Create(newDayShift.Id, "Success");
+                    }
+                    else
+                    {
+                        // Check if need to send this id, or need to create a new one
+                        long workingDayShiftId = listOfDayIds[0];
+
+                        List<WorkShift> listOfWorkShifts = (from b in ctx.WorkShiftSet
+                                                            where b.DayShiftId == workingDayShiftId
+                                                            orderby b.StartDate ascending
+                                                            select b).ToList<WorkShift>();
+
+                        WorkShift firstShiftOfTheDay = listOfWorkShifts[0];
+
+                        if (firstShiftOfTheDay.StartDate.Value.AddHours(14) > DateTime.Now)
+                        {
+                            // No starting new workday yet
+                            return Tuple.Create(Convert.ToInt32(workingDayShiftId), "Success");
+                        }
+                        else
+                        {
+                            // New work date
+                            DayShift newDayShift = new DayShift();
+                            ctx.DayShiftSet.Add(newDayShift);
+                            ctx.SaveChanges();
+                            return Tuple.Create(newDayShift.Id, "Success");
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return Tuple.Create(-1 ,ex.Message);
+                }
+            }
+        }
+
         public Tuple<List<WorkShift>, string, int> GetWorkShifts(int driverId)
         {
             List<WorkShift> listOfWorkShifts = new List<WorkShift>();

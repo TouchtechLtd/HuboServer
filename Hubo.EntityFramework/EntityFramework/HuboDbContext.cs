@@ -21,6 +21,8 @@ namespace Hubo.EntityFramework
         public virtual DbSet<Vehicle> VehicleSet { get; set; }
         public virtual DbSet<WorkShift> WorkShiftSet { get; set; }
         public virtual DbSet<Licence> LicenceSet { get; set; }
+        public virtual DbSet<Supervisor> SupervisorSet { get; set; }
+        public virtual DbSet<DayShift> DayShiftSet { get; set; }
         //public virtual DbSet<User> UserSet { get; set; }
 
 

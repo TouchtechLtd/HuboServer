@@ -40,7 +40,7 @@ namespace Hubo.EntityFramework
         //}
 
 
-        public Tuple<List<Break>, string, int> GetBreaks(int driverId)
+        public Tuple<List<Break>, string, int> GetBreaks(int shiftId)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
@@ -48,14 +48,14 @@ namespace Hubo.EntityFramework
 
                 try
                 {
-                    if(!ctx.DriverSet.Any<Driver>(d => d.Id == driverId))
+                    if(!ctx.WorkShiftSet.Any<WorkShift>(d => d.Id == shiftId))
                     {
-                        return Tuple.Create(listOfBreaks, "No Driver exists with ID = " + driverId, -1);
+                        return Tuple.Create(listOfBreaks, "No Shift exists with ID = " + shiftId, -1);
                     }
 
                     listOfBreaks = (from breaks in ctx.BreakSet
                                     join shift in ctx.WorkShiftSet on breaks.ShiftId equals shift.Id
-                                    where shift.DriverId == driverId
+                                    where shift.Id == shiftId
                                     select breaks).ToList<Break>();
                     return Tuple.Create(listOfBreaks, "Success", 1);
 
@@ -76,6 +76,11 @@ namespace Hubo.EntityFramework
                     if(!ctx.WorkShiftSet.Any(s => s.Id == newBreak.ShiftId))
                     {
                         return Tuple.Create(-1, "No Shift exists for ID = " + newBreak.ShiftId);
+                    }
+                    
+                    if (ctx.BreakSet.Any(b => b.isActive == true && b.ShiftId == newBreak.ShiftId))
+                    {
+                        return Tuple.Create(-1, "A break is already active");
                     }
 
                     newBreak.isActive = true;
@@ -105,6 +110,7 @@ namespace Hubo.EntityFramework
                     currentBreak.isActive = false;
                     currentBreak.StopBreakDateTime = stopBreak.StopBreakDateTime;
                     currentBreak.StopBreakLocation = stopBreak.StopBreakLocation;
+                    currentBreak.EndNote = stopBreak.EndNote;
                     ctx.Entry(currentBreak).State = EntityState.Modified;
                     ctx.SaveChanges();
                     return Tuple.Create(1, "Success");

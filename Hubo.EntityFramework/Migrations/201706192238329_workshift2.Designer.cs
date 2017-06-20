@@ -7,13 +7,13 @@ namespace Hubo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class licence : IMigrationMetadata
+    public sealed partial class workshift2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(licence));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(workshift2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201702082056566_licence"; }
+            get { return "201706192238329_workshift2"; }
         }
         
         string IMigrationMetadata.Source

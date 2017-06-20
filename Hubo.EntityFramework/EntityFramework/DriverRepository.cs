@@ -78,6 +78,76 @@ namespace Hubo.EntityFramework
             }
         }
 
+        public List<DrivingShift> GetDrivingShifts(List<long> listOfWorkShiftIds)
+        {
+            List<DrivingShift> listOfDrivingShifts = new List<DrivingShift>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    listOfDrivingShifts = ctx.DrivingShiftSet.Where(c => listOfWorkShiftIds.Contains(c.ShiftId)).ToList<DrivingShift>();
+                    return listOfDrivingShifts;
+                }
+                catch(Exception ex)
+                {
+                    return listOfDrivingShifts;
+                }
+            }
+        }
+
+        public List<Note> GetNotes(List<long> listOfWorkShiftIds)
+        {
+            List<Note> listOfNotes = new List<Note>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    listOfNotes = ctx.NoteSet.Where(c => listOfWorkShiftIds.Contains(c.ShiftId)).ToList<Note>();
+                    return listOfNotes;
+                }
+                catch(Exception ex)
+                {
+                    return listOfNotes;
+                }
+            }
+        }
+
+        public List<Break> GetBreaks(List<long> listOfWorkShiftIds)
+        {
+            List<Break> listOfBreaks = new List<Break>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    listOfBreaks = ctx.BreakSet.Where(c => listOfWorkShiftIds.Contains(c.ShiftId)).ToList<Break>();
+                    return listOfBreaks;
+                }
+                catch (Exception ex)
+                {
+                    return listOfBreaks;
+                }
+            }
+        }
+
+        public List<WorkShift> GetShiftFromLastLongBreak(int driverId)
+        {
+            List<WorkShift> listOfWorkShifts = new List<WorkShift>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    WorkShift lastWorkShift = ctx.WorkShiftSet.Where(p => p.TimeSinceLastShiftMins >= 1440 && p.DriverId == driverId).OrderByDescending(p => p.Id).First();
+
+                    listOfWorkShifts = ctx.WorkShiftSet.Where(p => p.DriverId == driverId && p.StartDate >= lastWorkShift.StartDate).ToList<WorkShift>();
+                    return listOfWorkShifts;
+                }
+                catch (Exception ex)
+                {
+                    return listOfWorkShifts;
+                }
+            }
+        }
+
         public long GetDriverId(long id)
         {
             using (HuboDbContext ctx = new HuboDbContext())

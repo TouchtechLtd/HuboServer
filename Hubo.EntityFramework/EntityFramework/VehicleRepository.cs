@@ -5,7 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Drawing;
 namespace Hubo.EntityFramework
 {
     public class VehicleRepository : IVehicleRepository
@@ -16,7 +16,6 @@ namespace Hubo.EntityFramework
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
-                 
                 try
                 {
                     int result = 0;
@@ -26,10 +25,9 @@ namespace Hubo.EntityFramework
                         // Match!
                         return Tuple.Create(-1, "Registration Number already exists");
                     }
-                    
+
                     ctx.Entry(vehicle).State = System.Data.Entity.EntityState.Added;
                     result = ctx.SaveChanges();
-                    
 
                     return Tuple.Create(vehicle.Id, "Success");
                 }

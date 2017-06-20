@@ -26,11 +26,11 @@ namespace Hubo.Api.Controllers
         [HttpGet]
         public async Task<AjaxResponse> GetBreaksAsync()
         {
-            IEnumerable<string> driverIds;
-            if (Request.Headers.TryGetValues("DriverId", out driverIds))
+            IEnumerable<string> shiftIds;
+            if (Request.Headers.TryGetValues("ShiftId", out shiftIds))
             {
-                string driverId = driverIds.FirstOrDefault();
-                return await Task<AjaxResponse>.Run(() => GetBreaks(Int32.Parse(driverId)));
+                string shiftId = shiftIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetBreaks(Int32.Parse(shiftId)));
             }
             AjaxResponse ar = new AjaxResponse();
             ar.Success = false;
@@ -38,10 +38,10 @@ namespace Hubo.Api.Controllers
             return ar;
         }
 
-        private AjaxResponse GetBreaks(int driverId)
+        private AjaxResponse GetBreaks(int shiftId)
         {
             AjaxResponse ar = new AjaxResponse();
-            Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(driverId);
+            Tuple<List<BreakDto>, string, int> result = _breakAppService.GetBreaks(shiftId);
 
             if (result.Item3 == -1)
             {
