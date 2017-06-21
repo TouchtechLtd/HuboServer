@@ -159,5 +159,18 @@ namespace Hubo.EntityFramework
             }
         }
 
+        public List<DrivingShift> GetDrivingShiftsWorkId(int workShiftId)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                List<DrivingShift> listOfDrivingShifts = (from d in ctx.DrivingShiftSet
+                                                           where d.ShiftId == workShiftId
+                                                           orderby d.StartDrivingDateTime descending
+                                                           select d).ToList<DrivingShift>();
+
+                return listOfDrivingShifts;
+            }
+        }
+
     }
 }

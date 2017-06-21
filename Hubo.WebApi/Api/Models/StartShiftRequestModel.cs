@@ -8,7 +8,7 @@ namespace Hubo.Api.Models
 {
     public class StartShiftRequestModel
     {
-        public long DriverId { get; set; }
+        public int DayShiftId { get; set; }
         public WorkShift WorkShift { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace Hubo.EntityFramework
 
                 try
                 {
-                    if(!ctx.WorkShiftSet.Any<WorkShift>(d => d.Id == shiftId))
+                    if (!ctx.WorkShiftSet.Any<WorkShift>(d => d.Id == shiftId))
                     {
                         return Tuple.Create(listOfBreaks, "No Shift exists with ID = " + shiftId, -1);
                     }
@@ -67,17 +67,31 @@ namespace Hubo.EntityFramework
             }
         }
 
+        public List<Break> GetBreaksList(int shiftId)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                List<Break> listOfBreaks = new List<Break>();
+                listOfBreaks = (from breaks in ctx.BreakSet
+                                join shift in ctx.WorkShiftSet on breaks.ShiftId equals shift.Id
+                                where shift.Id == shiftId
+                                select breaks).ToList<Break>();
+                return listOfBreaks;
+
+            }
+        }
+
         public Tuple<int, string> StartBreak(Break newBreak)
         {
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
                 {
-                    if(!ctx.WorkShiftSet.Any(s => s.Id == newBreak.ShiftId))
+                    if (!ctx.WorkShiftSet.Any(s => s.Id == newBreak.ShiftId))
                     {
                         return Tuple.Create(-1, "No Shift exists for ID = " + newBreak.ShiftId);
                     }
-                    
+
                     if (ctx.BreakSet.Any(b => b.isActive == true && b.ShiftId == newBreak.ShiftId))
                     {
                         return Tuple.Create(-1, "A break is already active");
@@ -103,7 +117,7 @@ namespace Hubo.EntityFramework
                 try
                 {
                     Break currentBreak = ctx.BreakSet.Single<Break>(b => b.Id == stopBreak.Id);
-                    if(currentBreak.isActive == false)
+                    if (currentBreak.isActive == false)
                     {
                         return Tuple.Create(-1, "Break has already ended");
                     }
@@ -115,11 +129,11 @@ namespace Hubo.EntityFramework
                     ctx.SaveChanges();
                     return Tuple.Create(1, "Success");
                 }
-                catch(ArgumentNullException ex)
+                catch (ArgumentNullException ex)
                 {
                     return Tuple.Create(-1, ex.Message);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     return Tuple.Create(-1, ex.Message);
                 }

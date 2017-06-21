@@ -40,8 +40,6 @@ namespace Hubo.EntityFramework
                 {
                     return Tuple.Create(-1, ex.Message);
                 }
-                
-
             }
         }
 
@@ -78,6 +76,31 @@ namespace Hubo.EntityFramework
             }
         }
 
+        public int GetAmountOfShifts(int workShiftId)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                var dayShiftId = (from w in ctx.WorkShiftSet
+                                  where workShiftId == w.Id
+                                  select w.DayShiftId).Single();
+                List<WorkShift> listOfCurrentWorkShifts = (from w in ctx.WorkShiftSet
+                                                           where dayShiftId == w.DayShiftId
+                                                           select w).ToList<WorkShift>();
+                return listOfCurrentWorkShifts.Count;
+            }
+        }
+
+        public WorkShift GetWorkShift(int workShiftId)
+        {
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                WorkShift currentShift = (from workShift in ctx.WorkShiftSet
+                                          where workShift.Id == workShiftId
+                                          select workShift).FirstOrDefault<WorkShift>();
+                return currentShift;
+            }
+        }
+
         public Tuple<int, string> StartDay(int driverId)
         {
             //Get all workshifts with driverid
@@ -91,51 +114,55 @@ namespace Hubo.EntityFramework
                         return Tuple.Create(-1, "No Driver exists with Driver ID = " + driverId);
                     }
 
-                    DateTime twoWeeksPrior = default(DateTime);
-                    twoWeeksPrior = DateTime.Now;
-                    twoWeeksPrior = twoWeeksPrior.AddDays(-14);
+                    //DateTime twoWeeksPrior = default(DateTime);
+                    //twoWeeksPrior = DateTime.Now;
+                    //twoWeeksPrior = twoWeeksPrior.AddDays(-14);
 
-                    List<long> listOfDayIds = (from b in ctx.WorkShiftSet
-                                              where b.DriverId == driverId &&
-                                              b.StartDate > twoWeeksPrior
-                                              orderby b.DayShiftId descending
-                                              select b.DayShiftId).ToList<long>();
+                    //List<long> listOfDayIds = (from b in ctx.WorkShiftSet
+                    //                          where b.DriverId == driverId &&
+                    //                          b.StartDate > twoWeeksPrior
+                    //                          orderby b.DayShiftId descending
+                    //                          select b.DayShiftId).ToList<long>();
 
-                    if (listOfDayIds.Count == 0)
-                    {
-                        // Start new day
-                        DayShift newDayShift = new DayShift();
-                        ctx.DayShiftSet.Add(newDayShift);
-                        ctx.SaveChanges();
-                        return Tuple.Create(newDayShift.Id, "Success");
-                    }
-                    else
-                    {
-                        // Check if need to send this id, or need to create a new one
-                        long workingDayShiftId = listOfDayIds[0];
+                    //if (listOfDayIds.Count == 0)
+                    //{
+                    //    // Start new day
+                    //    DayShift newDayShift = new DayShift();
+                    //    ctx.DayShiftSet.Add(newDayShift);
+                    //    ctx.SaveChanges();
+                    //    return Tuple.Create(newDayShift.Id, "Success");
+                    //}
+                    //else
+                    //{
+                    //    // Check if need to send this id, or need to create a new one
+                    //    long workingDayShiftId = listOfDayIds[0];
 
-                        List<WorkShift> listOfWorkShifts = (from b in ctx.WorkShiftSet
-                                                            where b.DayShiftId == workingDayShiftId
-                                                            orderby b.StartDate ascending
-                                                            select b).ToList<WorkShift>();
+                    //    List<WorkShift> listOfWorkShifts = (from b in ctx.WorkShiftSet
+                    //                                        where b.DayShiftId == workingDayShiftId
+                    //                                        orderby b.StartDate ascending
+                    //                                        select b).ToList<WorkShift>();
 
-                        WorkShift firstShiftOfTheDay = listOfWorkShifts[0];
+                    //    WorkShift firstShiftOfTheDay = listOfWorkShifts[0];
 
-                        if (firstShiftOfTheDay.StartDate.Value.AddHours(14) > DateTime.Now)
-                        {
-                            // No starting new workday yet
-                            return Tuple.Create(Convert.ToInt32(workingDayShiftId), "Success");
-                        }
-                        else
-                        {
-                            // New work date
-                            DayShift newDayShift = new DayShift();
-                            ctx.DayShiftSet.Add(newDayShift);
-                            ctx.SaveChanges();
-                            return Tuple.Create(newDayShift.Id, "Success");
-                        }
+                    //    if (firstShiftOfTheDay.StartDate.Value.AddHours(14) > DateTime.Now)
+                    //    {
+                    //        // No starting new workday yet
+                    //        return Tuple.Create(Convert.ToInt32(workingDayShiftId), "Success");
+                    //    }
+                    //    else
+                    //    {
+                    //        // New work date
+                    //        DayShift newDayShift = new DayShift();
+                    //        ctx.DayShiftSet.Add(newDayShift);
+                    //        ctx.SaveChanges();
+                    //        return Tuple.Create(newDayShift.Id, "Success");
+                    //    }
 
-                    }
+                    //}
+                    DayShift newDayShift = new DayShift();
+                    ctx.DayShiftSet.Add(newDayShift);
+                    ctx.SaveChanges();
+                    return Tuple.Create(newDayShift.Id, "Success");
                 }
                 catch (Exception ex)
                 {
