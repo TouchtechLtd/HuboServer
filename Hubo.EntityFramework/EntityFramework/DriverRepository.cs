@@ -129,24 +129,24 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public List<WorkShift> GetShiftFromLastLongBreak(int driverId)
-        {
-            List<WorkShift> listOfWorkShifts = new List<WorkShift>();
-            using (HuboDbContext ctx = new HuboDbContext())
-            {
-                try
-                {
-                    WorkShift lastWorkShift = ctx.WorkShiftSet.Where(p => p.TimeSinceLastShiftMins >= 1440 && p.DriverId == driverId).OrderByDescending(p => p.Id).First();
+        //public List<WorkShift> GetShiftFromLastLongBreak(int driverId)
+        //{
+        //    List<WorkShift> listOfWorkShifts = new List<WorkShift>();
+        //    using (HuboDbContext ctx = new HuboDbContext())
+        //    {
+        //        try
+        //        {
+        //            WorkShift lastWorkShift = ctx.WorkShiftSet.Where(p => p.TimeSinceLastShiftMins >= 1440 && p.DriverId == driverId).OrderByDescending(p => p.Id).First();
 
-                    listOfWorkShifts = ctx.WorkShiftSet.Where(p => p.DriverId == driverId && p.StartDate >= lastWorkShift.StartDate).ToList<WorkShift>();
-                    return listOfWorkShifts;
-                }
-                catch (Exception ex)
-                {
-                    return listOfWorkShifts;
-                }
-            }
-        }
+        //            listOfWorkShifts = ctx.WorkShiftSet.Where(p => p.DriverId == driverId && p.StartDate >= lastWorkShift.StartDate).ToList<WorkShift>();
+        //            return listOfWorkShifts;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return listOfWorkShifts;
+        //        }
+        //    }
+        //}
 
         public long GetDriverId(long id)
         {

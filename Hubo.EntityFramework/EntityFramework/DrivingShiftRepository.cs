@@ -35,9 +35,9 @@ namespace Hubo.EntityFramework
             }
         }
 
-        public Tuple<long, string, int> GetVehicleHubo(int vehicleId)
+        public Tuple<int, string, int> GetVehicleHubo(int vehicleId)
         {
-            long hubo = 0;
+            int hubo = 0;
             using (HuboDbContext ctx = new HuboDbContext())
             {
                 try
@@ -51,11 +51,16 @@ namespace Hubo.EntityFramework
                                                         where b.VehicleId == vehicleId
                                                         select b).ToList<DrivingShift>();
 
+                    if (vehicleDrives.Count == 0)
+                    {
+                        return Tuple.Create(0, "Success", 1);
+                    }
+
                     DrivingShift lastDrive = new DrivingShift();
                     lastDrive.StopDrivingDateTime = vehicleDrives[0].StopDrivingDateTime;
-                    foreach(DrivingShift drive in vehicleDrives)
+                    foreach (DrivingShift drive in vehicleDrives)
                     {
-                        if(drive.StopDrivingDateTime > lastDrive.StopDrivingDateTime)
+                        if (drive.StopDrivingDateTime > lastDrive.StopDrivingDateTime)
                         {
                             lastDrive = drive;
                         }

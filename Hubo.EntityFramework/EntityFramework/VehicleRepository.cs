@@ -68,5 +68,22 @@ namespace Hubo.EntityFramework
                 }
             }
         }
+
+        public Tuple<List<Vehicle>, string, int> GetVehicles(List<long> listCompanyIds)
+        {
+            List<Vehicle> listOfVehicles = new List<Vehicle>();
+            using (HuboDbContext ctx = new HuboDbContext())
+            {
+                try
+                {
+                    listOfVehicles = ctx.VehicleSet.Where(t => listCompanyIds.Contains(t.CompanyId)).ToList<Vehicle>();
+                    return Tuple.Create(listOfVehicles, "Success", 1);
+                }
+                catch (Exception ex)
+                {
+                    return Tuple.Create(listOfVehicles, ex.Message, -1);
+                }
+            }
+        }
     }
 }

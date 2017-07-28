@@ -18,7 +18,7 @@ namespace Hubo.DrivingShifts
             _drivingShiftRepository = new EntityFramework.DrivingShiftRepository();
         }
 
-        public Tuple<long, string, int> GetVehicleHubo(int vehicleId)
+        public Tuple<int, string, int> GetVehicleHubo(int vehicleId)
         {
             return _drivingShiftRepository.GetVehicleHubo(vehicleId);
         }

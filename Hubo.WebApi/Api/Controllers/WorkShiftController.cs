@@ -59,6 +59,32 @@ using Hubo.Api.Models;
         //}
 
         [Authorize]
+        [HttpGet]
+        public async Task<AjaxResponse> GetDayShiftsAsync()
+        {
+            IEnumerable<string> driverIds;
+            if (Request.Headers.TryGetValues("DriverId", out driverIds))
+            {
+                string driverId = driverIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetDayShifts(Int32.Parse(driverId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
+        }
+
+        private AjaxResponse GetDayShifts(int driverId)
+        {
+            AjaxResponse ar = new AjaxResponse();
+            List<WorkShiftDto> workShiftResults = _shiftService.GetWorkShifts(driverId);
+
+            ar.Success = true;
+
+            return ar;
+        }
+
+        [Authorize]
         [HttpPost]
         // create a shift record and return the shift ID to the app
         public async Task<AjaxResponse> StartShiftAsync([FromBody] WorkShift shift)
@@ -111,40 +137,40 @@ using Hubo.Api.Models;
 
         }
 
-        [Authorize]
-        [HttpGet]
-        public async Task<AjaxResponse> GetWorkShiftsAsync()
-        {
-            IEnumerable<string> driverIds;
-            if (Request.Headers.TryGetValues("DriverId", out driverIds))
-            {
-                string driverId = driverIds.FirstOrDefault();
-                return await Task<AjaxResponse>.Run(() => GetWorkShifts(Int32.Parse(driverId)));
-            }
-            AjaxResponse ar = new AjaxResponse();
-            ar.Success = false;
-            ar.Result = "Invalid Headers";
-            return ar;
-        }
+        //[Authorize]
+        //[HttpGet]
+        //public async Task<AjaxResponse> GetWorkShiftsAsync()
+        //{
+        //    IEnumerable<string> driverIds;
+        //    if (Request.Headers.TryGetValues("DriverId", out driverIds))
+        //    {
+        //        string driverId = driverIds.FirstOrDefault();
+        //        return await Task<AjaxResponse>.Run(() => GetWorkShifts(Int32.Parse(driverId)));
+        //    }
+        //    AjaxResponse ar = new AjaxResponse();
+        //    ar.Success = false;
+        //    ar.Result = "Invalid Headers";
+        //    return ar;
+        //}
 
-        private AjaxResponse GetWorkShifts(int driverId)
-        {
-            AjaxResponse ar = new AjaxResponse();
-            Tuple<List<WorkShiftDto>, string, int> result = _shiftService.GetWorkShifts(driverId);
+        //private AjaxResponse GetWorkShifts(int driverId)
+        //{
+        //    AjaxResponse ar = new AjaxResponse();
+        //    Tuple<List<WorkShiftDto>, string, int> result = _shiftService.GetWorkShifts(driverId);
 
-            if (result.Item3 == -1)
-            {
-                ar.Success = false;
-                ar.Result = result.Item2;
-            }
-            else
-            {
-                ar.Success = true;
-                ar.Result = result.Item1;
-            }
+        //    if (result.Item3 == -1)
+        //    {
+        //        ar.Success = false;
+        //        ar.Result = result.Item2;
+        //    }
+        //    else
+        //    {
+        //        ar.Success = true;
+        //        ar.Result = result.Item1;
+        //    }
 
-            return ar;
-        }
+        //    return ar;
+        //}
 
         [Authorize]
         [HttpGet]

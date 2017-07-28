@@ -14,6 +14,7 @@
     using PdfSharp.Pdf.IO;
     using System.Diagnostics;
     using TheArtOfDev.HtmlRenderer.PdfSharp;
+    
 
     public class ShiftAppService
     {
@@ -62,7 +63,7 @@
             return _shiftRepository.StartDay(driverId);
         }
 
-        public Tuple<List<WorkShiftDto>, string, int> GetWorkShifts(int driverId)
+        public List<WorkShiftDto> GetWorkShifts(int driverId)
         {
             Tuple<List<WorkShift>, string, int> result = _shiftRepository.GetWorkShifts(driverId);
             List<WorkShiftDto> listWorkShiftDto = new List<WorkShiftDto>();
@@ -70,8 +71,13 @@
             {
                 listWorkShiftDto.Add(Mapper.Map<WorkShift, WorkShiftDto>(workShift));
             }
-            return Tuple.Create(listWorkShiftDto, result.Item2, result.Item3);
+            return listWorkShiftDto;
         }
+
+        //public Tuple<DayShiftResponseModel, string, int> GetDayShifts(int driverId)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public Tuple<int, string> GeneratePdf(int workShiftId)
         {

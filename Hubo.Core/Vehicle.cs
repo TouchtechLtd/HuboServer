@@ -5,14 +5,14 @@ namespace Hubo
     using Abp.Domain.Entities.Auditing;
     using System.ComponentModel.DataAnnotations;
 
-    public class Vehicle : FullAuditedEntity
+    public class Vehicle 
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
+        public int Id { get; set; }
         public string RegistrationNo { get; set; }
         public string MakeModel { get; set; }
         public string FleetNumber { get; set; }
-        public long CompanyId { get; set; }
+        public int CompanyId { get; set; }
         public bool IsManuallyEntered { get; set; }
     }
 }

@@ -134,53 +134,9 @@
     <Compile Include="EntityFramework\Repositories\IVehicleRepository.cs" />
     <Compile Include="EntityFramework\WorkShiftRepository.cs" />
     <Compile Include="EntityFramework\VehicleRepository.cs" />
-    <Compile Include="Migrations\201703090051193_initial.cs" />
-    <Compile Include="Migrations\201703090051193_initial.Designer.cs">
-      <DependentUpon>201703090051193_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703092140186_drivingshift.cs" />
-    <Compile Include="Migrations\201703092140186_drivingshift.Designer.cs">
-      <DependentUpon>201703092140186_drivingshift.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703160044546_vehicle.cs" />
-    <Compile Include="Migrations\201703160044546_vehicle.Designer.cs">
-      <DependentUpon>201703160044546_vehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706190109576_driver.cs" />
-    <Compile Include="Migrations\201706190109576_driver.Designer.cs">
-      <DependentUpon>201706190109576_driver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706190127370_supervisor.cs" />
-    <Compile Include="Migrations\201706190127370_supervisor.Designer.cs">
-      <DependentUpon>201706190127370_supervisor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706190219493_dayshift.cs" />
-    <Compile Include="Migrations\201706190219493_dayshift.Designer.cs">
-      <DependentUpon>201706190219493_dayshift.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706190223509_workshift.cs" />
-    <Compile Include="Migrations\201706190223509_workshift.Designer.cs">
-      <DependentUpon>201706190223509_workshift.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706190258453_workshift1.cs" />
-    <Compile Include="Migrations\201706190258453_workshift1.Designer.cs">
-      <DependentUpon>201706190258453_workshift1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706190319599_dayshift1.cs" />
-    <Compile Include="Migrations\201706190319599_dayshift1.Designer.cs">
-      <DependentUpon>201706190319599_dayshift1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706192238121_dayshift2.cs" />
-    <Compile Include="Migrations\201706192238121_dayshift2.Designer.cs">
-      <DependentUpon>201706192238121_dayshift2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706192238329_workshift2.cs" />
-    <Compile Include="Migrations\201706192238329_workshift2.Designer.cs">
-      <DependentUpon>201706192238329_workshift2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706200412459_dayshift3.cs" />
-    <Compile Include="Migrations\201706200412459_dayshift3.Designer.cs">
-      <DependentUpon>201706200412459_dayshift3.cs</DependentUpon>
+    <Compile Include="Migrations\201707280558569_initial.cs" />
+    <Compile Include="Migrations\201707280558569_initial.Designer.cs">
+      <DependentUpon>201707280558569_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -210,41 +166,8 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703090051193_initial.resx">
-      <DependentUpon>201703090051193_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703092140186_drivingshift.resx">
-      <DependentUpon>201703092140186_drivingshift.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703160044546_vehicle.resx">
-      <DependentUpon>201703160044546_vehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706190109576_driver.resx">
-      <DependentUpon>201706190109576_driver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706190127370_supervisor.resx">
-      <DependentUpon>201706190127370_supervisor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706190219493_dayshift.resx">
-      <DependentUpon>201706190219493_dayshift.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706190223509_workshift.resx">
-      <DependentUpon>201706190223509_workshift.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706190258453_workshift1.resx">
-      <DependentUpon>201706190258453_workshift1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706190319599_dayshift1.resx">
-      <DependentUpon>201706190319599_dayshift1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706192238121_dayshift2.resx">
-      <DependentUpon>201706192238121_dayshift2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706192238329_workshift2.resx">
-      <DependentUpon>201706192238329_workshift2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706200412459_dayshift3.resx">
-      <DependentUpon>201706200412459_dayshift3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707280558569_initial.resx">
+      <DependentUpon>201707280558569_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

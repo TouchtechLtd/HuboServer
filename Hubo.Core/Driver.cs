@@ -9,12 +9,12 @@ namespace Hubo
     using Users;
     using System.ComponentModel.DataAnnotations;
 
-    public class Driver : FullAuditedEntity
+    public class Driver
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
-        public long UserId { get; set; }
-        public long SupervisorId { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public int SupervisorId { get; set; }
         public string LicenceNumber { get; set; }
         public int LicenceId { get; set; }
         public int PhoneNumber { get; set; }

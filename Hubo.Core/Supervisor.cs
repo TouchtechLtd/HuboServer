@@ -11,11 +11,11 @@ namespace Hubo
     using Hubo;
     using Users;
 
-    public class Supervisor : FullAuditedEntity
+    public class Supervisor 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
-        public long UserId { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
     }
 }

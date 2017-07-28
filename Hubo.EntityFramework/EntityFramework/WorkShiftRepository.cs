@@ -15,21 +15,21 @@ namespace Hubo.EntityFramework
             {
                 try
                 {
-                    if (!ctx.DriverSet.Any(d => d.Id == shift.DriverId))
-                    {
-                        //Driver ID does not exist
-                        return Tuple.Create(-1, "No Driver exists with the ID = " + shift.DriverId);
-                    }
+                    //if (!ctx.DriverSet.Any(d => d.Id == shift.DriverId))
+                    //{
+                    //    //Driver ID does not exist
+                    //    return Tuple.Create(-1, "No Driver exists with the ID = " + shift.DriverId);
+                    //}
 
-                    if (!ctx.CompanySet.Any(c => c.Id == shift.CompanyId))
-                    {
-                        return Tuple.Create(-1, "No Company exists with the ID = " + shift.CompanyId);
-                    }
+                    //if (!ctx.CompanySet.Any(c => c.Id == shift.CompanyId))
+                    //{
+                    //    return Tuple.Create(-1, "No Company exists with the ID = " + shift.CompanyId);
+                    //}
 
-                    if (ctx.WorkShiftSet.Any(c => c.isActive == true && shift.DriverId == c.DriverId))
-                    {
-                        return Tuple.Create(-1, "An active shift already exists");
-                    }
+                    //if (ctx.WorkShiftSet.Any(c => c.isActive == true && shift.DriverId == c.DriverId))
+                    //{
+                    //    return Tuple.Create(-1, "An active shift already exists");
+                    //}
 
                     shift.isActive = true;
                     ctx.WorkShiftSet.Add(shift);
@@ -187,10 +187,10 @@ namespace Hubo.EntityFramework
                     twoWeeksPrior = DateTime.Now;
                     twoWeeksPrior = twoWeeksPrior.AddDays(-14);
 
-                    listOfWorkShifts = (from b in ctx.WorkShiftSet
-                                        where b.DriverId == driverId &&
-                                        b.StartDate > twoWeeksPrior
-                                        select b).ToList<WorkShift>();
+                    //listOfWorkShifts = (from b in ctx.WorkShiftSet
+                    //                    where b.DriverId == driverId &&
+                    //                    b.StartDate > twoWeeksPrior
+                    //                    select b).ToList<WorkShift>();
 
                     return Tuple.Create(listOfWorkShifts, "Success", 1);
                 }

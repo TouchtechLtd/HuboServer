@@ -45,6 +45,18 @@ namespace Hubo.Vehicles
             return Tuple.Create(listOfDtoVehicles, result.Item2, result.Item3);
         }
 
+        public Tuple<List<VehicleOutput>, int, string> GetVehicles(List<long> listCompanyIds)
+        {
+            Tuple<List<Vehicle>, string, int> result =  _vehicleRepository.GetVehicles(listCompanyIds);
+            List<VehicleOutput> listOfDtoVehicles = new List<VehicleOutput>();
+            foreach (Vehicle vehicle in result.Item1)
+            {
+                listOfDtoVehicles.Add(Mapper.Map<Vehicle, VehicleOutput>(vehicle));
+            }
+
+            return Tuple.Create(listOfDtoVehicles, result.Item3, result.Item2);
+        }
+
         // TODO: Give it a unique name, save the image, then save the string to the location, then do OCR recognition, then return back the new vehicle id.
         static byte[] GetImageAsByteArray(string imageFilePath)
         {

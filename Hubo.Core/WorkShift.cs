@@ -7,13 +7,12 @@ namespace Hubo
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class WorkShift : FullAuditedEntity
+    public class WorkShift
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
-        public long CompanyId { get; set; }
-        public long DriverId { get; set; }
-        public long DayShiftId { get; set; }
+        public int Id { get; set; }
+        public int CompanyId { get; set; }
+        public int DayShiftId { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public decimal StartLocationLat { get; set; }
@@ -23,7 +22,6 @@ namespace Hubo
         public string StartLocation { get; set; }
         public string EndLocation { get; set; }
         public bool isActive { get; set; }
-        public long TimeSinceLastShiftMins { get; set; }
         public string StartNote { get; set; }
         public string EndNote { get; set; }
     }

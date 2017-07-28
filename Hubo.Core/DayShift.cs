@@ -9,10 +9,11 @@
     using Users;
     using System.ComponentModel.DataAnnotations;
 
-    public class DayShift : FullAuditedEntity
+    public class DayShift
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
+        public int Id { get; set; }
+        public int DriverId { get; set; }
         public bool isActive { get; set; }
     }
 }

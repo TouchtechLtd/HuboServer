@@ -8,11 +8,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Hubo
 {
-    public class Note : FullAuditedEntity
+    public class Note
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
-        public long ShiftId { get; set; }
+        public int Id { get; set; }
+        public int ShiftId { get; set; }
         public string NoteText { get; set; }
         public DateTime TimeStamp { get; set; }
     }

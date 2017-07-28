@@ -9,11 +9,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hubo
 {
-    public class Break : FullAuditedEntity
+    public class Break
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
-        public long ShiftId { get; set; }
+        public int Id { get; set; }
+        public int ShiftId { get; set; }
         public DateTime? StartBreakDateTime { get; set; }
         public DateTime? StopBreakDateTime { get; set; }
         public string StartBreakLocation { get; set; }

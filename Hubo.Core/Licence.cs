@@ -9,11 +9,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Hubo
 {
-    public class Licence : FullAuditedEntity
+    public class Licence
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
-        public long DriverId { get; set; }
+        public int Id { get; set; }
+        public int DriverId { get; set; }
         public string Class { get; set; }
         public string Endorsement { get; set; }
     }

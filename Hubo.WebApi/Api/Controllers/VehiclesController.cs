@@ -26,6 +26,32 @@
         }
 
         [Authorize]
+        [HttpPost]
+        // create a shift record and return the shift ID to the app
+        public async Task<AjaxResponse> VehiclesAsync([FromBody] List<long> listCompanyIds)
+        {
+            return await Task<AjaxResponse>.Run(() => Vehicles(listCompanyIds));
+        }
+
+        private AjaxResponse Vehicles(List<long> listCompanyIds)
+        {
+            AjaxResponse ar = new AjaxResponse();
+            Tuple<List<VehicleOutput> , int, string> listOfVehicles = _vehicleService.GetVehicles(listCompanyIds);
+            if (listOfVehicles.Item2 > 0)
+            {
+                ar.Result = listOfVehicles.Item1;
+                ar.Success = true;
+            }
+            else
+            {
+                ar.Result = listOfVehicles.Item3;
+                ar.Success = false;
+            }
+
+            return ar;
+        }
+
+        [Authorize]
         [HttpGet]
         public async Task<AjaxResponse> getVehiclesByDriverAsync()
         {

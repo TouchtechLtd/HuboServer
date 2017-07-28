@@ -38,7 +38,7 @@ namespace Hubo.Api.Controllers
         private AjaxResponse GetVehicleHubo(int vehicleId)
         {
             AjaxResponse ar = new AjaxResponse();
-            Tuple<long, string, int> result = _drivingShiftAppService.GetVehicleHubo(vehicleId);
+            Tuple<int, string, int> result = _drivingShiftAppService.GetVehicleHubo(vehicleId);
 
             if (result.Item3 == -1)
             {

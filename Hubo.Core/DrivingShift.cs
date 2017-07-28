@@ -9,17 +9,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hubo
 {
-    public class DrivingShift : FullAuditedEntity
+    public class DrivingShift
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public override int Id { get; set; }
-        public long ShiftId { get; set; }
+        public int Id { get; set; }
+        public int ShiftId { get; set; }
+        public int VehicleId { get; set; }
         public DateTime? StartDrivingDateTime { get; set; }
         public DateTime? StopDrivingDateTime { get; set; }
-        public long StartHubo { get; set; }
-        public long StopHubo { get; set; }
-        public bool isActive { get; set; }
-        public long VehicleId { get; set; }
+        public int StartHubo { get; set; }
+        public int StopHubo { get; set; }
+        public bool isActive { get; set; }        
         public string StartNote { get; set; }
         public string EndNote { get; set; }
         public string StartLocation { get; set; }
