@@ -12,6 +12,12 @@ using Hubo.Users;
 using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using Hubo.Drivers;
+using System.Collections.Generic;
+using Abp.Domain.Entities;
+using Hubo.ApiResponseClasses;
+using System.Linq;
+using Hubo.Drivers.Dto;
 
 namespace Hubo.Api.Controllers
 {
@@ -20,6 +26,7 @@ namespace Hubo.Api.Controllers
         public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
 
         private readonly UserManager _userManager;
+        private DriverAppService _driverService;
 
         static AccountController()
         {
@@ -29,6 +36,79 @@ namespace Hubo.Api.Controllers
         public AccountController(UserManager userManager)
         {
             _userManager = userManager;
+            _driverService = new DriverAppService();
+        }
+
+        //[Authorize]
+        //[HttpGet]
+        //public async Task<AjaxResponse> ExportUserDataAsync()
+        //{
+        //    IEnumerable<string> driverIds;
+        //    if(Request.Headers.TryGetValues("DriverId", out driverIds))
+        //    {
+        //        string driverId = driverIds.FirstOrDefault();
+        //        return await Task<AjaxResponse>.Run(() => ExportUserDataAsync(Int32.Parse(driverId)));
+        //    }
+        //    AjaxResponse ar = new AjaxResponse();
+        //    ar.Success = false;
+        //    ar.Result = "Invalid Headers";
+        //    return ar;
+        //}
+
+        //private AjaxResponse ExportUserDataAsync(int driverId)
+        //{
+        //    AjaxResponse ar = new AjaxResponse();
+        //    Tuple<int, string> result = _driverService.ExportData(driverId);
+
+        //    if(result.Item1 > 0)
+        //    {
+        //        ar.Result = result.Item1;
+        //    }
+        //    else
+        //    {
+        //        ar.Success = false;
+        //        ar.Result = result.Item2;
+        //    }
+
+        //    return ar;
+        //}
+
+        [Authorize]
+        [HttpGet]
+        public async Task<AjaxResponse> GetDriverDetailsAsync()
+        {
+            IEnumerable<string> userIds;
+            if(Request.Headers.TryGetValues("UserId", out userIds))
+            {
+                string userId = userIds.FirstOrDefault();
+                return await Task<AjaxResponse>.Run(() => GetDriverDetails(Int32.Parse(userId)));
+            }
+            AjaxResponse ar = new AjaxResponse();
+            ar.Success = false;
+            ar.Result = "Invalid Headers";
+            return ar;
+        }
+
+        private AjaxResponse GetDriverDetails(int userId)
+        {
+            AjaxResponse ar = new AjaxResponse();
+
+            Tuple<DriverOutput,List<LicenceOutputDto>, int, string> driverResult = _driverService.GetDriverDetails(userId);
+            
+            if(driverResult.Item3 < 1)
+            {
+                ar.Success = false;
+                ar.Result = driverResult.Item4;
+            }
+            else
+            {
+                DriverDetailsResponseModel response = new DriverDetailsResponseModel();
+                response.driverInfo = driverResult.Item1;
+                response.listOfLicences = driverResult.Item2;
+                ar.Result = response;
+            }
+
+            return ar;
         }
 
         [HttpPost]
@@ -40,15 +120,25 @@ namespace Hubo.Api.Controllers
                 loginModel.UsernameOrEmailAddress,
                 loginModel.Password,
                 loginModel.TenancyName
-                );
+                );            
 
             var ticket = new AuthenticationTicket(loginResult.Identity, new AuthenticationProperties());
-
             var currentUtc = new SystemClock().UtcNow;
             ticket.Properties.IssuedUtc = currentUtc;
-            ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromMinutes(30));
+            ticket.Properties.ExpiresUtc = currentUtc.Add(TimeSpan.FromDays(60));
+            string token = OAuthBearerOptions.AccessTokenFormat.Protect(ticket);
 
-            return new AjaxResponse(OAuthBearerOptions.AccessTokenFormat.Protect(ticket));
+            LoginResponse response = new LoginResponse();
+            response.Id = loginResult.User.Id;
+            response.FirstName = loginResult.User.Name;
+            response.SurName = loginResult.User.Surname;
+            response.EmailAddress = loginResult.User.EmailAddress;
+            response.DriverId = _driverService.GetDriverId(loginResult.User.Id);
+            response.Token = token;
+
+            AjaxResponse ar = new AjaxResponse();
+            ar.Result = response;
+            return ar;
         }
 
         private async Task<AbpUserManager<Tenant, Role, User>.AbpLoginResult> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)

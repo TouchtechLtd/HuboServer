@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
@@ -23,6 +24,7 @@ namespace Hubo.Users
             _permissionManager = permissionManager;
         }
 
+
         public async Task ProhibitPermission(ProhibitPermissionInput input)
         {
             var user = await UserManager.GetUserByIdAsync(input.UserId);
@@ -39,7 +41,7 @@ namespace Hubo.Users
 
         public async Task<ListResultOutput<UserListDto>> GetUsers()
         {
-            var users = await _userRepository.GetAllListAsync();
+            var users = await _userRepository.GetAllListAsync();           
 
             return new ListResultOutput<UserListDto>(
                 users.MapTo<List<UserListDto>>()

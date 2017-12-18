@@ -8,8 +8,7 @@ namespace Hubo.Drivers
 {
     public interface IDriverAppService : IApplicationService
     {
-        
-
         Task RegisterDriver(Hubo.Drivers.Dto.CreateDriverInput input);
+
     }
 }

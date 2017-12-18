@@ -9,20 +9,20 @@ namespace Hubo
     using Users;
     using System.ComponentModel.DataAnnotations;
 
-    public class Driver : FullAuditedEntity
+    public class Driver
     {
-
-        public virtual User User { get; set; }
-        public virtual long UserId { get; set; }
-
-        [MaxLength(20)]
-        public string LicenceNo { get; set; }
-
-        public int LicenceVersion { get; set; }
-        public string Email { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string MobilePh { get; set; }
-
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public int SupervisorId { get; set; }
+        public string LicenceNumber { get; set; }
+        public int LicenceId { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string Address3 { get; set; }
+        public string PostCode { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
     }
 }
